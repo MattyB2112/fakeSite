@@ -1,12 +1,13 @@
 #root {
 }
 
-html {
+body {
   background-image: URL("../src/assets/background.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  margin-top: 0px;
+  margin: 0px;
   width: 100%;
+  height: 100vh;
 }
