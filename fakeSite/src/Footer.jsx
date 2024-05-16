@@ -3,6 +3,8 @@ export default function Footer() {
     <>
       <div className="footer-container">
         <div className="footer">FOOTER</div>
+
+        <div>MORE FOOTER</div>
       </div>
     </>
   );
