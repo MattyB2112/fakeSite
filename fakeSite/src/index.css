@@ -24,8 +24,7 @@ a:hover {
 .burger-menu {
   padding-top: 60px;
   padding-left: 15px;
-  border: solid black;
-  background: rgb(209, 205, 205, 0.5);
+  background: #373a47;
 }
 
 .bm-burger-button {
@@ -67,10 +66,12 @@ a:hover {
 .bm-item {
   display: inline-block;
   width: auto;
+  padding-top: 5px;
 }
 
 .menu-item {
-  font-size: 40px;
+  font-family: inherit;
+  font-size: 30px;
   text-decoration: none !important;
   color: rgb(64, 118, 139);
 }

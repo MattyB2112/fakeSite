@@ -2,7 +2,7 @@ import { slide as Menu } from "react-burger-menu";
 
 export default function Navbar() {
   return (
-    <Menu width={"300px"} className="burger-menu">
+    <Menu width={"270px"} className="burger-menu">
       <a id="home" className="menu-item" href="/">
         Home
       </a>
