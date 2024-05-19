@@ -82,7 +82,7 @@ a:hover {
   font-size: 30px;
   text-decoration: none !important;
   color: rgb(64, 118, 139);
-  border-bottom: 2px solid black;
+  border-bottom: 1.5px solid black;
 }
 
 .search {
@@ -134,7 +134,7 @@ a:hover {
   display: flex;
   align-items: center;
   transform: translateY(-50%);
-  background-color: pink;
+  background-color: rgb(135, 145, 196);
   justify-content: center;
   color: black;
   height: 30px;
@@ -144,10 +144,10 @@ a:hover {
   margin: 7px;
   z-index: 1;
   transition: background-color 0.3s;
-  border: 1px solid rgb(233, 137, 153);
+  border: 1px solid rgb(80, 88, 133);
 }
 .carousel__btn:hover {
-  background-color: rgb(233, 137, 153);
+  background-color: rgb(80, 88, 133);
 }
 .carousel__btn--prev {
   left: 0;
