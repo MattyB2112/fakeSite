@@ -1,4 +1,3 @@
-import burger from "../src/assets/burger.png";
 import Navbar from "./Navbar";
 
 export default function Header() {
