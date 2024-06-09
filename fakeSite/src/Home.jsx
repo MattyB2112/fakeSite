@@ -43,6 +43,7 @@ export default function Home({ basketSize, setBasketSize }) {
     <div className="carousel-container">
       <Carousel
         showIndicators={false}
+        infiniteLoop={true}
         renderArrowNext={(clickHandler, hasNext) => {
           return (
             hasNext && (
@@ -87,6 +88,7 @@ export default function Home({ basketSize, setBasketSize }) {
       </Carousel>
       <Carousel
         showIndicators={false}
+        infiniteLoop={true}
         renderArrowNext={(clickHandler, hasNext) => {
           return (
             hasNext && (
