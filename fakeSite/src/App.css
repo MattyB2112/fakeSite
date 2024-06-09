@@ -2,12 +2,8 @@
 }
 
 body {
-  background-image: URL("../src/assets/background.jpg");
-  /* background-color: white; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  /* background-image: URL("../src/assets/background.jpg"); */
+  background-color: white;
   margin: 0px;
   width: 100%;
   min-height: 100vh;

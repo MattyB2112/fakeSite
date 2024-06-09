@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import Search from "./Search";
 import { useState } from "react";
 import "./Header.css";
+import logo from "./assets/theLogo.png";
 
 export default function Header({ basketSize }) {
   return (
@@ -10,7 +11,9 @@ export default function Header({ basketSize }) {
         <Navbar />
 
         <div className="logo-container">
-          <div className="logo">LOGO</div>
+          <div className="logo">
+            <img src={logo} className="logo" />
+          </div>
         </div>
         <div className="search-and-basket">
           <div className="search">

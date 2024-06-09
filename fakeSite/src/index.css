@@ -1,9 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
-a:hover {
-  color: rgb(34, 77, 94);
-}
 
 /*DETAILS AND BASKET*/
 .details-basket-container {

@@ -11,6 +11,10 @@ import shoe2one from "./assets/shoe2first.jpeg";
 import shoe2two from "./assets/shoe2second.png";
 import shoe2three from "./assets/shoe2third.jpeg";
 import shoe2four from "./assets/shoe2fourth.jpeg";
+import shoe3one from "./assets/shoe3first.png";
+import shoe3two from "./assets/shoe3second.png";
+import shoe3three from "./assets/shoe3third.png";
+import shoe3four from "./assets/shoe3fourth.png";
 const images1 = [
   { img: shoe1one, link: "/1" },
   { img: shoe1two, link: "/1" },
@@ -22,6 +26,12 @@ const images2 = [
   { img: shoe2two, link: "/1" },
   { img: shoe2three, link: "/1" },
   { img: shoe2four, link: "/1" },
+];
+const images3 = [
+  { img: shoe3one, link: "/1" },
+  { img: shoe3two, link: "/1" },
+  { img: shoe3three, link: "/1" },
+  { img: shoe3four, link: "/1" },
 ];
 
 export default function Home({ basketSize, setBasketSize }) {
@@ -153,7 +163,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return <></>;
         }}
       >
-        {images2.map((image, index) => (
+        {images3.map((image, index) => (
           <div className="slide">
             <img alt="sample_file" src={image.img} key={index} />
           </div>
