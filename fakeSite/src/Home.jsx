@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Carousel.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import sprite from "./sprite.svg";
+import sprite from "./assets/sprite.svg";
 import shoe1one from "./assets/shoe1first.png";
 import shoe1two from "./assets/shoe1second.png";
 import shoe1three from "./assets/shoe1third.png";
