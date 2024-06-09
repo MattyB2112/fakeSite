@@ -34,6 +34,10 @@ const images3 = [
   { img: shoe3four, link: "/1" },
 ];
 
+const handleClick = () => {
+  console.log("Hello there!");
+};
+
 export default function Home({ basketSize, setBasketSize }) {
   return (
     <div className="carousel-container">
@@ -76,9 +80,9 @@ export default function Home({ basketSize, setBasketSize }) {
         }}
       >
         {images1.map((image, index) => (
-          <div className="slide" href={image.link}>
+          <Link to="/1" className="link-test">
             <img alt="sample_file" src={image.img} key={index} />
-          </div>
+          </Link>
         ))}
       </Carousel>
       <Carousel
@@ -120,13 +124,15 @@ export default function Home({ basketSize, setBasketSize }) {
         }}
       >
         {images2.map((image, index) => (
-          <div className="slide">
+          <Link to="/2" className="link-test">
             <img alt="sample_file" src={image.img} key={index} />
-          </div>
+          </Link>
         ))}
       </Carousel>
       <Carousel
         showIndicators={false}
+        infiniteLoop={true}
+        onClickItem={() => handleClick}
         renderArrowNext={(clickHandler, hasNext) => {
           return (
             hasNext && (
@@ -164,9 +170,9 @@ export default function Home({ basketSize, setBasketSize }) {
         }}
       >
         {images3.map((image, index) => (
-          <div className="slide">
+          <Link to="/3" className="link-test">
             <img alt="sample_file" src={image.img} key={index} />
-          </div>
+          </Link>
         ))}
       </Carousel>
     </div>
