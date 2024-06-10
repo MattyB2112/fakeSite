@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import "./Carousel.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import right from "./assets/right.png";
+import left from "./assets/left.png";
 import sprite from "./assets/sprite.svg";
 import shoe1one from "./assets/shoe1first.png";
 import shoe1two from "./assets/shoe1second.png";
@@ -48,9 +50,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <svg>
-                  <use xlinkHref={sprite + "#right"}></use>
-                </svg>
+                <img src={right} />
               </button>
             )
           );
@@ -59,9 +59,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <svg>
-                  <use xlinkHref={sprite + "#left"}></use>
-                </svg>
+                <img src={left} />
               </button>
             )
           );
@@ -93,9 +91,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <svg>
-                  <use xlinkHref={sprite + "#right"}></use>
-                </svg>
+                <img src={right} />
               </button>
             )
           );
@@ -104,9 +100,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <svg>
-                  <use xlinkHref={sprite + "#left"}></use>
-                </svg>
+                <img src={left} />
               </button>
             )
           );
@@ -139,9 +133,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <svg>
-                  <use xlinkHref={sprite + "#right"}></use>
-                </svg>
+                <img src={right} />
               </button>
             )
           );
@@ -150,9 +142,7 @@ export default function Home({ basketSize, setBasketSize }) {
           return (
             hasNext && (
               <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <svg>
-                  <use xlinkHref={sprite + "#left"}></use>
-                </svg>
+                <img src={left} />
               </button>
             )
           );
