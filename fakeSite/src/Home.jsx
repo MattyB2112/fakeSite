@@ -166,6 +166,7 @@ export default function Home({ basketSize, setBasketSize }) {
             <img alt="sample_file" src={image.img} key={index} />
           </Link>
         ))}
+        <div className="test-text">HELLO</div>
       </Carousel>
     </div>
   );
