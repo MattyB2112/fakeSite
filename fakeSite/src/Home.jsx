@@ -19,15 +19,15 @@ import shoe3three from "./assets/shoe3third.png";
 import shoe3four from "./assets/shoe3fourth.png";
 const images1 = [
   { img: shoe1one, link: "/1" },
-  { img: shoe1two, link: "/1" },
-  { img: shoe1three, link: "/1" },
-  { img: shoe1four, link: "/1" },
-];
-const images2 = [
-  { img: shoe2one, link: "/1" },
   { img: shoe2two, link: "/1" },
   { img: shoe2three, link: "/1" },
   { img: shoe2four, link: "/1" },
+];
+const images2 = [
+  { img: shoe2one, link: "/1" },
+  { img: shoe1two, link: "/1" },
+  { img: shoe1three, link: "/1" },
+  { img: shoe1four, link: "/1" },
 ];
 const images3 = [
   { img: shoe3one, link: "/1" },
@@ -166,7 +166,48 @@ export default function Home({ basketSize, setBasketSize }) {
             <img alt="sample_file" src={image.img} key={index} />
           </Link>
         ))}
-        <div className="test-text">HELLO</div>
+      </Carousel>
+      <Carousel
+        showIndicators={false}
+        infiniteLoop={true}
+        onClickItem={() => handleClick}
+        renderArrowNext={(clickHandler, hasNext) => {
+          return (
+            hasNext && (
+              <button className="nav_btn nav_btn_right" onClick={clickHandler}>
+                <img src={right} />
+              </button>
+            )
+          );
+        }}
+        renderArrowPrev={(clickHandler, hasNext) => {
+          return (
+            hasNext && (
+              <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                <img src={left} />
+              </button>
+            )
+          );
+        }}
+        renderIndicator={(clickHandler, isSelected, index) => {
+          return (
+            <li
+              onClick={clickHandler}
+              className={`ind ${isSelected ? "active" : ""}`}
+              key={index}
+              role="button"
+            />
+          );
+        }}
+        statusFormatter={(currentItem, total) => {
+          return <></>;
+        }}
+      >
+        {images3.map((image, index) => (
+          <Link to="/3" className="link-test">
+            <img alt="sample_file" src={image.img} key={index} />
+          </Link>
+        ))}
       </Carousel>
     </div>
   );

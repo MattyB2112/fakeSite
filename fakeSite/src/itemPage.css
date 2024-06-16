@@ -1,0 +1,10 @@
+.product-info-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 375px;
+}
+
+.product-info {
+  padding: 5px;
+}
