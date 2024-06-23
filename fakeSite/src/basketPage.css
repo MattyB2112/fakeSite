@@ -1,5 +1,19 @@
-.the-basket {
+.basket-list-container {
   margin-top: 100px;
-  color: black;
+  padding: 5px;
   height: 100vh;
+}
+
+.loading-message {
+  color: black;
+}
+
+.basket-list {
+  padding: 5px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.basket-list-item {
+  width: 100px;
 }

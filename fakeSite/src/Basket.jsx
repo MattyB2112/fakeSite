@@ -3,22 +3,43 @@ import { useEffect, useState, useContext } from "react";
 import { UserContext } from "./UserContext";
 import { getCart } from "./APICalls";
 
-export default function Basket() {
-  const [basket, setBasket] = useState([]);
+export default function Basket({ basket, setBasket }) {
   const { signedInUser } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [myCart, setMyCart] = useState([]);
 
   useEffect(() => {
-    getCart(signedInUser.user_id).then((result) => {
-      setBasket(result.data.basket);
-    });
-  }, []);
+    getCart(signedInUser.user_id)
+      .then((result) => {
+        setMyCart(result.data.basket);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError({ err });
+        setIsLoading(false);
+      });
+  }, [basket]);
 
-  return (
-    <div className="basket-page-container">
-      {basket?.map((item) => {
-        <div>ITEM ID IS {item.item_id}</div>;
-      })}
-      <div className="the-basket">BASKET FUNCTIONALITY BEING WORKED ON</div>
-    </div>
-  );
+  if (isLoading) {
+    return <div className="loading-message">LOADING...</div>;
+  } else
+    return (
+      <div className="basket-list-container">
+        <h1>ITEMS IN MY BASKET</h1>
+        {myCart.length === 0 ? (
+          <div>NO ITEMS IN BASKET</div>
+        ) : (
+          myCart.map((item, index) => {
+            return (
+              <ul className="basket-list">
+                <li className="basket-list-item">
+                  ITEM ID IS {item.product_id}
+                </li>
+              </ul>
+            );
+          })
+        )}
+      </div>
+    );
 }

@@ -8,7 +8,8 @@ import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { UserContext } from "./UserContext";
 
-export default function ItemPage({ cart, setCart }) {
+export default function ItemPage({ basket, setBasket, handleCartChange }) {
+  let basketSize = basket.length;
   const { signedInUser } = useContext(UserContext);
   const { product_id } = useParams();
   const [product, setProduct] = useState([]);
@@ -36,6 +37,11 @@ export default function ItemPage({ cart, setCart }) {
         setIsLoading(false);
       });
   }, []);
+
+  function multiFunc(product_id, user_id) {
+    addToCart(product_id, user_id);
+    handleCartChange(basket);
+  }
 
   if (isLoading) {
     return <div className="loading-message">LOADING API....</div>;
@@ -100,7 +106,8 @@ export default function ItemPage({ cart, setCart }) {
               <button
                 className="add-to-basket-button"
                 onClick={() => {
-                  addToCart(product.product_id, signedInUser.user_id);
+                  multiFunc(product.product_id, signedInUser.user_id);
+                  basketSize++;
                 }}
               >
                 ADD TO BASKET

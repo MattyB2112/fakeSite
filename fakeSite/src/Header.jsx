@@ -9,10 +9,23 @@ import chatBox from "./assets/chatbox.png";
 import { Link } from "react-router-dom";
 import { getCart } from "./APICalls";
 
-export default function Header({ cart }) {
+export default function Header({ basket, basketChanged }) {
+  let basketSize = basket.length;
+  const [error, setError] = useState(null);
   const { signedInUser } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(true);
 
-  console.log(cart);
+  useEffect(() => {
+    getCart(signedInUser.user_id)
+      .then((result) => {
+        setBasket(result.data.basket);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError({ err });
+        setIsLoading(false);
+      });
+  }, [basketChanged]);
   return (
     <>
       <div className="header-container">
@@ -37,7 +50,7 @@ export default function Header({ cart }) {
                 <img src={shoppingCart} className="header-image" />
               </button>
             </a>
-            <div className="basket-counter">{cart.length}</div>
+            <div className="basket-counter">{basketSize}</div>
             <button className="header-button">
               <img
                 src={chatBox}

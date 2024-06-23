@@ -34,8 +34,7 @@ export function getCart(id) {
 }
 
 export function addToCart(product_id, user_id) {
-  const productObj = { product: product_id };
-  console.log(product_id, "<-- PRODUCT ID", user_id, "<-- USER ID");
+  const productObj = { product_id: product_id };
   return axios
     .post(
       `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
