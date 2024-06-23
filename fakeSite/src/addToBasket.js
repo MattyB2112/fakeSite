@@ -7,6 +7,7 @@ export default function handleAddToBasket(cart, setCart, id) {
     tempCart.push(result.data.product[0]);
     setCart(tempCart);
     console.log(cart.length);
+    console.log(cart);
     return cart;
   });
 }

@@ -25,3 +25,8 @@
 .add-to-basket-button:hover {
   background-color: rgb(197, 114, 5);
 }
+
+.loading-message {
+  height: 100%;
+  margin-top: 100px;
+}
