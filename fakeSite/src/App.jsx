@@ -8,23 +8,20 @@ import { useState } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 
 function App() {
-  const [basketSize, setBasketSize] = useState(0);
-  const [cart, setCart] = useState([{}]);
+  const [cart, setCart] = useState([]);
+
   return (
     <>
       <nav>
-        <Header basketSize={basketSize} />
+        <Header cart={cart} />
       </nav>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <Home basketSize={basketSize} setBasketSize={setBasketSize} />
-          }
-        ></Route>
+        <Route exact path="/" element={<Home />}></Route>
         <Route path="/basket" element={<Basket cart={cart} />}></Route>
-        <Route path="/:product_id" element={<ItemPage />}></Route>
+        <Route
+          path="/:product_id"
+          element={<ItemPage cart={cart} setCart={setCart} />}
+        ></Route>
       </Routes>
       <Footer />
     </>

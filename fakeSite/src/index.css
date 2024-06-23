@@ -12,19 +12,6 @@
   width: 180px;
 }
 
-.add-to-basket-button {
-  font-size: 30px;
-  align-items: center;
-  display: flex;
-  background-color: pink;
-  height: 30px;
-  width: 30px;
-}
-
-.add-to-basket-button:hover {
-  background-color: rgb(243, 171, 183);
-}
-
 /*DETAILS*/
 .details-container {
   display: flex;
@@ -50,7 +37,6 @@
 button {
   border-radius: 6px;
   border: 1px solid transparent;
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;

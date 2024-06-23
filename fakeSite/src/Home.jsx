@@ -40,7 +40,7 @@ const handleClick = () => {
   console.log("Hello there!");
 };
 
-export default function Home({ basketSize, setBasketSize }) {
+export default function Home() {
   return (
     <div className="carousel-container">
       <Carousel

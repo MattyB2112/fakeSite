@@ -6,8 +6,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import right from "./assets/right.png";
 import left from "./assets/left.png";
+import handleAddToBasket from "./addToBasket";
 
-export default function ItemPage() {
+export default function ItemPage({ cart, setCart }) {
   let { product_id } = useParams();
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,8 @@ export default function ItemPage() {
         setIsLoading(false);
       });
   }, []);
+
+  if (isLoading) return <div>PAGE LOADING</div>;
   return (
     <>
       <div className="product-container">
@@ -83,6 +86,17 @@ export default function ItemPage() {
           <div className="product-info">{product.productname}</div>
           <div className="product-info">${product.productprice}</div>
           <div className="product-info">{product.about}</div>
+          <br />
+          <div className="product-info">
+            <button
+              className="add-to-basket-button"
+              onClick={() => {
+                handleAddToBasket(cart, setCart, product.product_id);
+              }}
+            >
+              ADD TO BASKET
+            </button>
+          </div>
         </div>
       </div>
     </>

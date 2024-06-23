@@ -1,13 +1,18 @@
 import Navbar from "./Navbar";
 import Search from "./Search";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Header.css";
 import logo from "./assets/theLogo.png";
 import shoppingCart from "./assets/shoppingcart.png";
 import chatBox from "./assets/chatbox.png";
 import { Link } from "react-router-dom";
 
-export default function Header({ basketSize }) {
+// useEffect(() => {
+//   console.log("IM WORKING");
+// }, [cart]);
+
+export default function Header({ cart }) {
+  console.log(cart.length, "HEADER");
   return (
     <>
       <div className="header-container">
@@ -32,7 +37,7 @@ export default function Header({ basketSize }) {
                 <img src={shoppingCart} className="header-image" />
               </button>
             </a>
-            <div className="basket-counter">{basketSize}</div>
+            <div className="basket-counter">{cart.length}</div>
             <button className="header-button">
               <img
                 src={chatBox}

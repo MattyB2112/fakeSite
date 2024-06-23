@@ -63,3 +63,7 @@
   text-align: right;
   font-family: "Courier New", Courier, monospace;
 }
+
+.menu-item:hover {
+  color: rgb(196, 192, 192);
+}
