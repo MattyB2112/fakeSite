@@ -39,11 +39,15 @@ export default function Basket({ basket, setBasket }) {
             if (item.product_id !== null)
               return (
                 <ul className="basket-list">
-                  <li className="basket-list-item">{item.productname}</li>
                   <li className="basket-list-item">
-                    <img src={item.productimage1} />
+                    Item ID: {item.product_id}
                   </li>
-                  <li className="basket-list-item">quantity {item.quantity}</li>
+                  {/* <li className="basket-list-item">
+                    <img src={item.productimage1} />
+                  </li> */}
+                  <li className="basket-list-item">
+                    Quantity: {item.quantity}
+                  </li>
                 </ul>
               );
           })

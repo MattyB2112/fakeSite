@@ -38,9 +38,9 @@ export default function ItemPage({ basket, setBasket, handleCartChange }) {
       });
   }, []);
 
-  function multiFunc(product_id, user_id, quantity) {
+  function multiFunc(product_id, user_id) {
     basketSize++;
-    addToCart(product_id, user_id, quantity);
+    addToCart(product_id, user_id);
     handleCartChange(basket);
   }
 
@@ -107,7 +107,7 @@ export default function ItemPage({ basket, setBasket, handleCartChange }) {
               <button
                 className="add-to-basket-button"
                 onClick={() => {
-                  multiFunc(product.product_id, signedInUser.user_id, 1);
+                  multiFunc(product.product_id, signedInUser.user_id);
                 }}
               >
                 ADD TO BASKET

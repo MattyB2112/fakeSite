@@ -33,7 +33,7 @@ export function getCart(id) {
     });
 }
 
-export function addToCart(product_id, user_id, quantity) {
+export function addToCart(product_id, user_id, quantity = 1) {
   const productObj = { product_id: product_id, quantity: quantity };
   return axios
     .post(
