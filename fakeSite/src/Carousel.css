@@ -59,6 +59,7 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 450px !important;
+  min-width: 200px !important;
   margin-top: 10px;
   padding: 5px;
   -webkit-box-sizing: border-box;
@@ -193,6 +194,7 @@
 }
 .carousel .slide img {
   max-width: 400px !important;
+  min-width: 200px !important;
   height: auto;
   vertical-align: top;
   border: 0;
@@ -273,16 +275,31 @@
 }
 
 /*other*/
+
+.carousel-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 90px;
+  margin-right: 5px;
+}
 * {
-  padding: 0;
+  padding: 10;
+}
+
+.home-product-info {
+  padding: 5px;
+  font-size: 25px;
+  color: rgb(88, 88, 88);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .carousel-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   margin: 10px;
-  margin-top: 90px;
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
 }
 
 .nav_btn {

@@ -73,6 +73,7 @@ a {
   justify-self: center;
   flex-shrink: 2;
   margin-top: 10px;
+  margin-left: 5px;
 }
 
 .logo {

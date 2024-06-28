@@ -42,173 +42,206 @@ const handleClick = () => {
 
 export default function Home() {
   return (
-    <div className="carousel-container">
-      <Carousel
-        showIndicators={false}
-        infiniteLoop={true}
-        renderArrowNext={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <img src={right} />
-              </button>
-            )
-          );
-        }}
-        renderArrowPrev={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <img src={left} />
-              </button>
-            )
-          );
-        }}
-        renderIndicator={(clickHandler, isSelected, index) => {
-          return (
-            <li
-              onClick={clickHandler}
-              className={`ind ${isSelected ? "active" : ""}`}
-              key={index}
-              role="button"
-            />
-          );
-        }}
-        statusFormatter={(currentItem, total) => {
-          return <></>;
-        }}
-      >
-        {images1.map((image, index) => (
-          <Link to="/1" className="link-test">
-            <img alt="sample_file" src={image.img} key={index} />
-          </Link>
-        ))}
-      </Carousel>
-      <Carousel
-        showIndicators={false}
-        infiniteLoop={true}
-        renderArrowNext={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <img src={right} />
-              </button>
-            )
-          );
-        }}
-        renderArrowPrev={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <img src={left} />
-              </button>
-            )
-          );
-        }}
-        renderIndicator={(clickHandler, isSelected, index) => {
-          return (
-            <li
-              onClick={clickHandler}
-              className={`ind ${isSelected ? "active" : ""}`}
-              key={index}
-              role="button"
-            />
-          );
-        }}
-        statusFormatter={(currentItem, total) => {
-          return <></>;
-        }}
-      >
-        {images2.map((image, index) => (
-          <Link to="/2" className="link-test">
-            <img alt="sample_file" src={image.img} key={index} />
-          </Link>
-        ))}
-      </Carousel>
-      <Carousel
-        showIndicators={false}
-        infiniteLoop={true}
-        onClickItem={() => handleClick}
-        renderArrowNext={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <img src={right} />
-              </button>
-            )
-          );
-        }}
-        renderArrowPrev={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <img src={left} />
-              </button>
-            )
-          );
-        }}
-        renderIndicator={(clickHandler, isSelected, index) => {
-          return (
-            <li
-              onClick={clickHandler}
-              className={`ind ${isSelected ? "active" : ""}`}
-              key={index}
-              role="button"
-            />
-          );
-        }}
-        statusFormatter={(currentItem, total) => {
-          return <></>;
-        }}
-      >
-        {images3.map((image, index) => (
-          <Link to="/3" className="link-test">
-            <img alt="sample_file" src={image.img} key={index} />
-          </Link>
-        ))}
-      </Carousel>
-      <Carousel
-        showIndicators={false}
-        infiniteLoop={true}
-        onClickItem={() => handleClick}
-        renderArrowNext={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button className="nav_btn nav_btn_right" onClick={clickHandler}>
-                <img src={right} />
-              </button>
-            )
-          );
-        }}
-        renderArrowPrev={(clickHandler, hasNext) => {
-          return (
-            hasNext && (
-              <button onClick={clickHandler} className="nav_btn nav_btn_left">
-                <img src={left} />
-              </button>
-            )
-          );
-        }}
-        renderIndicator={(clickHandler, isSelected, index) => {
-          return (
-            <li
-              onClick={clickHandler}
-              className={`ind ${isSelected ? "active" : ""}`}
-              key={index}
-              role="button"
-            />
-          );
-        }}
-        statusFormatter={(currentItem, total) => {
-          return <></>;
-        }}
-      >
-        {images3.map((image, index) => (
-          <Link to="/3" className="link-test">
-            <img alt="sample_file" src={image.img} key={index} />
-          </Link>
-        ))}
-      </Carousel>
+    <div className="carousel-group">
+      <div className="carousel-container">
+        <div className="home-product-info">Nike Air Max Plus</div>
+        <div className="home-product-info">$174.99</div>
+        <Carousel
+          showIndicators={false}
+          showThumbs={false}
+          infiniteLoop={true}
+          renderArrowNext={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button
+                  className="nav_btn nav_btn_right"
+                  onClick={clickHandler}
+                >
+                  <img src={right} />
+                </button>
+              )
+            );
+          }}
+          renderArrowPrev={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                  <img src={left} />
+                </button>
+              )
+            );
+          }}
+          renderIndicator={(clickHandler, isSelected, index) => {
+            return (
+              <li
+                onClick={clickHandler}
+                className={`ind ${isSelected ? "active" : ""}`}
+                key={index}
+                role="button"
+              />
+            );
+          }}
+          statusFormatter={(currentItem, total) => {
+            return <></>;
+          }}
+        >
+          {images1.map((image, index) => (
+            <Link to="/1" className="link-test">
+              <img alt="sample_file" src={image.img} key={index} />
+            </Link>
+          ))}
+        </Carousel>
+      </div>
+      <div className="carousel-container">
+        <div className="home-product-info">Nike Air Presto</div>
+        <div className="home-product-info">$69.99</div>
+        <Carousel
+          showIndicators={false}
+          infiniteLoop={true}
+          showThumbs={false}
+          renderArrowNext={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button
+                  className="nav_btn nav_btn_right"
+                  onClick={clickHandler}
+                >
+                  <img src={right} />
+                </button>
+              )
+            );
+          }}
+          renderArrowPrev={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                  <img src={left} />
+                </button>
+              )
+            );
+          }}
+          renderIndicator={(clickHandler, isSelected, index) => {
+            return (
+              <li
+                onClick={clickHandler}
+                className={`ind ${isSelected ? "active" : ""}`}
+                key={index}
+                role="button"
+              />
+            );
+          }}
+          statusFormatter={(currentItem, total) => {
+            return <></>;
+          }}
+        >
+          {images2.map((image, index) => (
+            <Link to="/2" className="link-test">
+              <img alt="sample_file" src={image.img} key={index} />
+            </Link>
+          ))}
+        </Carousel>
+      </div>
+      <div className="carousel-container">
+        <div className="home-product-info">Nike Dunk Low</div>
+        <div className="home-product-info">$109.99</div>
+        <Carousel
+          showIndicators={false}
+          infiniteLoop={true}
+          showThumbs={false}
+          onClickItem={() => handleClick}
+          renderArrowNext={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button
+                  className="nav_btn nav_btn_right"
+                  onClick={clickHandler}
+                >
+                  <img src={right} />
+                </button>
+              )
+            );
+          }}
+          renderArrowPrev={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                  <img src={left} />
+                </button>
+              )
+            );
+          }}
+          renderIndicator={(clickHandler, isSelected, index) => {
+            return (
+              <li
+                onClick={clickHandler}
+                className={`ind ${isSelected ? "active" : ""}`}
+                key={index}
+                role="button"
+              />
+            );
+          }}
+          statusFormatter={(currentItem, total) => {
+            return <></>;
+          }}
+        >
+          {images3.map((image, index) => (
+            <Link to="/3" className="link-test">
+              <img alt="sample_file" src={image.img} key={index} />
+            </Link>
+          ))}
+        </Carousel>
+      </div>
+      <div className="carousel-container">
+        <div className="home-product-info">Nike Dunk Low</div>
+        <div className="home-product-info">$109.99</div>
+
+        <Carousel
+          showIndicators={false}
+          infiniteLoop={true}
+          showThumbs={false}
+          onClickItem={() => handleClick}
+          renderArrowNext={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button
+                  className="nav_btn nav_btn_right"
+                  onClick={clickHandler}
+                >
+                  <img src={right} />
+                </button>
+              )
+            );
+          }}
+          renderArrowPrev={(clickHandler, hasNext) => {
+            return (
+              hasNext && (
+                <button onClick={clickHandler} className="nav_btn nav_btn_left">
+                  <img src={left} />
+                </button>
+              )
+            );
+          }}
+          renderIndicator={(clickHandler, isSelected, index) => {
+            return (
+              <li
+                onClick={clickHandler}
+                className={`ind ${isSelected ? "active" : ""}`}
+                key={index}
+                role="button"
+              />
+            );
+          }}
+          statusFormatter={(currentItem, total) => {
+            return <></>;
+          }}
+        >
+          {images3.map((image, index) => (
+            <Link to="/3" className="link-test">
+              <img alt="sample_file" src={image.img} key={index} />
+            </Link>
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 }

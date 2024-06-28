@@ -10,9 +10,15 @@ export default function Basket({ basket, setBasket }) {
   const [myCart, setMyCart] = useState([]);
 
   useEffect(() => {
+    let tempCart = [];
     getCart(signedInUser.user_id)
       .then((result) => {
-        setMyCart(result.data.basket);
+        result.data.basket.map((item) => {
+          if (item.product_id !== null) tempCart.push(item);
+        });
+
+        setMyCart(tempCart);
+        console.log(tempCart);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -26,18 +32,20 @@ export default function Basket({ basket, setBasket }) {
   } else
     return (
       <div className="basket-list-container">
-        <h1>ITEMS IN MY BASKET</h1>
         {myCart.length === 0 ? (
-          <div>NO ITEMS IN BASKET</div>
+          <h1>NO ITEMS IN BASKET</h1>
         ) : (
           myCart.map((item, index) => {
-            return (
-              <ul className="basket-list">
-                <li className="basket-list-item">
-                  ITEM ID IS {item.product_id}
-                </li>
-              </ul>
-            );
+            if (item.product_id !== null)
+              return (
+                <ul className="basket-list">
+                  <li className="basket-list-item">{item.productname}</li>
+                  <li className="basket-list-item">
+                    <img src={item.productimage1} />
+                  </li>
+                  <li className="basket-list-item">quantity {item.quantity}</li>
+                </ul>
+              );
           })
         )}
       </div>

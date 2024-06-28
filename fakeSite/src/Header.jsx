@@ -10,7 +10,12 @@ import { Link } from "react-router-dom";
 import { getCart } from "./APICalls";
 
 export default function Header({ basket, basketChanged }) {
-  let basketSize = basket.length;
+  let basketSize = 0;
+  for (let i = 0; i < basket.length; i++) {
+    if (basket[i].product_id !== null) {
+      basketSize++;
+    }
+  }
   const [error, setError] = useState(null);
   const { signedInUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +24,7 @@ export default function Header({ basket, basketChanged }) {
     getCart(signedInUser.user_id)
       .then((result) => {
         setBasket(result.data.basket);
+
         setIsLoading(false);
       })
       .catch((err) => {
@@ -61,11 +67,7 @@ export default function Header({ basket, basketChanged }) {
           </div>
         </div>
       </div>
-      <div>
-        {signedInUser && localStorage.getItem("name")
-          ? `Logged in as: ${localStorage.getItem("name")}`
-          : "Not logged in"}
-      </div>
+      <div></div>
     </>
   );
 }
