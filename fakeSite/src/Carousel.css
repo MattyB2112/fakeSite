@@ -58,8 +58,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 450px !important;
-  min-width: 200px !important;
+  max-width: 400px !important;
+  min-width: 100px !important;
   margin-top: 10px;
   padding: 5px;
   -webkit-box-sizing: border-box;
@@ -194,7 +194,7 @@
 }
 .carousel .slide img {
   max-width: 400px !important;
-  min-width: 200px !important;
+  min-width: 100px !important;
   height: auto;
   vertical-align: top;
   border: 0;

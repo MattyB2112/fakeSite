@@ -7,20 +7,26 @@ import ItemPage from "./ItemPage";
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import { UserContext } from "./UserContext";
-import { getCart } from "./APICalls";
+import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 
 function App() {
   const [basket, setBasket] = useState([]);
   const [signedInUser, setSignedInUser] = useState({ user_id: 1 });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [basketChanged, setBasketChanged] = useState(true);
+  const [basketChanged, setBasketChanged] = useState(false);
 
-  function handleCartChange() {
-    setBasketChanged(true);
-    console.log("CHANGED!");
-    console.log(basket.length);
-  }
+  const handleBasketChange = (product_id, user_id, quantity) => {
+    updateCart(product_id, user_id, quantity).then((result) => {
+      setBasketChanged(true);
+    });
+  };
+
+  const handleBasketDelete = (product_id, user_id) => {
+    deleteFromBasket(product_id, user_id).then((result) => {
+      setBasketChanged(true);
+    });
+  };
 
   useEffect(() => {
     getCart(signedInUser.user_id)
@@ -43,14 +49,23 @@ function App() {
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
-          <Route path="/basket" element={<Basket basket={basket} />}></Route>
+          <Route
+            path="/basket"
+            element={
+              <Basket
+                basket={basket}
+                onBasketChange={handleBasketChange}
+                onBasketDelete={handleBasketDelete}
+              />
+            }
+          ></Route>
           <Route
             path="/:product_id"
             element={
               <ItemPage
                 basket={basket}
                 setBasket={setBasket}
-                handleCartChange={handleCartChange}
+                // handleCartChange={handleCartChange}
               />
             }
           ></Route>

@@ -17,3 +17,11 @@
 .basket-list-item {
   width: 100px;
 }
+
+.add-or-minus-basket-button-container {
+  display: flex;
+}
+
+.update-basket-button {
+  width: 50px;
+}

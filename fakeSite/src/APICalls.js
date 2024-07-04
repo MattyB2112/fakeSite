@@ -47,3 +47,30 @@ export function addToCart(product_id, user_id, quantity = 1) {
       }
     });
 }
+
+export function updateCart(product_id, user_id, quantity) {
+  const updateObj = { product_id: product_id, quantity: quantity };
+  return axios
+    .patch(
+      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      updateObj
+    )
+    .then((result) => result)
+    .catch((error) => {
+      return error;
+    });
+}
+
+export function deleteFromBasket(product_id, user_id) {
+  const deleteObj = { product_id: product_id };
+  console.log(product_id, user_id);
+  return axios
+    .delete(
+      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      { data: deleteObj }
+    )
+    .then((result) => result)
+    .catch((error) => {
+      return error;
+    });
+}
