@@ -43,6 +43,12 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                   <li className="basket-list-item">
                     Item ID: {item.product_id}
                   </li>
+                  <li className="basket-list-item">
+                    Product Name: {item.productname}
+                  </li>
+                  <li className="basket-list-item">
+                    Product Price: {item.productprice}
+                  </li>
                   {/* <li className="basket-list-item">
                     <img src={item.productimage1} />
                   </li> */}

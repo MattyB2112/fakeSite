@@ -10,12 +10,11 @@
 
 .basket-list {
   padding: 5px;
-  width: 100px;
+  width: 400px;
   border: 1px solid black;
 }
 
 .basket-list-item {
-  width: 100px;
 }
 
 .add-or-minus-basket-button-container {
@@ -23,5 +22,5 @@
 }
 
 .update-basket-button {
-  width: 50px;
+  width: 70px;
 }
