@@ -36,65 +36,54 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
           myCart.map((item, index) => {
             if (item.product_id !== null)
               return (
-                <ul className="basket-list">
-                  <li className="basket-list-item">
-                    User ID: {signedInUser.user_id}
-                  </li>
-                  <li className="basket-list-item">
-                    Item ID: {item.product_id}
-                  </li>
-                  <li className="basket-list-item">
-                    Product Name: {item.productname}
-                  </li>
-                  <li className="basket-list-item">
-                    Product Price: {item.productprice}
-                  </li>
-                  {/* <li className="basket-list-item">
-                    <img src={item.productimage1} />
-                  </li> */}
-                  <li className="basket-list-item">
-                    Quantity: {item.quantity}
-                  </li>
-                  <div className="add-or-minus-basket-button-container">
-                    <button
-                      className="update-basket-button"
-                      onClick={() => {
-                        onBasketChange(
-                          item.product_id,
-                          signedInUser.user_id,
-                          1
-                        );
-                      }}
-                    >
-                      +
-                    </button>
-                  </div>
+                <div className="basket-product-container">
+                  <img
+                    src={item.productimage1}
+                    className="basket-product-image"
+                  />
+                  <ul className="basket-list-details">
+                    <li className="basket-list-item">{item.productname}</li>
+                    <li className="basket-list-item">${item.productprice}</li>
+                    <li className="basket-list-item">Qty: {item.quantity}</li>
+                    <div className="add-or-minus-basket-button-container">
+                      <button
+                        className="update-basket-button-plus"
+                        onClick={() => {
+                          onBasketChange(
+                            item.product_id,
+                            signedInUser.user_id,
+                            1
+                          );
+                        }}
+                      >
+                        +
+                      </button>
 
-                  <div>
-                    <button
-                      className="update-basket-button"
-                      onClick={() => {
-                        onBasketChange(
-                          item.product_id,
-                          signedInUser.user_id,
-                          -1
-                        );
-                      }}
-                    >
-                      -
-                    </button>
-                  </div>
-                  <div>
-                    <button
-                      className="update-basket-button"
-                      onClick={() => {
-                        onBasketDelete(item.product_id, signedInUser.user_id);
-                      }}
-                    >
-                      DELETE
-                    </button>
-                  </div>
-                </ul>
+                      <button
+                        className="update-basket-button-minus"
+                        onClick={() => {
+                          onBasketChange(
+                            item.product_id,
+                            signedInUser.user_id,
+                            -1
+                          );
+                        }}
+                      >
+                        -
+                      </button>
+                    </div>
+                    <div className="update-basket-delete-button-container">
+                      <button
+                        className="update-basket-button-delete"
+                        onClick={() => {
+                          onBasketDelete(item.product_id, signedInUser.user_id);
+                        }}
+                      >
+                        DELETE
+                      </button>
+                    </div>
+                  </ul>
+                </div>
               );
           })
         )}

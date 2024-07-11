@@ -1,26 +1,70 @@
 .basket-list-container {
+  display: flex;
+  flex-direction: column;
   margin-top: 100px;
   padding: 5px;
-  height: 100vh;
+  margin-left: 20px;
+  height: 100%;
 }
 
 .loading-message {
   color: black;
 }
 
-.basket-list {
+.basket-list-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 5px;
-  width: 400px;
-  border: 1px solid black;
+  max-width: 400px;
+  margin-left: 20px;
+  font-size: 27px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .basket-list-item {
+  padding: 10px;
 }
 
 .add-or-minus-basket-button-container {
+  margin: 10px;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.update-basket-button {
+.update-basket-button-plus,
+.update-basket-button-minus {
+  background-color: rgb(251, 141, 0);
+  font-weight: bold;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+.update-basket-delete-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.update-basket-button-delete {
+  font-weight: bold;
+  font-size: 15px;
   width: 70px;
+  background-color: rgb(251, 141, 0);
+  height: 30px;
+}
+
+.basket-product-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.basket-product-image {
+  max-width: 400px;
+}
+
+li {
+  list-style-type: none;
 }

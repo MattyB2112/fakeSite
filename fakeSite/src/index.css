@@ -27,8 +27,7 @@
 
 .footer-container {
   display: flex;
-  align-content: flex-end;
-  align-items: flex-end;
+  justify-items: flex-end;
   justify-content: center;
   border: solid black;
   text-align: center;
