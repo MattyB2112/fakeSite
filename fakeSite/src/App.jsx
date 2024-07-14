@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
+import SearchBar from "./SearchBar";
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -46,6 +47,7 @@ function App() {
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
         <nav>
           <Header basket={basket} basketChanged={basketChanged} />
+          <SearchBar />
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>

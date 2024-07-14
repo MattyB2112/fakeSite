@@ -36,7 +36,6 @@ export default function Header({ basket, basketChanged }) {
     <>
       <div className="header-container">
         <Navbar />
-
         <div className="logo-container">
           <Link to="/">
             <img
@@ -46,10 +45,7 @@ export default function Header({ basket, basketChanged }) {
             />
           </Link>
         </div>
-        <div className="search-and-basket">
-          <div className="search">
-            <Search />
-          </div>
+        <div className="basket-and-chat-container">
           <div className="basket-counter-container">
             <a href="basket">
               <button className="header-button">

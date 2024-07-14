@@ -31,6 +31,7 @@
   justify-items: flex-end;
   justify-content: center;
   text-align: center;
+  align-items: flex-end;
 }
 
 button {
