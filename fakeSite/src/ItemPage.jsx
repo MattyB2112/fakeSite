@@ -53,6 +53,7 @@ export default function ItemPage({ basket, setBasket, handleCartChange }) {
           <Carousel
             showIndicators={false}
             infiniteLoop={true}
+            thumbWidth={75}
             selectedItem={0}
             renderArrowNext={(clickHandler, hasNext) => {
               return (
