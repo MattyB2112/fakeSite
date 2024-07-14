@@ -87,7 +87,12 @@ export default function Home() {
         >
           {images1.map((image, index) => (
             <Link to="/1" className="link-test">
-              <img alt="sample_file" src={image.img} key={index} />
+              <img
+                alt="sample_file"
+                src={image.img}
+                key={index}
+                className="carousel-image"
+              />
             </Link>
           ))}
         </Carousel>
@@ -136,7 +141,12 @@ export default function Home() {
         >
           {images2.map((image, index) => (
             <Link to="/2" className="link-test">
-              <img alt="sample_file" src={image.img} key={index} />
+              <img
+                alt="sample_file"
+                src={image.img}
+                key={index}
+                className="carousel-image"
+              />
             </Link>
           ))}
         </Carousel>
@@ -186,7 +196,12 @@ export default function Home() {
         >
           {images3.map((image, index) => (
             <Link to="/3" className="link-test">
-              <img alt="sample_file" src={image.img} key={index} />
+              <img
+                alt="sample_file"
+                src={image.img}
+                key={index}
+                className="carousel-image"
+              />
             </Link>
           ))}
         </Carousel>
@@ -237,7 +252,12 @@ export default function Home() {
         >
           {images3.map((image, index) => (
             <Link to="/3" className="link-test">
-              <img alt="sample_file" src={image.img} key={index} />
+              <img
+                alt="sample_file"
+                src={image.img}
+                key={index}
+                className="carousel-image"
+              />
             </Link>
           ))}
         </Carousel>
