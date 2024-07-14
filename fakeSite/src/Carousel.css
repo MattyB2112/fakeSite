@@ -59,7 +59,7 @@
   flex-wrap: wrap;
   justify-content: center;
   max-width: 400px !important;
-  min-width: 100px !important;
+  min-width: 200px !important;
   margin-top: 10px;
   padding: 5px;
   -webkit-box-sizing: border-box;
@@ -193,8 +193,6 @@
   text-align: center;
 }
 .carousel .slide img {
-  max-width: 100% !important;
-  min-width: 100px !important;
   height: auto;
   vertical-align: top;
   border: 0;
@@ -295,7 +293,8 @@
 .carousel-container {
   justify-content: center;
   align-items: center;
-  max-width: 100%;
+  max-width: 400px !important;
+
   height: auto;
   margin: 20px;
   padding: 10px;
@@ -305,7 +304,7 @@
 }
 
 .carousel-image {
-  max-width: 350px !important;
+  max-width: 500px !important;
   min-width: 200px !important;
   height: auto;
 }

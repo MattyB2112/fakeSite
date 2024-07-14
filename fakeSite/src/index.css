@@ -27,9 +27,9 @@
 
 .footer-container {
   display: flex;
+  width: 100%;
   justify-items: flex-end;
   justify-content: center;
-  border: solid black;
   text-align: center;
 }
 
