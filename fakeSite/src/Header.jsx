@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import Search from "./Search";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 import "./Header.css";
@@ -46,6 +47,9 @@ export default function Header({ basket, basketChanged }) {
           </Link>
         </div>
         <div className="search-and-basket">
+          <div className="search">
+            <Search />
+          </div>
           <div className="basket-counter-container">
             <a href="basket">
               <button className="header-button">
