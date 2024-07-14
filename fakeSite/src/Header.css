@@ -9,19 +9,22 @@
   font-size: 30px;
   text-align: center;
   background-color: white;
-  border-bottom: 5px solid rgb(251, 141, 0);
+  border-bottom: 4px solid rgb(251, 141, 0);
   border-bottom-style: double;
+  border-top: 4px solid rgb(251, 141, 0);
+  border-top-style: double;
   position: fixed;
   top: 0;
   bottom: 0;
   margin-bottom: 100px;
-  z-index: 5;
 }
 
 .search-and-basket {
   display: flex;
   align-items: center;
   align-content: center;
+  justify-content: flex-end;
+  margin: 10px;
   width: 420px;
 }
 
@@ -70,10 +73,10 @@ a {
 .logo-container {
   display: flex;
   align-items: center;
-  justify-self: center;
-  flex-shrink: 2;
   margin-top: 10px;
-  margin-left: 5px;
+  max-width: 500px;
+  justify-content: flex-end;
+  margin-left: 10px;
 }
 
 .logo {

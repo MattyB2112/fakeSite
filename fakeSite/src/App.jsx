@@ -1,6 +1,7 @@
 import "./App.css";
 import Home from "./Home";
 import Header from "./Header";
+import SearchBar from "./SearchBar";
 import Footer from "./Footer";
 import Basket from "./Basket";
 import ItemPage from "./ItemPage";
@@ -46,6 +47,7 @@ function App() {
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
         <nav>
           <Header basket={basket} basketChanged={basketChanged} />
+          <SearchBar />
         </nav>
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
