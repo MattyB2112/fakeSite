@@ -16,6 +16,7 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [basketChanged, setBasketChanged] = useState(false);
+  const [basketSize, setBasketSize] = useState(basket.length);
 
   const handleBasketChange = (product_id, user_id, quantity) => {
     updateCart(product_id, user_id, quantity).then((result) => {
@@ -29,10 +30,21 @@ function App() {
     });
   };
 
+  const handleBasketUpdate = () => {
+    setBasketChanged(true);
+  };
+
   useEffect(() => {
     getCart(signedInUser.user_id)
       .then((result) => {
         setBasket(result.data.basket);
+        let sizeofbasket = 0;
+        for (let i = 0; i < result.data.basket.length; i++) {
+          if (result.data.basket[i].product_id !== null) {
+            sizeofbasket++;
+          }
+        }
+        setBasketSize(sizeofbasket);
         setBasketChanged(false);
         setIsLoading(false);
       })
@@ -46,7 +58,7 @@ function App() {
     <>
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
         <nav>
-          <Header basket={basket} basketChanged={basketChanged} />
+          <Header basketSize={basketSize} />
           <SearchBar />
         </nav>
         <Routes>
@@ -67,7 +79,7 @@ function App() {
               <ItemPage
                 basket={basket}
                 setBasket={setBasket}
-                // handleCartChange={handleCartChange}
+                onBasketUpdate={handleBasketUpdate}
               />
             }
           ></Route>

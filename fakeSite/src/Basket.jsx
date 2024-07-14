@@ -25,6 +25,11 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
       });
   }, [basket]);
 
+  const multiFunc = (product_id, user_id, quantity, currentQuantity) => {
+    currentQuantity++;
+    onBasketChange(product_id, user_id, quantity);
+  };
+
   if (isLoading) {
     return <div className="loading-message">LOADING...</div>;
   } else
@@ -49,10 +54,11 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                       <button
                         className="update-basket-button-plus"
                         onClick={() => {
-                          onBasketChange(
+                          multiFunc(
                             item.product_id,
                             signedInUser.user_id,
-                            1
+                            1,
+                            item.quantity
                           );
                         }}
                       >

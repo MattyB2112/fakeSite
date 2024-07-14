@@ -63,7 +63,6 @@ export function updateCart(product_id, user_id, quantity) {
 
 export function deleteFromBasket(product_id, user_id) {
   const deleteObj = { product_id: product_id };
-  console.log(product_id, user_id);
   return axios
     .delete(
       `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,

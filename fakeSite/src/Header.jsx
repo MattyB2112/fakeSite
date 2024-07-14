@@ -8,29 +8,7 @@ import chatBox from "./assets/chatbox.png";
 import { Link } from "react-router-dom";
 import { getCart } from "./APICalls";
 
-export default function Header({ basket, basketChanged }) {
-  let basketSize = 0;
-  for (let i = 0; i < basket.length; i++) {
-    if (basket[i].product_id !== null) {
-      basketSize++;
-    }
-  }
-  const [error, setError] = useState(null);
-  const { signedInUser } = useContext(UserContext);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getCart(signedInUser.user_id)
-      .then((result) => {
-        setBasket(result.data.basket);
-
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError({ err });
-        setIsLoading(false);
-      });
-  }, [basketChanged]);
+export default function Header({ basketSize }) {
   return (
     <>
       <div className="header-container">

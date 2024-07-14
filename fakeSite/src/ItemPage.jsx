@@ -8,7 +8,7 @@ import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { UserContext } from "./UserContext";
 
-export default function ItemPage({ basket, setBasket, handleCartChange }) {
+export default function ItemPage({ basket, onBasketUpdate }) {
   let basketSize = basket.length;
   const { signedInUser } = useContext(UserContext);
   const { product_id } = useParams();
@@ -39,9 +39,8 @@ export default function ItemPage({ basket, setBasket, handleCartChange }) {
   }, []);
 
   function multiFunc(product_id, user_id) {
-    basketSize++;
     addToCart(product_id, user_id);
-    handleCartChange(basket);
+    onBasketUpdate();
   }
 
   if (isLoading) {

@@ -270,7 +270,7 @@
 .carousel-container {
   justify-content: center;
   align-items: center;
-  max-width: 350px !important;
+  max-width: 300px !important;
   height: auto;
   margin: 20px;
   padding: 10px;
