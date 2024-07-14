@@ -1,5 +1,4 @@
 import Navbar from "./Navbar";
-import Search from "./Search";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 import "./Header.css";
@@ -54,16 +53,11 @@ export default function Header({ basket, basketChanged }) {
             </a>
             <div className="basket-counter">{basketSize}</div>
             <button className="header-button">
-              <img
-                src={chatBox}
-                className="header-image"
-                alt="logo for fake clothing website"
-              />
+              <img src={chatBox} className="header-image" />
             </button>
           </div>
         </div>
       </div>
-      <div></div>
     </>
   );
 }

@@ -1,20 +1,22 @@
 .burger-menu {
   display: flex;
-  padding-top: 60px;
+  padding-top: 40px;
   background: rgb(251, 141, 0);
   color: white;
+  max-width: 40%;
+  min-width: 20%;
 }
 
 .bm-burger-button {
-  margin-right: 100px;
   display: flex;
   align-items: center;
   align-content: center;
   position: fixed;
-  width: 40px;
-  height: 30px;
+  width: 30px;
+  height: 25px;
   left: 20px;
-  top: 23px;
+  top: 26px;
+  margin: 0;
 }
 
 .bm-burger-bars {
@@ -22,14 +24,14 @@
 }
 
 .bm-cross-button {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 
 .bm-cross {
   background: #0c0c0c;
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 
 .bm-item-list {
@@ -38,29 +40,25 @@
 }
 
 .bm-menu-wrap {
-  position: fixed;
-  height: 100%;
 }
 
 .bm-item {
-  display: inline-block;
+  display: flex;
   width: auto;
   padding-top: 10px;
 }
 
 .menu-item {
-  display: flex;
-  justify-content: flex-end;
   font-family: inherit;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
-  padding: 5px;
-  padding-top: 10px;
-  width: 220px;
+  padding-top: 20px;
+  max-width: 225px;
+  min-width: 200px;
   text-decoration: none !important;
   color: white;
   border-bottom: 1.5px solid black;
-  text-align: right;
+  text-align: left;
   font-family: "Courier New", Courier, monospace;
 }
 
