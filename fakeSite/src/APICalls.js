@@ -25,7 +25,12 @@ export function fetchUserById(id) {
 export function getCart(id) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/users/${id}/basket`)
-    .then((result) => result)
+    .then((result) => {
+      if (result.data.basket.length === 0) {
+        return 0;
+      } else return result;
+    })
+
     .catch((error) => {
       if (error) {
         return error;
@@ -68,7 +73,7 @@ export function deleteFromBasket(product_id, user_id) {
       `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
       { data: deleteObj }
     )
-    .then((result) => result)
+    .then((result) => 0)
     .catch((error) => {
       return error;
     });

@@ -255,9 +255,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
+  align-items: center;
   margin-top: 10px;
   margin-right: 5px;
   padding: 10px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .home-product-info {
@@ -268,13 +272,14 @@
 }
 
 .carousel-container {
+  display: flex;
   justify-content: center;
   align-items: center;
+  align-content: center;
   max-width: 300px !important;
   height: auto;
-  margin: 20px;
+  margin: 30px;
   padding: 10px;
-  display: flex;
   flex-direction: column-reverse;
   text-align: center;
 }
