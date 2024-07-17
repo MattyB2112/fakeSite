@@ -3,7 +3,7 @@ import "./burgerMenu.css";
 
 export default function Navbar() {
   return (
-    <Menu className="burger-menu">
+    <Menu width={250} className="burger-menu">
       <a id="home" className="menu-item" href="/">
         New In
       </a>

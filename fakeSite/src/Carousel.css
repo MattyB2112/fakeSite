@@ -288,6 +288,7 @@
   max-width: 350px !important;
   min-width: 200px !important;
   height: auto;
+  /* pointer-events: none; */
 }
 
 .nav_btn {

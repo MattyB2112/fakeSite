@@ -31,7 +31,7 @@
   display: flex;
   align-content: center;
   align-items: center;
-  margin-left: 0px;
+  margin-right: 4px;
 }
 
 .header-button {
@@ -83,7 +83,4 @@ a {
   max-width: 140px;
   min-width: 50px;
   height: auto;
-}
-
-.basket-counter {
 }

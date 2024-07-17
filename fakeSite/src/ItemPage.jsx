@@ -50,6 +50,7 @@ export default function ItemPage({ basket, onBasketUpdate }) {
       <>
         <div className="product-container">
           <Carousel
+            className="item-page-carousel"
             showIndicators={false}
             infiniteLoop={true}
             thumbWidth={75}
@@ -94,7 +95,12 @@ export default function ItemPage({ basket, onBasketUpdate }) {
           >
             {images.map((image, index) => (
               <div>
-                <img alt="sample_file" src={image} key={index} />
+                <img
+                  alt="sample_file"
+                  src={image}
+                  key={index}
+                  className="item-page-image"
+                />
               </div>
             ))}
           </Carousel>
