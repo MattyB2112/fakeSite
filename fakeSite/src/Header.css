@@ -46,7 +46,13 @@
   color: #ffffff;
 }
 
-.header-image {
+.cart-image {
+  max-width: 50px;
+  max-height: 50px;
+  min-width: 80%;
+  min-height: 80%;
+}
+.head-image {
   max-width: 50px;
   max-height: 50px;
   min-width: 80%;

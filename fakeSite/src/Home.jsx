@@ -47,6 +47,8 @@ export default function Home() {
         <div className="home-product-info">Nike Air Max Plus</div>
         <div className="home-product-info">$174.99</div>
         <Carousel
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
           showIndicators={false}
           showThumbs={false}
           infiniteLoop={true}
@@ -101,6 +103,8 @@ export default function Home() {
         <div className="home-product-info">Nike Air Presto</div>
         <div className="home-product-info">$69.99</div>
         <Carousel
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
           showIndicators={false}
           infiniteLoop={true}
           showThumbs={false}
@@ -155,6 +159,8 @@ export default function Home() {
         <div className="home-product-info">Nike Dunk Low</div>
         <div className="home-product-info">$109.99</div>
         <Carousel
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
           showIndicators={false}
           infiniteLoop={true}
           showThumbs={false}
@@ -211,6 +217,8 @@ export default function Home() {
         <div className="home-product-info">$109.99</div>
 
         <Carousel
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
           showIndicators={false}
           infiniteLoop={true}
           showThumbs={false}

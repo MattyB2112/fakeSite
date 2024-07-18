@@ -50,6 +50,8 @@ export default function ItemPage({ basket, onBasketUpdate }) {
       <>
         <div className="product-container">
           <Carousel
+            preventMovementUntilSwipeScrollTolerance={true}
+            swipeScrollTolerance={50}
             className="item-page-carousel"
             showIndicators={false}
             infiniteLoop={true}

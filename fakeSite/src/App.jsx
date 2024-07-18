@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Basket from "./Basket";
 import ItemPage from "./ItemPage";
+import Login from "./Login";
 import { useState, useEffect } from "react";
 import { Routes, Route, useParams } from "react-router-dom";
 import { UserContext } from "./UserContext";
@@ -83,6 +84,7 @@ function App() {
               />
             }
           ></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
         <Footer />
       </UserContext.Provider>
