@@ -6,7 +6,7 @@ import Basket from "./Basket";
 import ItemPage from "./ItemPage";
 import Login from "./Login";
 import { useState, useEffect } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 import SearchBar from "./SearchBar";
@@ -58,33 +58,53 @@ function App() {
   return (
     <>
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
-        <nav>
-          <Header basketSize={basketSize} />
-          <SearchBar />
-        </nav>
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SearchBar />
+                <Home />
+              </>
+            }
+          ></Route>
           <Route
             path="/basket"
             element={
-              <Basket
-                basket={basket}
-                onBasketChange={handleBasketChange}
-                onBasketDelete={handleBasketDelete}
-              />
+              <>
+                <Header basketSize={basketSize} />
+                <Basket
+                  basket={basket}
+                  onBasketChange={handleBasketChange}
+                  onBasketDelete={handleBasketDelete}
+                />
+              </>
             }
           ></Route>
           <Route
             path="/:product_id"
             element={
-              <ItemPage
-                basket={basket}
-                setBasket={setBasket}
-                onBasketUpdate={handleBasketUpdate}
-              />
+              <>
+                <Header basketSize={basketSize} />
+                <ItemPage
+                  basket={basket}
+                  setBasket={setBasket}
+                  onBasketUpdate={handleBasketUpdate}
+                />
+              </>
             }
           ></Route>
-          <Route path="/login" element={<Login />}></Route>
+          <Route
+            path="/login"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <Login />
+              </>
+            }
+          ></Route>
         </Routes>
         <Footer />
       </UserContext.Provider>

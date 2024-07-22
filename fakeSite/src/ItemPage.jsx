@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { fetchProductById, addToCart } from "./APICalls";
+import { fetchProductById, addToCart, getCart } from "./APICalls";
 import { useEffect, useState, useContext } from "react";
 import "./itemPage.css";
 import { Carousel } from "react-responsive-carousel";
@@ -9,7 +9,8 @@ import left from "./assets/left.png";
 import { UserContext } from "./UserContext";
 
 export default function ItemPage({ basket, onBasketUpdate }) {
-  let basketSize = basket.length;
+  const [basketSize, setBasketSize] = useState(basket.length);
+  const [basketChanged, setBasketChanged] = useState(false);
   const { signedInUser } = useContext(UserContext);
   const { product_id } = useParams();
   const [product, setProduct] = useState([]);
@@ -38,9 +39,30 @@ export default function ItemPage({ basket, onBasketUpdate }) {
       });
   }, []);
 
+  useEffect(() => {
+    getCart(signedInUser.user_id)
+      .then((result) => {
+        setBasket(result.data.basket);
+        let sizeofbasket = 0;
+        for (let i = 0; i < result.data.basket.length; i++) {
+          if (result.data.basket[i].product_id !== null) {
+            sizeofbasket++;
+          }
+        }
+        setBasketSize(sizeofbasket);
+        setBasketChanged(false);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError({ err });
+        setIsLoading(false);
+      });
+  }, [basketChanged]);
+
   function multiFunc(product_id, user_id) {
-    addToCart(product_id, user_id);
+    setBasketChanged(true);
     onBasketUpdate();
+    addToCart(product_id, user_id);
   }
 
   if (isLoading) {

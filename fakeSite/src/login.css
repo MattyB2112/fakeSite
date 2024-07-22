@@ -7,6 +7,11 @@
   font-size: 25px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0 auto;
+  margin-top: 100px;
+}
+.Auth-form-title {
+  color: white;
+  margin: 0;
 }
 
 .Auth-form {
@@ -14,8 +19,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 25%;
-  max-height: 40%;
+  max-width: 350px;
+  height: auto;
   min-width: 25%;
   min-height: 40%;
   border: 2px rgb(175, 100, 3);
@@ -35,10 +40,19 @@
 
 .form-control-mt-1 {
   width: 250px;
-  height: 30px;
+  height: 25px;
   border: 2px rgb(175, 100, 3);
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
   font-size: 20px;
+}
+
+.forgot-password-text {
+  font-size: 12px;
+}
+.forgot-password-link,
+.signup-link {
+  color: white;
+  text-decoration: underline;
 }

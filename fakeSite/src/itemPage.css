@@ -1,5 +1,5 @@
 .product-container {
-  margin-top: 10px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -12,7 +12,7 @@
   flex-direction: column;
   margin: 2px;
   padding: 5px;
-  max-width: 80%;
+  max-width: 90%;
   min-width: 50%;
   max-height: 100%;
 }

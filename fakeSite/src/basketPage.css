@@ -1,15 +1,19 @@
 .basket-list-container {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 5px;
   margin-left: 20px;
   max-width: 100%;
-  height: auto;
+  height: 95vh;
 }
 
 .loading-message {
   color: black;
+}
+
+.no-items-header {
+  text-align: center;
 }
 
 .basket-list-details {
@@ -49,10 +53,11 @@
 }
 .update-basket-button-delete {
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
   width: 70px;
   background-color: rgb(251, 141, 0);
   height: 30px;
+  text-align: center;
 }
 
 .basket-product-container {
@@ -63,6 +68,13 @@
 
 .basket-product-image {
   width: 200px;
+}
+
+.basket-cost-container {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 li {
