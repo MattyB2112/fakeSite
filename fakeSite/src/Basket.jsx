@@ -5,6 +5,8 @@ import { getCart } from "./APICalls";
 
 export default function Basket({ basket, onBasketChange, onBasketDelete }) {
   const { signedInUser } = useContext(UserContext);
+  let basketEmpty = basket === 0;
+  const [basketIsEmpty, setBasketIsEmpty] = useState(basketEmpty);
 
   const multiFunc = (product_id, user_id, quantity, currentQuantity) => {
     currentQuantity++;
@@ -16,7 +18,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
     totalCost += basket[i].quantity * basket[i].productprice;
   }
 
-  if (basket === 0) {
+  if (basketEmpty) {
     return (
       <div className="no-items-container">
         <h1 className="no-items-header">NO ITEMS IN BASKET</h1>
@@ -80,11 +82,10 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                 </div>
               );
           })}
-          {basket === 0 ? null : (
-            <div className="basket-cost-container">
-              Basket Total = ${totalCost.toFixed(2)}
-            </div>
-          )}
+
+          <div className="basket-cost-container">
+            Basket Total = ${totalCost.toFixed(2)}
+          </div>
         </div>
       </>
     );
