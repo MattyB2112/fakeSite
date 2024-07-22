@@ -5,8 +5,6 @@ import { getCart } from "./APICalls";
 
 export default function Basket({ basket, onBasketChange, onBasketDelete }) {
   const { signedInUser } = useContext(UserContext);
-  let basketIsEmpty = basket === 0;
-  const [basketEmpty, setBasketEmpty] = useState(basketIsEmpty);
 
   const multiFunc = (product_id, user_id, quantity, currentQuantity) => {
     currentQuantity++;
@@ -17,13 +15,18 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
   for (let i = 0; i < basket.length; i++) {
     totalCost += basket[i].quantity * basket[i].productprice;
   }
-  return (
-    <>
-      <div className="basket-list-container">
-        {basket === 0 ? (
-          <h1 className="no-items-header">NO ITEMS IN BASKET</h1>
-        ) : (
-          basket?.map((item, index) => {
+
+  if (basket === 0) {
+    return (
+      <div className="no-items-container">
+        <h1 className="no-items-header">NO ITEMS IN BASKET</h1>
+      </div>
+    );
+  } else
+    return (
+      <>
+        <div className="basket-list-container">
+          {basket?.map((item, index) => {
             if (item.product_id !== null)
               return (
                 <div className="basket-product-container" key={index}>
@@ -76,14 +79,13 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                   </ul>
                 </div>
               );
-          })
-        )}
-        {basket === 0 ? null : (
-          <div className="basket-cost-container">
-            Basket Total = ${totalCost.toFixed(2)}
-          </div>
-        )}
-      </div>
-    </>
-  );
+          })}
+          {basket === 0 ? null : (
+            <div className="basket-cost-container">
+              Basket Total = ${totalCost.toFixed(2)}
+            </div>
+          )}
+        </div>
+      </>
+    );
 }

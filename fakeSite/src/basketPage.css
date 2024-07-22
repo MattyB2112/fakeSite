@@ -11,8 +11,15 @@
 .loading-message {
   color: black;
 }
+.no-items-container {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  height: 93vh;
+}
 
 .no-items-header {
+  margin-top: 100px;
   text-align: center;
 }
 
