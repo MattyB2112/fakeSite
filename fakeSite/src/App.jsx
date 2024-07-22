@@ -6,6 +6,7 @@ import Basket from "./Basket";
 import ItemPage from "./ItemPage";
 import Login from "./Login";
 import Banner from "./Banner";
+import SignUp from "./SignUp/SignUp";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
@@ -103,6 +104,15 @@ function App() {
               <>
                 <Header basketSize={basketSize} />
                 <Login />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/signup"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SignUp />
               </>
             }
           ></Route>

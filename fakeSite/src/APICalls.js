@@ -22,6 +22,17 @@ export function fetchUserById(id) {
     });
 }
 
+export function fetchUserById(id) {
+  return axios
+    .get(`https://fakesitebackend.onrender.com/api/users/${id}`)
+    .then((result) => result)
+    .catch((error) => {
+      if (error) {
+        return error;
+      }
+    });
+}
+
 export function getCart(id) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/users/${id}/basket`)
@@ -67,6 +78,19 @@ export function updateCart(product_id, user_id, quantity) {
 }
 
 export function deleteFromBasket(product_id, user_id) {
+  const deleteObj = { product_id: product_id };
+  return axios
+    .delete(
+      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      { data: deleteObj }
+    )
+    .then((result) => 0)
+    .catch((error) => {
+      return error;
+    });
+}
+
+export function createNewUser(product_id, user_id) {
   const deleteObj = { product_id: product_id };
   return axios
     .delete(
