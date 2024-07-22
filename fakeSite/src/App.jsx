@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Basket from "./Basket";
 import ItemPage from "./ItemPage";
 import Login from "./Login";
+import Banner from "./Banner";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { UserContext } from "./UserContext";
