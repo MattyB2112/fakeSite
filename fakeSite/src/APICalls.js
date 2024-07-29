@@ -22,6 +22,18 @@ export function fetchUserById(id) {
     });
 }
 
+export function fetchUserByEmail(email) {
+  const emailObject = { email: email };
+  return axios
+    .get(`https://fakesitebackend.onrender.com/api/users/`, emailObject)
+    .then((result) => result)
+    .catch((error) => {
+      if (error) {
+        return error;
+      }
+    });
+}
+
 export function getCart(id) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/users/${id}/basket`)

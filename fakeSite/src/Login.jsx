@@ -1,12 +1,15 @@
 import "./login.css";
-import { useState } from "react";
-import { fetchUserById } from "./APICalls";
+import { useState, useRef } from "react";
+import { fetchUserByEmail } from "./APICalls";
 
 export default function Login() {
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: "",
   });
+  const inputRefEmail = useRef();
+  const inputRefPassword = useRef();
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setUserDetails((prevUserDetails) => ({
@@ -14,19 +17,22 @@ export default function Login() {
       [id]: value,
     }));
   };
-  const handleSubmitClick = (e) => {
-    getUser;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetchUserByEmail({ email: inputRefEmail.current.value }).then((result) => {
+      console.log(result);
+    });
     if (userDetails.password === userDetails.confirmPassword) {
       console.log(userDetails.email, userDetails.password);
     } else {
-      e.preventDefault();
+      event.preventDefault();
       console.log("Passwords do not match!");
     }
   };
 
   return (
     <div className="login-container">
-      <form className="Auth-form">
+      <form onSubmit={handleSubmit} className="Auth-form">
         <div className="login-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <p className="forgot-password-text">
@@ -39,6 +45,7 @@ export default function Login() {
             <input
               type="email"
               id="email"
+              ref={inputRefEmail}
               className="form-control-mt-1"
               placeholder="Enter your email"
               onChange={handleChange}
@@ -49,6 +56,7 @@ export default function Login() {
             <input
               type="password"
               id="password"
+              ref={inputRefPassword}
               className="form-control-mt-1"
               placeholder="Enter password"
               onChange={handleChange}
@@ -56,11 +64,7 @@ export default function Login() {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button
-              type="submit"
-              className="submit-button"
-              onClick={handleSubmitClick}
-            >
+            <button type="submit" className="submit-button">
               Login!
             </button>
           </div>
