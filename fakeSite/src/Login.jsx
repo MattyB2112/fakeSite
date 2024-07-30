@@ -7,6 +7,7 @@ export default function Login() {
     email: "",
     password: "",
   });
+  const [retrievedDetails, setRetrievedDetails] = useState({});
   const inputRefEmail = useRef();
   const inputRefPassword = useRef();
 
@@ -20,10 +21,13 @@ export default function Login() {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetchUserByEmail({ email: inputRefEmail.current.value }).then((result) => {
-      console.log(result);
+      setRetrievedDetails(result.data.user[0]);
     });
-    if (userDetails.password === userDetails.confirmPassword) {
-      console.log(userDetails.email, userDetails.password);
+    console.log(retrievedDetails);
+    if (userDetails.password === retrievedDetails.userpassword) {
+      console.log(
+        userDetails.password + " is equal to " + retrievedDetails.userpassword
+      );
     } else {
       event.preventDefault();
       console.log("Passwords do not match!");
