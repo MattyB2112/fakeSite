@@ -11,6 +11,17 @@ export function fetchProductById(id) {
     });
 }
 
+export function fetchAllUsers() {
+  return axios
+    .get(`https://fakesitebackend.onrender.com/api/users/`)
+    .then((result) => result)
+    .catch((error) => {
+      if (error) {
+        return error;
+      }
+    });
+}
+
 export function fetchUserById(id) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/users/${id}`)
