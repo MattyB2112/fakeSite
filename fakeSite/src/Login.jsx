@@ -30,7 +30,7 @@ export default function Login() {
       );
     } else {
       event.preventDefault();
-      console.log("Passwords do not match!");
+      console.log("Incorrect password");
     }
   };
 

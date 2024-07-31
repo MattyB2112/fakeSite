@@ -33,6 +33,28 @@ export function fetchUserById(id) {
     });
 }
 
+export function createNewUser(
+  userFirstName,
+  userSurname,
+  userEmail,
+  userPassword
+) {
+  const newUserObj = {
+    firstName: userFirstName,
+    surname: userSurname,
+    email: userEmail,
+    password: userPassword,
+  };
+  return axios
+    .post("https://fakesitebackend.onrender.com/api/users/", newUserObj)
+    .then((result) => result)
+    .catch((error) => {
+      if (error) {
+        return error;
+      }
+    });
+}
+
 export function fetchUserByEmail(email) {
   const emailObject = { email: email };
   return axios

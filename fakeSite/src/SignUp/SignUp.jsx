@@ -1,5 +1,6 @@
 import "./signup.css";
 import { useState } from "react";
+import { createNewUser, fetchAllUsers } from "../APICalls";
 
 export default function SignUp() {
   const [userDetails, setUserDetails] = useState({
@@ -9,6 +10,8 @@ export default function SignUp() {
     password: "",
     confirmPassword: "",
   });
+  const [allUsers, setAllUsers] = useState([]);
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setUserDetails((prevUserDetails) => ({
@@ -18,14 +21,25 @@ export default function SignUp() {
   };
 
   const handleSubmitClick = (e) => {
-    if (userDetails.password === userDetails.confirmPassword) {
-      console.log(
-        userDetails.firstName,
-        userDetails.surname,
-        userDetails.email,
-        userDetails.password,
-        userDetails.confirmPassword
-      );
+    e.preventDefault();
+    if (userDetails.password !== userDetails.confirmPassword) {
+      console.log("Passwords do not match!");
+    } else if (userDetails.password === userDetails.confirmPassword) {
+      fetchAllUsers().then((result) => {
+        setAllUsers(result.data.user);
+      });
+      allUsers.map((user, i) => {
+        if (user.useremail === userDetails.email) {
+          console.log("user with that email already exists!");
+        } else {
+          createNewUser(
+            userDetails.firstName,
+            userDetails.surname,
+            userDetails.email,
+            userDetails.password
+          );
+        }
+      });
     } else {
       e.preventDefault();
       console.log("Passwords do not match!");
