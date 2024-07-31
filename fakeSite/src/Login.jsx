@@ -20,7 +20,7 @@ export default function Login() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetchUserByEmail({ email: inputRefEmail.current.value }).then((result) => {
+    fetchUserByEmail(inputRefEmail.current.value).then((result) => {
       setRetrievedDetails(result.data.user[0]);
     });
     console.log(retrievedDetails);

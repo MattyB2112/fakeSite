@@ -11,6 +11,7 @@ export default function SignUp() {
     confirmPassword: "",
   });
   const [allUsers, setAllUsers] = useState([]);
+  let userExists = false;
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,25 +25,25 @@ export default function SignUp() {
     e.preventDefault();
     if (userDetails.password !== userDetails.confirmPassword) {
       console.log("Passwords do not match!");
-    } else if (userDetails.password === userDetails.confirmPassword) {
+    } else {
       fetchAllUsers().then((result) => {
         setAllUsers(result.data.user);
+        console.log(allUsers);
       });
       allUsers.map((user, i) => {
         if (user.useremail === userDetails.email) {
           console.log("user with that email already exists!");
-        } else {
-          createNewUser(
-            userDetails.firstName,
-            userDetails.surname,
-            userDetails.email,
-            userDetails.password
-          );
+          userExists = true;
         }
       });
-    } else {
-      e.preventDefault();
-      console.log("Passwords do not match!");
+    }
+    if (userExists === false) {
+      createNewUser(
+        userDetails.firstName,
+        userDetails.surname,
+        userDetails.email,
+        userDetails.password
+      );
     }
   };
   return (
