@@ -1,5 +1,5 @@
 import "./signup.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createNewUser, fetchAllUsers } from "../APICalls";
 
 export default function SignUp() {
@@ -11,7 +11,14 @@ export default function SignUp() {
     confirmPassword: "",
   });
   const [allUsers, setAllUsers] = useState([]);
-  let userExists = false;
+  const [userExists, setUserExists] = useState(false);
+  const [emailValid, setEmailValid] = useState(true);
+
+  useEffect(() => {
+    fetchAllUsers().then((result) => {
+      setAllUsers(result.data.user);
+    });
+  });
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -21,20 +28,30 @@ export default function SignUp() {
     }));
   };
 
+  const handleEmailBlur = () => {
+    const inputEmail = userDetails.email;
+    allUsers.map((user, i) => {
+      if (user.useremail === inputEmail) {
+        console.log("user with that email already exists!");
+        setUserExists(true);
+        setEmailValid(false);
+      }
+    });
+  };
+
+  const handlePasswordBlur = () => {
+    if (userDetails.password !== userDetails.confirmPassword) {
+      console.log("passwords do not match");
+    }
+  };
+
   const handleSubmitClick = (e) => {
-    e.preventDefault();
     if (userDetails.password !== userDetails.confirmPassword) {
       console.log("Passwords do not match!");
     } else {
       fetchAllUsers().then((result) => {
         setAllUsers(result.data.user);
         console.log(allUsers);
-      });
-      allUsers.map((user, i) => {
-        if (user.useremail === userDetails.email) {
-          console.log("user with that email already exists!");
-          userExists = true;
-        }
       });
     }
     if (userExists === false) {
@@ -55,7 +72,7 @@ export default function SignUp() {
             <input
               type="text"
               id="firstName"
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Enter your first name"
               value={userDetails.userName}
               onChange={handleChange}
@@ -66,7 +83,7 @@ export default function SignUp() {
             <input
               type="text"
               id="surname"
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Enter your surname"
               value={userDetails.userName}
               onChange={handleChange}
@@ -77,18 +94,19 @@ export default function SignUp() {
             <input
               type="email"
               id="email"
-              className="form-control-mt-1"
+              className={emailValid ? "inputfield" : "invalid"}
               placeholder="Enter your email"
               value={userDetails.userName}
               onChange={handleChange}
               required
+              onBlur={handleEmailBlur}
             />
           </div>
           <div className="form-group-mt-3">
             <input
               type="password"
               id="password"
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Enter your password"
               value={userDetails.userName}
               onChange={handleChange}
@@ -99,10 +117,11 @@ export default function SignUp() {
             <input
               type="password"
               id="confirmPassword"
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Confirm your password"
               value={userDetails.userName}
               onChange={handleChange}
+              onBlur={handlePasswordBlur}
               required
             />
           </div>
