@@ -13,6 +13,7 @@ export default function SignUp() {
   const [allUsers, setAllUsers] = useState([]);
   const [userExists, setUserExists] = useState(false);
   const [emailValid, setEmailValid] = useState(true);
+  const [passwordValid, setPasswordValid] = useState(true);
 
   useEffect(() => {
     fetchAllUsers().then((result) => {
@@ -30,24 +31,31 @@ export default function SignUp() {
 
   const handleEmailBlur = () => {
     const inputEmail = userDetails.email;
-    allUsers.map((user, i) => {
-      if (user.useremail === inputEmail) {
+    for (let i = 0; i < allUsers.length; i++) {
+      if (allUsers[i].useremail === inputEmail) {
         console.log("user with that email already exists!");
         setUserExists(true);
         setEmailValid(false);
+        break;
+      } else {
+        setUserExists(false);
+        setEmailValid(true);
       }
-    });
+    }
   };
 
   const handlePasswordBlur = () => {
     if (userDetails.password !== userDetails.confirmPassword) {
       console.log("passwords do not match");
+      setPasswordValid(false);
+    } else {
+      setPasswordValid(true);
     }
   };
 
   const handleSubmitClick = (e) => {
     if (userDetails.password !== userDetails.confirmPassword) {
-      console.log("Passwords do not match!");
+      console.log("Passwords do not match");
     } else {
       fetchAllUsers().then((result) => {
         setAllUsers(result.data.user);
@@ -106,7 +114,7 @@ export default function SignUp() {
             <input
               type="password"
               id="password"
-              className="inputfield"
+              className={passwordValid ? "inputfield" : "invalid"}
               placeholder="Enter your password"
               value={userDetails.userName}
               onChange={handleChange}
@@ -117,7 +125,7 @@ export default function SignUp() {
             <input
               type="password"
               id="confirmPassword"
-              className="inputfield"
+              className={passwordValid ? "inputfield" : "invalid"}
               placeholder="Confirm your password"
               value={userDetails.userName}
               onChange={handleChange}
