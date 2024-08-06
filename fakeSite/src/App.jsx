@@ -7,8 +7,9 @@ import ItemPage from "./ItemPage";
 import Login from "./Login";
 import Banner from "./Banner";
 import SignUp from "./SignUp/SignUp";
+import ProfilePage from "./ProfilePage";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 import SearchBar from "./SearchBar";
@@ -98,15 +99,20 @@ function App() {
               </>
             }
           ></Route>
+          <Route path="/profile" element={<ProfilePage />} />
           <Route
             path="/login"
             element={
-              <>
-                <Header basketSize={basketSize} />
-                <Login />
-              </>
+              localStorage.getItem("auth_token") ? (
+                <Navigate to="/profile" />
+              ) : (
+                <>
+                  <Header basketSize={basketSize} />
+                  <Login />
+                </>
+              )
             }
-          ></Route>
+          />
           <Route
             path="/signup"
             element={

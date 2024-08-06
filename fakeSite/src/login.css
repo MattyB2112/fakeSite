@@ -40,7 +40,7 @@
 }
 
 .inputfield {
-  width: 250px;
+  width: 280px;
   height: 25px;
   border-radius: 10px;
   border: 3px solid rgb(175, 100, 3);
@@ -51,7 +51,7 @@
 }
 
 .invalid {
-  width: 250px;
+  width: 280px;
   height: 25px;
   border-radius: 10px;
   margin: 5px;

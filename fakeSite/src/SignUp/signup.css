@@ -41,14 +41,25 @@
 .form-group-mt-3 {
 }
 
-.form-control-mt-1 {
+.inputfield {
   width: 250px;
   height: 25px;
-  border: 2px rgb(175, 100, 3);
+  border-radius: 10px;
+  border: 3px solid rgb(175, 100, 3);
+  border: none;
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+.invalid {
+  width: 250px;
+  height: 25px;
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
   font-size: 20px;
+  border: 3px solid red;
 }
 
 .submit-button {

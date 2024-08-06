@@ -1,6 +1,7 @@
 import "./login.css";
 import { useState, useRef } from "react";
 import { fetchUserByEmail } from "./APICalls";
+import { redirect } from "react-router-dom";
 
 export default function Login() {
   const [userDetails, setUserDetails] = useState({
@@ -19,15 +20,18 @@ export default function Login() {
     }));
   };
   const handleSubmit = (event) => {
-    event.preventDefault();
     fetchUserByEmail(inputRefEmail.current.value).then((result) => {
       setRetrievedDetails(result.data.user[0]);
     });
     console.log(retrievedDetails);
     if (userDetails.password === retrievedDetails.userpassword) {
+      event.preventDefault();
+      localStorage.setItem("auth_token", false);
       console.log(
         userDetails.password + " is equal to " + retrievedDetails.userpassword
       );
+      localStorage.setItem("auth_token", true);
+      console.log(localStorage.getItem("auth_token"));
     } else {
       event.preventDefault();
       console.log("Incorrect password");
@@ -50,7 +54,7 @@ export default function Login() {
               type="email"
               id="email"
               ref={inputRefEmail}
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Enter your email"
               onChange={handleChange}
               required
@@ -61,7 +65,7 @@ export default function Login() {
               type="password"
               id="password"
               ref={inputRefPassword}
-              className="form-control-mt-1"
+              className="inputfield"
               placeholder="Enter password"
               onChange={handleChange}
               required
