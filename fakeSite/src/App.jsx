@@ -8,7 +8,7 @@ import Login from "./Login";
 import Banner from "./Banner";
 import SignUp from "./SignUp/SignUp";
 import ProfilePage from "./ProfilePage";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
@@ -16,7 +16,7 @@ import SearchBar from "./SearchBar";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  const [signedInUser, setSignedInUser] = useState({ user_id: 1 });
+  const [signedInUser, setSignedInUser] = useState(UserContext);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [basketChanged, setBasketChanged] = useState(false);
@@ -48,9 +48,13 @@ function App() {
             sizeofbasket++;
           }
         }
-        setBasketSize(sizeofbasket);
-        setBasketChanged(false);
-        setIsLoading(false);
+        if (sizeofbasket === 0) {
+          setBasketSize(0);
+        } else {
+          setBasketSize(sizeofbasket);
+          setBasketChanged(false);
+          setIsLoading(false);
+        }
       })
       .catch((err) => {
         setError({ err });
@@ -99,7 +103,22 @@ function App() {
               </>
             }
           ></Route>
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route
+            path="/profile"
+            element={
+              localStorage.getItem("auth_token") ? (
+                <>
+                  <Header basketSize={basketSize} />
+                  <ProfilePage signedInUser={signedInUser} />
+                </>
+              ) : (
+                <>
+                  <Header basketSize={basketSize} />
+                  <Login />
+                </>
+              )
+            }
+          />
           <Route
             path="/login"
             element={

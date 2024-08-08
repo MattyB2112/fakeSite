@@ -1,7 +1,8 @@
 import "./login.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { fetchUserByEmail } from "./APICalls";
 import { redirect } from "react-router-dom";
+import { UserContext } from "./UserContext";
 
 export default function Login() {
   const [userDetails, setUserDetails] = useState({
@@ -9,6 +10,7 @@ export default function Login() {
     password: "",
   });
   const [retrievedDetails, setRetrievedDetails] = useState({});
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
   const inputRefEmail = useRef();
   const inputRefPassword = useRef();
 
@@ -23,15 +25,9 @@ export default function Login() {
     fetchUserByEmail(inputRefEmail.current.value).then((result) => {
       setRetrievedDetails(result.data.user[0]);
     });
-    console.log(retrievedDetails);
     if (userDetails.password === retrievedDetails.userpassword) {
-      event.preventDefault();
-      localStorage.setItem("auth_token", false);
-      console.log(
-        userDetails.password + " is equal to " + retrievedDetails.userpassword
-      );
       localStorage.setItem("auth_token", true);
-      console.log(localStorage.getItem("auth_token"));
+      setSignedInUser(retrievedDetails);
     } else {
       event.preventDefault();
       console.log("Incorrect password");

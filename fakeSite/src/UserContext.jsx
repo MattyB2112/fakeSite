@@ -3,9 +3,7 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
-  const [signedInUser, setSignedInUser] = useState({
-    user_id: 1,
-  });
+  const [signedInUser, setSignedInUser] = useState({});
 
   const login = (userData) => {
     setSignedInUser(userData);
