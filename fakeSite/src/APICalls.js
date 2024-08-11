@@ -24,7 +24,7 @@ export function fetchAllUsers() {
 
 export function fetchUserById(id) {
   return axios
-    .get(`https://fakesitebackend.onrender.com/api/users/${id}`)
+    .get(`https://fakesitebackend.onrender.com/api/users/id/${id}`)
     .then((result) => result)
     .catch((error) => {
       if (error) {
@@ -56,9 +56,8 @@ export function createNewUser(
 }
 
 export function fetchUserByEmail(email) {
-  const emailObject = { email: email };
   return axios
-    .get(`https://fakesitebackend.onrender.com/api/users/`, emailObject)
+    .get(`https://fakesitebackend.onrender.com/api/users/email/${email}`)
     .then((result) => result)
     .catch((error) => {
       if (error) {

@@ -38,29 +38,31 @@ function App() {
     setBasketChanged(true);
   };
 
-  useEffect(() => {
-    getCart(signedInUser.user_id)
-      .then((result) => {
-        setBasket(result.data.basket);
-        let sizeofbasket = 0;
-        for (let i = 0; i < result.data.basket.length; i++) {
-          if (result.data.basket[i].product_id !== null) {
-            sizeofbasket++;
+  if (signedInUser.user_id !== 0) {
+    useEffect(() => {
+      getCart(signedInUser.user_id)
+        .then((result) => {
+          setBasket(result.data.basket);
+          let sizeofbasket = 0;
+          for (let i = 0; i < result.data.basket.length; i++) {
+            if (result.data.basket[i].product_id !== null) {
+              sizeofbasket++;
+            }
           }
-        }
-        if (sizeofbasket === 0) {
-          setBasketSize(0);
-        } else {
-          setBasketSize(sizeofbasket);
-          setBasketChanged(false);
+          if (sizeofbasket === 0) {
+            setBasketSize(0);
+          } else {
+            setBasketSize(sizeofbasket);
+            setBasketChanged(false);
+            setIsLoading(false);
+          }
+        })
+        .catch((err) => {
+          setError({ err });
           setIsLoading(false);
-        }
-      })
-      .catch((err) => {
-        setError({ err });
-        setIsLoading(false);
-      });
-  }, [basketChanged]);
+        });
+    }, [basketChanged]);
+  }
 
   return (
     <>

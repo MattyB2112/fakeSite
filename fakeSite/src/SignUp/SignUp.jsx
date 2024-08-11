@@ -144,6 +144,14 @@ export default function SignUp() {
           </div>
         </div>
       </form>
+      <div class="messages-container" id="center">
+        <p id="name-invalid-message" role="alert"></p>
+        <p id="name-valid-message" role="alert"></p>
+        <p id="email-invalid-message" role="alert"></p>
+        <p id="email-valid-message" role="alert"></p>
+        <p id="card-invalid-message" role="alert"></p>
+        <p id="card-valid-message" role="alert"></p>
+      </div>
     </div>
   );
 }

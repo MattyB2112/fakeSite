@@ -11,6 +11,8 @@ export default function Login() {
   });
   const [retrievedDetails, setRetrievedDetails] = useState({});
   const { signedInUser, setSignedInUser } = useContext(UserContext);
+  const [emailFound, setEmailFound] = useState(true);
+  const [passwordCorrect, setPasswordCorrect] = useState(true);
   const inputRefEmail = useRef();
   const inputRefPassword = useRef();
 
@@ -21,16 +23,34 @@ export default function Login() {
       [id]: value,
     }));
   };
-  const handleSubmit = (event) => {
-    fetchUserByEmail(inputRefEmail.current.value).then((result) => {
-      setRetrievedDetails(result.data.user[0]);
+
+  const handleEmailBlur = () => {
+    fetchUserByEmail(userDetails.email).then((result) => {
+      if (result.response?.status === 404) {
+        setEmailFound(false);
+      } else {
+        setEmailFound(true);
+        setRetrievedDetails(result.data.user);
+      }
     });
-    if (userDetails.password === retrievedDetails.userpassword) {
+  };
+
+  const handlePasswordBlur = () => {
+    if (emailFound) {
+      if (userDetails.password !== retrievedDetails.userpassword) {
+        setPasswordCorrect(false);
+      } else {
+        setPasswordCorrect(true);
+      }
+    }
+  };
+
+  const handleSubmit = (event) => {
+    if (!emailFound || !passwordCorrect) {
+      event.preventDefault();
+    } else {
       localStorage.setItem("auth_token", true);
       setSignedInUser(retrievedDetails);
-    } else {
-      event.preventDefault();
-      console.log("Incorrect password");
     }
   };
 
@@ -50,9 +70,10 @@ export default function Login() {
               type="email"
               id="email"
               ref={inputRefEmail}
-              className="inputfield"
+              className={emailFound ? "inputfield" : "invalid"}
               placeholder="Enter your email"
               onChange={handleChange}
+              onBlur={handleEmailBlur}
               required
             />
           </div>
@@ -61,9 +82,10 @@ export default function Login() {
               type="password"
               id="password"
               ref={inputRefPassword}
-              className="inputfield"
+              className={passwordCorrect ? "inputfield" : "invalid"}
               placeholder="Enter password"
               onChange={handleChange}
+              onBlur={handlePasswordBlur}
               required
             />
           </div>
@@ -80,6 +102,10 @@ export default function Login() {
           </p>
         </div>
       </form>
+      <div className="messages-container" id="center">
+        <p className="message">{emailFound ? "" : "Email not found"}</p>
+        <p className="message">{passwordCorrect ? "" : "Incorrect password"}</p>
+      </div>
     </div>
   );
 }
