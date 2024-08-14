@@ -16,7 +16,7 @@ import SearchBar from "./SearchBar";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  const [signedInUser, setSignedInUser] = useState(UserContext);
+  const [signedInUser, setSignedInUser] = useState({ user_id: 1 });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [basketChanged, setBasketChanged] = useState(false);

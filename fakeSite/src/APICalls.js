@@ -68,7 +68,7 @@ export function fetchUserByEmail(email) {
 
 export function getCart(id) {
   return axios
-    .get(`https://fakesitebackend.onrender.com/api/users/${id}/basket`)
+    .get(`https://fakesitebackend.onrender.com/api/users/id/${id}/basket`)
     .then((result) => {
       if (result.data.basket.length === 0) {
         return 0;
@@ -86,7 +86,7 @@ export function addToCart(product_id, user_id, quantity = 1) {
   const productObj = { product_id: product_id, quantity: quantity };
   return axios
     .post(
-      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
       productObj
     )
     .then((result) => result)
@@ -101,7 +101,7 @@ export function updateCart(product_id, user_id, quantity) {
   const updateObj = { product_id: product_id, quantity: quantity };
   return axios
     .patch(
-      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
       updateObj
     )
     .then((result) => result)
@@ -114,7 +114,7 @@ export function deleteFromBasket(product_id, user_id) {
   const deleteObj = { product_id: product_id };
   return axios
     .delete(
-      `https://fakesitebackend.onrender.com/api/users/${user_id}/basket`,
+      `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
       { data: deleteObj }
     )
     .then((result) => 0)

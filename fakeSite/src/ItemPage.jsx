@@ -60,6 +60,7 @@ export default function ItemPage({ basket, onBasketUpdate }) {
   }, [basketChanged]);
 
   function multiFunc(product_id, user_id) {
+    console.log(signedInUser);
     setBasketChanged(true);
     onBasketUpdate();
     addToCart(product_id, user_id);

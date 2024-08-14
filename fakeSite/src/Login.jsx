@@ -50,6 +50,7 @@ export default function Login() {
       event.preventDefault();
     } else {
       localStorage.setItem("auth_token", true);
+      localStorage.setItem("user_id", retrievedDetails.user_id);
       setSignedInUser(retrievedDetails);
     }
   };

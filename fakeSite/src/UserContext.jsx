@@ -3,14 +3,14 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export default function UserProvider({ children }) {
-  const [signedInUser, setSignedInUser] = useState({});
+  const [signedInUser, setSignedInUser] = useState({ user_id: 0 });
 
-  const login = (userData) => {
+  const Login = (userData) => {
     setSignedInUser(userData);
   };
 
   return (
-    <UserContext.Provider value={{ signedInUser, setSignedInUser, login }}>
+    <UserContext.Provider value={{ signedInUser, setSignedInUser, Login }}>
       {children}
     </UserContext.Provider>
   );
