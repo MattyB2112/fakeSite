@@ -8,9 +8,7 @@ import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { UserContext } from "./UserContext";
 
-export default function ItemPage({ basket, onBasketUpdate }) {
-  const [basketSize, setBasketSize] = useState(basket.length);
-  const [basketChanged, setBasketChanged] = useState(false);
+export default function ItemPage({ handleBasketUpdate }) {
   const { signedInUser } = useContext(UserContext);
   const { product_id } = useParams();
   const [product, setProduct] = useState([]);
@@ -39,31 +37,10 @@ export default function ItemPage({ basket, onBasketUpdate }) {
       });
   }, []);
 
-  useEffect(() => {
-    getCart(signedInUser.user_id)
-      .then((result) => {
-        setBasket(result.data.basket);
-        let sizeofbasket = 0;
-        for (let i = 0; i < result.data.basket.length; i++) {
-          if (result.data.basket[i].product_id !== null) {
-            sizeofbasket++;
-          }
-        }
-        setBasketSize(sizeofbasket);
-        setBasketChanged(false);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        setError({ err });
-        setIsLoading(false);
-      });
-  }, [basketChanged]);
-
   function multiFunc(product_id, user_id) {
-    console.log(signedInUser);
-    setBasketChanged(true);
-    onBasketUpdate();
-    addToCart(product_id, user_id);
+    addToCart(product_id, user_id).then(() => {
+      handleBasketUpdate();
+    });
   }
 
   if (isLoading) {

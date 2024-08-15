@@ -20,16 +20,16 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [basketChanged, setBasketChanged] = useState(false);
-  const [basketSize, setBasketSize] = useState(basket.length);
+  const [basketSize, setBasketSize] = useState(0);
 
   const handleBasketChange = (product_id, user_id, quantity) => {
-    updateCart(product_id, user_id, quantity).then((result) => {
+    updateCart(product_id, user_id, quantity).then(() => {
       setBasketChanged(true);
     });
   };
 
   const handleBasketDelete = (product_id, user_id) => {
-    deleteFromBasket(product_id, user_id).then((result) => {
+    deleteFromBasket(product_id, user_id).then(() => {
       setBasketChanged(true);
     });
   };
@@ -38,31 +38,24 @@ function App() {
     setBasketChanged(true);
   };
 
-  if (signedInUser.user_id !== 0) {
-    useEffect(() => {
-      getCart(signedInUser.user_id)
-        .then((result) => {
+  useEffect(() => {
+    getCart(signedInUser.user_id)
+      .then((result) => {
+        if (result.data.basket !== 0) {
           setBasket(result.data.basket);
-          let sizeofbasket = 0;
-          for (let i = 0; i < result.data.basket.length; i++) {
-            if (result.data.basket[i].product_id !== null) {
-              sizeofbasket++;
-            }
-          }
-          if (sizeofbasket === 0) {
-            setBasketSize(0);
-          } else {
-            setBasketSize(sizeofbasket);
-            setBasketChanged(false);
-            setIsLoading(false);
-          }
-        })
-        .catch((err) => {
-          setError({ err });
-          setIsLoading(false);
-        });
-    }, [basketChanged]);
-  }
+          setBasketSize(result.data.basket.length);
+          setBasketChanged(false);
+        } else {
+          setBasket([]);
+          setBasketSize(0);
+          setBasketChanged(false);
+        }
+      })
+      .catch((err) => {
+        setError({ err });
+        setIsLoading(false);
+      });
+  }, [basketChanged]);
 
   return (
     <>
@@ -97,11 +90,7 @@ function App() {
             element={
               <>
                 <Header basketSize={basketSize} />
-                <ItemPage
-                  basket={basket}
-                  setBasket={setBasket}
-                  onBasketUpdate={handleBasketUpdate}
-                />
+                <ItemPage handleBasketUpdate={handleBasketUpdate} />
               </>
             }
           ></Route>

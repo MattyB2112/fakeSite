@@ -4,11 +4,8 @@ import { UserContext } from "./UserContext";
 import "./Header.css";
 import logo from "./assets/theLogo.png";
 import shoppingCart from "./assets/shoppingcart.png";
-import chatBox from "./assets/chatbox.png";
-import headIcon from "./assets/head-icon.png";
 import headIcon2 from "./assets/head-icon2.png";
 import { Link } from "react-router-dom";
-import { getCart } from "./APICalls";
 
 export default function Header({ basketSize }) {
   return (
@@ -31,7 +28,15 @@ export default function Header({ basketSize }) {
                 <img src={shoppingCart} className="cart-image" />
               </button>
             </a>
-            <div className="basket-counter">{basketSize}</div>
+            <div
+              className={
+                basketSize === 0
+                  ? "basket-counter-empty"
+                  : "basket-counter-not-empty"
+              }
+            >
+              {basketSize}
+            </div>
             <a href="login">
               <button className="header-button-profile">
                 <img src={headIcon2} className="head-image" />

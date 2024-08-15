@@ -5,8 +5,12 @@ import { getCart } from "./APICalls";
 
 export default function Basket({ basket, onBasketChange, onBasketDelete }) {
   const { signedInUser } = useContext(UserContext);
-  let basketEmpty = basket === 0;
-  const [basketIsEmpty, setBasketIsEmpty] = useState(basketEmpty);
+  let basketEmpty;
+  if (basket.length === 0) {
+    basketEmpty = true;
+  } else {
+    basketEmpty = false;
+  }
 
   const multiFunc = (product_id, user_id, quantity, currentQuantity) => {
     currentQuantity++;
