@@ -3,6 +3,11 @@ import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 import "./Header.css";
 import logo from "./assets/theLogo.png";
+import newlogo from "./assets/newlogo.png";
+import newlogo1 from "./assets/newerlogo1.png";
+import newlogo2 from "./assets/newerlogo2.png";
+import newlogo3 from "./assets/newlogo3.png";
+import newlogo5 from "./assets/logo5.png";
 import shoppingCart from "./assets/shoppingcart.png";
 import headIcon2 from "./assets/head-icon2.png";
 import { Link } from "react-router-dom";
@@ -15,7 +20,7 @@ export default function Header({ basketSize }) {
         <div className="logo-container">
           <Link to="/">
             <img
-              src={logo}
+              src={newlogo5}
               className="logo"
               alt="logo for fake clothing website"
             />
