@@ -1,5 +1,16 @@
 import axios from "axios";
 
+export function fetchAllProducts(sortby = "name") {
+  return axios
+    .get(`https://fakesitebackend.onrender.com/api/products/`)
+    .then((result) => result)
+    .catch((error) => {
+      if (error) {
+        return error;
+      }
+    });
+}
+
 export function fetchProductById(id) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/products/${id}`)

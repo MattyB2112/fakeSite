@@ -264,6 +264,10 @@
   margin: 0 auto;
 }
 
+.loading-message {
+  height: 100vh;
+}
+
 .home-product-info {
   padding: 5px;
   font-size: 25px;
