@@ -262,10 +262,15 @@
   padding: 10px;
   width: 90%;
   margin: 0 auto;
+  height: auto;
+  border: solid black;
 }
 
 .loading-message {
+  display: flex;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-product-info {

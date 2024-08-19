@@ -11,6 +11,7 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  let imagesArray = [];
 
   useEffect(() => {
     fetchAllProducts()
@@ -30,7 +31,15 @@ export default function Home() {
   } else
     return (
       <div className="carousel-group">
-        {products.map((product, i) => {
+        {products.map((product, index) => {
+          imagesArray = [];
+          imagesArray.push(
+            product.productimage1,
+            product.productimage2,
+            product.productimage3,
+            product.productimage4
+          );
+          console.log(imagesArray, "<--THE ARRAY");
           return (
             <div className="carousel-container">
               <div className="home-product-info">${product.productprice}</div>
@@ -79,14 +88,17 @@ export default function Home() {
                   return <></>;
                 }}
               >
-                <Link to={`/${product.product_id}`} className="link-test">
-                  <img
-                    alt={`${product.productname}`}
-                    src={product.productimage1}
-                    key={product.product_id}
-                    className="carousel-image"
-                  />
-                </Link>
+                {imagesArray.map((image) => (
+                  <Link to={`/${product.product_id}`} className="link-test">
+                    {console.log(image, "<-- IMAGE LINK")}
+                    <img
+                      alt={`${product.productname}`}
+                      src={image}
+                      key={product.product_id}
+                      className="carousel-image"
+                    />
+                  </Link>
+                ))}
               </Carousel>
             </div>
           );
