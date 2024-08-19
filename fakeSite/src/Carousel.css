@@ -58,8 +58,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 320px !important;
-  min-width: 200px !important;
+  max-width: 400px !important;
+  min-width: 320px !important;
   margin-top: 10px;
   padding: 5px;
   -webkit-box-sizing: border-box;
@@ -255,15 +255,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
-  align-items: center;
+
+  align-items: flex-start;
   margin-top: 10px;
   margin-right: 5px;
-  padding: 10px;
-  width: 90%;
+  padding: 0px;
+  width: 95%;
   margin: 0 auto;
-  height: auto;
-  border: solid black;
 }
 
 .loading-message {
@@ -292,13 +290,6 @@
   padding: 10px;
   flex-direction: column-reverse;
   text-align: center;
-}
-
-.carousel-image {
-  max-width: 350px !important;
-  min-width: 200px !important;
-  height: auto;
-  /* pointer-events: none; */
 }
 
 .nav_btn {

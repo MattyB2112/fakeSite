@@ -1,11 +1,21 @@
 .basket-list-container {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
+  margin-top: 80px;
   padding: 5px;
-  margin-left: 20px;
   max-width: 100%;
   height: 100vh;
+}
+.basket-header {
+  font-size: 25px;
+  text-align: center;
+}
+
+.basket-product-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
 }
 
 .loading-message {
@@ -29,12 +39,13 @@
   justify-content: center;
   padding: 5px;
   margin-left: 10px;
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .basket-list-item {
   padding: 10px;
+  font-size: 20px;
 }
 
 .add-or-minus-basket-button-container {
@@ -67,18 +78,14 @@
   text-align: center;
 }
 
-.basket-product-container {
-  display: flex;
-  flex-direction: row;
-  margin: 10px;
-}
-
 .basket-product-image {
-  width: 200px;
+  max-width: 350px;
+  min-width: 200px;
+  height: auto;
 }
 
 .basket-cost-container {
-  font-size: 30px;
+  font-size: 28px;
   display: flex;
   align-items: center;
   justify-content: center;

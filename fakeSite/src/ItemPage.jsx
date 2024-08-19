@@ -108,7 +108,7 @@ export default function ItemPage({ handleBasketUpdate }) {
           </Carousel>
           <div className="product-info-container">
             <div className="product-info">{product.productname}</div>
-            <div className="product-info">${product.productprice}</div>
+            <div className="product-info">£{product.productprice}</div>
             <div className="product-info">{product.about}</div>
             <br />
             <div className="product-info">

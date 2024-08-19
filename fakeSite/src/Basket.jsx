@@ -32,6 +32,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
     return (
       <>
         <div className="basket-list-container">
+          <div className="basket-header">Items in your basket:</div>
           {basket?.map((item, index) => {
             if (item.product_id !== null)
               return (
@@ -86,9 +87,8 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                 </div>
               );
           })}
-
           <div className="basket-cost-container">
-            Basket Total = ${totalCost.toFixed(2)}
+            Basket Total = £{totalCost.toFixed(2)}
           </div>
         </div>
       </>

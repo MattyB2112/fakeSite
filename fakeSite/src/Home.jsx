@@ -42,7 +42,7 @@ export default function Home() {
           console.log(imagesArray, "<--THE ARRAY");
           return (
             <div className="carousel-container">
-              <div className="home-product-info">${product.productprice}</div>
+              <div className="home-product-info">£{product.productprice}</div>
               <div className="home-product-info">{product.productname}</div>
               <Carousel
                 preventMovementUntilSwipeScrollTolerance={true}
@@ -90,7 +90,6 @@ export default function Home() {
               >
                 {imagesArray.map((image) => (
                   <Link to={`/${product.product_id}`} className="link-test">
-                    {console.log(image, "<-- IMAGE LINK")}
                     <img
                       alt={`${product.productname}`}
                       src={image}
