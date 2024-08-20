@@ -6,17 +6,32 @@ import { fetchAllProducts } from "./APICalls";
 import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import myFunction from "./sortBy";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const sortByQuery = searchParams.get("sort_by") || "dateadded";
+  const orderByQuery = searchParams.get("order_by") || "ASC";
   let imagesArray = [];
 
+  function handleQueryChange(sort_by, order_by) {
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("sort_by", sort_by);
+    newParams.set("order_by", order_by);
+    setSearchParams(newParams);
+  }
+
+  const currentUrl = window.location.href;
+
   useEffect(() => {
-    fetchAllProducts()
+    fetchAllProducts(sortByQuery, orderByQuery)
       .then((result) => {
-        console.log(result.data.products);
         setProducts(result.data.products);
         setIsLoading(false);
       })
@@ -24,84 +39,101 @@ export default function Home() {
         setError({ err });
         setIsLoading(false);
       });
-  }, []);
+  }, [searchParams]);
 
   if (isLoading) {
     return <div className="loading-message">LOADING API....</div>;
   } else
     return (
-      <div className="carousel-group">
-        {products.map((product, index) => {
-          imagesArray = [];
-          imagesArray.push(
-            product.productimage1,
-            product.productimage2,
-            product.productimage3,
-            product.productimage4
-          );
-          console.log(imagesArray, "<--THE ARRAY");
-          return (
-            <div className="carousel-container">
-              <div className="home-product-info">£{product.productprice}</div>
-              <div className="home-product-info">{product.productname}</div>
-              <Carousel
-                preventMovementUntilSwipeScrollTolerance={true}
-                swipeScrollTolerance={50}
-                showIndicators={false}
-                showThumbs={false}
-                infiniteLoop={true}
-                renderArrowNext={(clickHandler, hasNext) => {
-                  return (
-                    hasNext && (
-                      <button
-                        className="nav_btn nav_btn_right"
+      <>
+        <div className="dropdown">
+          <button onClick={myFunction} className="dropbtn">
+            Sort By
+          </button>
+          <div id="myDropdown" className="dropdown-content">
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productname", "ASC")}
+            >
+              Alphabetical
+            </a>
+            <a href="#">Price {"(low to high)"}</a>
+            <a href="#">Price {"(high to low)"}</a>
+          </div>
+        </div>
+        <div className="carousel-group">
+          {products.map((product, index) => {
+            imagesArray = [];
+            imagesArray.push(
+              product.productimage1,
+              product.productimage2,
+              product.productimage3,
+              product.productimage4
+            );
+
+            return (
+              <div className="carousel-container">
+                <div className="home-product-info">£{product.productprice}</div>
+                <div className="home-product-info">{product.productname}</div>
+                <Carousel
+                  preventMovementUntilSwipeScrollTolerance={true}
+                  swipeScrollTolerance={50}
+                  showIndicators={false}
+                  showThumbs={false}
+                  infiniteLoop={true}
+                  renderArrowNext={(clickHandler, hasNext) => {
+                    return (
+                      hasNext && (
+                        <button
+                          className="nav_btn nav_btn_right"
+                          onClick={clickHandler}
+                        >
+                          <img src={right} />
+                        </button>
+                      )
+                    );
+                  }}
+                  renderArrowPrev={(clickHandler, hasNext) => {
+                    return (
+                      hasNext && (
+                        <button
+                          onClick={clickHandler}
+                          className="nav_btn nav_btn_left"
+                        >
+                          <img src={left} />
+                        </button>
+                      )
+                    );
+                  }}
+                  renderIndicator={(clickHandler, isSelected, index) => {
+                    return (
+                      <li
                         onClick={clickHandler}
-                      >
-                        <img src={right} />
-                      </button>
-                    )
-                  );
-                }}
-                renderArrowPrev={(clickHandler, hasNext) => {
-                  return (
-                    hasNext && (
-                      <button
-                        onClick={clickHandler}
-                        className="nav_btn nav_btn_left"
-                      >
-                        <img src={left} />
-                      </button>
-                    )
-                  );
-                }}
-                renderIndicator={(clickHandler, isSelected, index) => {
-                  return (
-                    <li
-                      onClick={clickHandler}
-                      className={`ind ${isSelected ? "active" : ""}`}
-                      key={index}
-                      role="button"
-                    />
-                  );
-                }}
-                statusFormatter={(currentItem, total) => {
-                  return <></>;
-                }}
-              >
-                {imagesArray.map((image) => (
-                  <Link to={`/${product.product_id}`} className="link-test">
-                    <img
-                      alt={`${product.productname}`}
-                      src={image}
-                      key={product.product_id}
-                      className="carousel-image"
-                    />
-                  </Link>
-                ))}
-              </Carousel>
-            </div>
-          );
-        })}
-      </div>
+                        className={`ind ${isSelected ? "active" : ""}`}
+                        key={index}
+                        role="button"
+                      />
+                    );
+                  }}
+                  statusFormatter={(currentItem, total) => {
+                    return <></>;
+                  }}
+                >
+                  {imagesArray.map((image) => (
+                    <Link to={`/${product.product_id}`} className="link-test">
+                      <img
+                        alt={`${product.productname}`}
+                        src={image}
+                        key={product.product_id}
+                        className="carousel-image"
+                      />
+                    </Link>
+                  ))}
+                </Carousel>
+              </div>
+            );
+          })}
+        </div>
+      </>
     );
 }

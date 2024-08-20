@@ -1,8 +1,13 @@
 import axios from "axios";
 
-export function fetchAllProducts(sortby = "name") {
+export function fetchAllProducts(
+  sortByQuery = "dateadded",
+  orderByQuery = "ASC"
+) {
   return axios
-    .get(`https://fakesitebackend.onrender.com/api/products/`)
+    .get(
+      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order=${orderByQuery}`
+    )
     .then((result) => result)
     .catch((error) => {
       if (error) {

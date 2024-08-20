@@ -251,6 +251,66 @@
 
 /*other*/
 
+.sort-by-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: rgb(251, 141, 0);
+  color: white;
+  width: 80px;
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: rgb(251, 141, 0);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  margin: 10px;
+  float: center;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(251, 141, 0);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
 .carousel-group {
   display: flex;
   flex-wrap: wrap;
