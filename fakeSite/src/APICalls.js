@@ -6,7 +6,7 @@ export function fetchAllProducts(
 ) {
   return axios
     .get(
-      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order=${orderByQuery}`
+      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order_by=${orderByQuery}`
     )
     .then((result) => result)
     .catch((error) => {

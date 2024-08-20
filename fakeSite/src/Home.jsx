@@ -57,8 +57,18 @@ export default function Home() {
             >
               Alphabetical
             </a>
-            <a href="#">Price {"(low to high)"}</a>
-            <a href="#">Price {"(high to low)"}</a>
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productprice", "ASC")}
+            >
+              Price {"(low to high)"}
+            </a>
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productprice", "DESC")}
+            >
+              Price {"(high to low)"}
+            </a>
           </div>
         </div>
         <div className="carousel-group">
