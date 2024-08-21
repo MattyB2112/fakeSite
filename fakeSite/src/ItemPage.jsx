@@ -106,6 +106,90 @@ export default function ItemPage({ handleBasketUpdate }) {
               </div>
             ))}
           </Carousel>
+          <div className="sizes-container">
+            <div className="sizes-list">
+              <button
+                disabled={product.size5 === 0 ? true : false}
+                className={
+                  product.size5 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                5
+              </button>
+              <button
+                disabled={product.size6 === 0 ? true : false}
+                className={
+                  product.size6 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                6
+              </button>
+              <button
+                disabled={product.size7 === 0 ? true : false}
+                className={
+                  product.size7 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                7
+              </button>
+              <button
+                disabled={product.size8 === 0 ? true : false}
+                className={
+                  product.size8 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                8
+              </button>
+              <button
+                disabled={product.size9 === 0 ? true : false}
+                className={
+                  product.size9 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                9
+              </button>
+              <button
+                disabled={product.size10 === 0 ? true : false}
+                className={
+                  product.size10 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                10
+              </button>
+              <button
+                disabled={product.size11 === 0 ? true : false}
+                className={
+                  product.size11 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                11
+              </button>
+              <button
+                disabled={product.size12 === 0 ? true : false}
+                className={
+                  product.size12 !== 0
+                    ? "size-button-in-stock"
+                    : "size-button-out-of-stock"
+                }
+              >
+                12
+              </button>
+            </div>
+          </div>
           <div className="product-info-container">
             <div className="product-info">{product.productname}</div>
             <div className="product-info">£{product.productprice}</div>
