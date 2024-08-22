@@ -32,10 +32,10 @@ export default function ItemPage({ handleBasketUpdate }) {
         );
         let sizesArray = [];
 
-        Object.keys(product).map((key) => {
+        Object.keys(result.data.product[0]).map((key) => {
           if (key.includes("size")) {
             let obj = {};
-            obj[key.substring(4)] = product[key];
+            obj[key.substring(4)] = result.data.product[0][key];
 
             sizesArray.push(obj);
           }
