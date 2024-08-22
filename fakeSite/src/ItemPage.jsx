@@ -14,7 +14,9 @@ export default function ItemPage({ handleBasketUpdate }) {
   const [product, setProduct] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [images, setImages] = useState([]);
+  const [sizes, setSizes] = useState([]);
   const [error, setError] = useState(null);
+  const [isSelected, setIsSelected] = useState("");
 
   useEffect(() => {
     fetchProductById(product_id)
@@ -28,7 +30,19 @@ export default function ItemPage({ handleBasketUpdate }) {
           result.data.product[0].productimage3,
           result.data.product[0].productimage4
         );
+        let sizesArray = [];
+
+        Object.keys(product).map((key) => {
+          if (key.includes("size")) {
+            let obj = {};
+            obj[key.substring(4)] = product[key];
+
+            sizesArray.push(obj);
+          }
+        });
+
         setImages(imagesArray);
+        setSizes(sizesArray);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -41,6 +55,10 @@ export default function ItemPage({ handleBasketUpdate }) {
     addToCart(product_id, user_id).then(() => {
       handleBasketUpdate();
     });
+  }
+
+  function handleSizeSelect(productSize) {
+    setIsSelected(productSize);
   }
 
   if (isLoading) {
@@ -107,88 +125,25 @@ export default function ItemPage({ handleBasketUpdate }) {
             ))}
           </Carousel>
           <div className="sizes-container">
-            <div className="sizes-list">
-              <button
-                disabled={product.size5 === 0 ? true : false}
-                className={
-                  product.size5 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                5
-              </button>
-              <button
-                disabled={product.size6 === 0 ? true : false}
-                className={
-                  product.size6 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                6
-              </button>
-              <button
-                disabled={product.size7 === 0 ? true : false}
-                className={
-                  product.size7 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                7
-              </button>
-              <button
-                disabled={product.size8 === 0 ? true : false}
-                className={
-                  product.size8 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                8
-              </button>
-              <button
-                disabled={product.size9 === 0 ? true : false}
-                className={
-                  product.size9 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                9
-              </button>
-              <button
-                disabled={product.size10 === 0 ? true : false}
-                className={
-                  product.size10 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                10
-              </button>
-              <button
-                disabled={product.size11 === 0 ? true : false}
-                className={
-                  product.size11 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                11
-              </button>
-              <button
-                disabled={product.size12 === 0 ? true : false}
-                className={
-                  product.size12 !== 0
-                    ? "size-button-in-stock"
-                    : "size-button-out-of-stock"
-                }
-              >
-                12
-              </button>
-            </div>
+            {sizes.map((element) => {
+              let available = element[Object.keys(element)];
+              return (
+                <button
+                  disabled={available === 0 ? true : false}
+                  id={element === isSelected ? "selected" : "not selected"}
+                  className={
+                    available !== 0
+                      ? "size-button-in-stock"
+                      : "size-button-out-of-stock"
+                  }
+                  onClick={() => {
+                    handleSizeSelect(element);
+                  }}
+                >
+                  {Object.keys(element)}
+                </button>
+              );
+            })}
           </div>
           <div className="product-info-container">
             <div className="product-info">{product.productname}</div>
