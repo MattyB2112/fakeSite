@@ -7,13 +7,13 @@ export default function Navbar() {
       <a id="home" className="menu-item" href="/">
         New In
       </a>
-      <a id="about" className="menu-item" href="/about">
+      <a id="about" className="menu-item" href="/">
         Mens
       </a>
-      <a id="contribute" className="menu-item" href="/contribute">
+      <a id="contribute" className="menu-item" href="/">
         Womens
       </a>
-      <a id="download" className="menu-item" href="/download">
+      <a id="download" className="menu-item" href="/">
         Kids
       </a>
     </Menu>
