@@ -90,7 +90,7 @@
   box-sizing: border-box;
 }
 
-.add-to-basket-button {
+.add-to-basket-button-active {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,6 +99,18 @@
   width: 170px;
   height: 50px;
   background-color: rgb(251, 141, 0);
+  font-size: 16px;
+}
+
+.add-to-basket-button-inactive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  margin: 0 auto;
+  width: 170px;
+  height: 50px;
+  background-color: rgb(168, 166, 164);
   font-size: 16px;
 }
 

@@ -152,7 +152,12 @@ export default function ItemPage({ handleBasketUpdate }) {
             <br />
             <div className="product-info">
               <button
-                className="add-to-basket-button"
+                className={
+                  isSelected === ""
+                    ? "add-to-basket-button-inactive"
+                    : "add-to-basket-button-active"
+                }
+                disabled={isSelected === "" ? true : false}
                 onClick={() => {
                   multiFunc(
                     product.product_id,
