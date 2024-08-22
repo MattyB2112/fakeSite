@@ -51,8 +51,9 @@ export default function ItemPage({ handleBasketUpdate }) {
       });
   }, []);
 
-  function multiFunc(product_id, user_id) {
+  function multiFunc(product_id, user_id, size) {
     addToCart(product_id, user_id).then(() => {
+      console.log(size[0]);
       handleBasketUpdate();
     });
   }
@@ -154,7 +155,11 @@ export default function ItemPage({ handleBasketUpdate }) {
               <button
                 className="add-to-basket-button"
                 onClick={() => {
-                  multiFunc(product.product_id, signedInUser.user_id);
+                  multiFunc(
+                    product.product_id,
+                    signedInUser.user_id,
+                    Object.keys(isSelected)
+                  );
                 }}
               >
                 ADD TO BASKET

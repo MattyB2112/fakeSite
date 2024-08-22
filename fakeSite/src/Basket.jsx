@@ -43,6 +43,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                   />
                   <ul className="basket-list-details">
                     <li className="basket-list-item">{item.productname}</li>
+                    <li className="basket-list-item">Size: {item.size}</li>
                     <li className="basket-list-item">${item.productprice}</li>
                     <li className="basket-list-item">Qty: {item.quantity}</li>
                     <div className="add-or-minus-basket-button-container">
