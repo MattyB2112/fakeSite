@@ -98,8 +98,8 @@ export function getCart(id) {
     });
 }
 
-export function addToCart(product_id, user_id, quantity = 1) {
-  const productObj = { product_id: product_id, quantity: quantity };
+export function addToCart(product_id, user_id, quantity = 1, size) {
+  const productObj = { product_id: product_id, quantity: quantity, size: size };
   return axios
     .post(
       `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
