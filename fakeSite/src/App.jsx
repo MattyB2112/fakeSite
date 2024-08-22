@@ -22,14 +22,14 @@ function App() {
   const [basketChanged, setBasketChanged] = useState(false);
   const [basketSize, setBasketSize] = useState(0);
 
-  const handleBasketChange = (product_id, user_id, quantity) => {
-    updateCart(product_id, user_id, quantity).then(() => {
+  const handleBasketChange = (product_id, user_id, quantity, size) => {
+    updateCart(product_id, user_id, quantity, size).then(() => {
       setBasketChanged(true);
     });
   };
 
-  const handleBasketDelete = (product_id, user_id) => {
-    deleteFromBasket(product_id, user_id).then(() => {
+  const handleBasketDelete = (product_id, user_id, size) => {
+    deleteFromBasket(product_id, user_id, size).then(() => {
       setBasketChanged(true);
     });
   };

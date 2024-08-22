@@ -52,8 +52,7 @@ export default function ItemPage({ handleBasketUpdate }) {
   }, []);
 
   function multiFunc(product_id, user_id, size) {
-    addToCart(product_id, user_id).then(() => {
-      console.log(size[0]);
+    addToCart(product_id, user_id, 1, size).then(() => {
       handleBasketUpdate();
     });
   }
@@ -158,7 +157,7 @@ export default function ItemPage({ handleBasketUpdate }) {
                   multiFunc(
                     product.product_id,
                     signedInUser.user_id,
-                    Object.keys(isSelected)
+                    Number(Object.keys(isSelected))
                   );
                 }}
               >

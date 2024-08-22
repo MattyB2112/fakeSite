@@ -12,9 +12,9 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
     basketEmpty = false;
   }
 
-  const multiFunc = (product_id, user_id, quantity, currentQuantity) => {
+  const multiFunc = (product_id, user_id, quantity, currentQuantity, size) => {
     currentQuantity++;
-    onBasketChange(product_id, user_id, quantity);
+    onBasketChange(product_id, user_id, quantity, size);
   };
 
   let totalCost = 0;
@@ -54,7 +54,8 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                             item.product_id,
                             signedInUser.user_id,
                             1,
-                            item.quantity
+                            item.quantity,
+                            item.size
                           );
                         }}
                       >
@@ -67,7 +68,8 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                           onBasketChange(
                             item.product_id,
                             signedInUser.user_id,
-                            -1
+                            -1,
+                            item.size
                           );
                         }}
                       >
@@ -78,7 +80,11 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                       <button
                         className="update-basket-button-delete"
                         onClick={() => {
-                          onBasketDelete(item.product_id, signedInUser.user_id);
+                          onBasketDelete(
+                            item.product_id,
+                            signedInUser.user_id,
+                            item.size
+                          );
                         }}
                       >
                         DELETE

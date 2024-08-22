@@ -113,8 +113,8 @@ export function addToCart(product_id, user_id, quantity = 1, size) {
     });
 }
 
-export function updateCart(product_id, user_id, quantity) {
-  const updateObj = { product_id: product_id, quantity: quantity };
+export function updateCart(product_id, user_id, quantity, size) {
+  const updateObj = { product_id: product_id, quantity: quantity, size: size };
   return axios
     .patch(
       `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
@@ -126,8 +126,8 @@ export function updateCart(product_id, user_id, quantity) {
     });
 }
 
-export function deleteFromBasket(product_id, user_id) {
-  const deleteObj = { product_id: product_id };
+export function deleteFromBasket(product_id, user_id, size) {
+  const deleteObj = { product_id: product_id, size: size };
   return axios
     .delete(
       `https://fakesitebackend.onrender.com/api/users/id/${user_id}/basket`,
