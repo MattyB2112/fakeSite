@@ -29,11 +29,11 @@ export default function Header({ basketSize }) {
         </div>
         <div className="basket-and-chat-container">
           <div className="basket-counter-container">
-            <a href="basket">
+            <Link to="/basket">
               <button className="header-button-cart">
                 <img src={shoppingCart} className="cart-image" />
               </button>
-            </a>
+            </Link>
             <div
               className={
                 basketSize === 0
@@ -43,11 +43,11 @@ export default function Header({ basketSize }) {
             >
               {basketSize}
             </div>
-            <a href="login">
+            <Link to="/login">
               <button className="header-button-profile">
                 <img src={headIcon2} className="head-image" />
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
