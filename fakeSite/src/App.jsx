@@ -13,6 +13,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 import SearchBar from "./SearchBar";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -60,6 +61,7 @@ function App() {
   return (
     <>
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
+        <ScrollToTop />
         <Routes>
           <Route
             exact

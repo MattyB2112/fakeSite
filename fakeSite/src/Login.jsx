@@ -1,5 +1,5 @@
 import "./login.css";
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { fetchUserByEmail } from "./APICalls";
 import { UserContext } from "./UserContext";
 
