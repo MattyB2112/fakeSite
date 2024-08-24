@@ -65,7 +65,9 @@ export default function ItemPage({ handleBasketUpdate }) {
   }
 
   function handleSizeSelect(productSize) {
-    setIsSelected(productSize);
+    if (isSelected === productSize) {
+      setIsSelected("");
+    } else setIsSelected(productSize);
   }
 
   if (isLoading) {
