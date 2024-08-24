@@ -1,35 +1,42 @@
 import "./profilePage.css";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "./UserContext";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
+import { fetchUserById } from "./APICalls";
 
-export default function ProfilePage({ signedInUser }) {
+export default function ProfilePage() {
   const navigate = useNavigate();
-  const { setSignedInUser } = useContext(UserContext);
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
+  const [userInfo, setUserInfo] = useState({});
 
   const Logout = () => {
     localStorage.clear();
+    setSignedInUser(2);
     navigate("/login");
-    setSignedInUser({});
   };
+
+  useEffect(() => {
+    fetchUserById(signedInUser).then((result) => {
+      setUserInfo(result.data.user[0]);
+    });
+  });
+
   return (
     <div className="profile-page-container">
-      <div className="profile-greeting">
-        Hello {signedInUser.userfirstname}!
-      </div>
+      <div className="profile-greeting">Hello {userInfo.userfirstname}!</div>
       <br />
       <div className="profile-user-info">
         <div>
-          Name: {signedInUser.userfirstname} {signedInUser.userlastname}
+          Name: {userInfo.userfirstname} {userInfo.userlastname}
         </div>
         <div>
-          Address: {signedInUser.useraddress1}
+          Address: {userInfo.useraddress1}
           <br />
-          {signedInUser.useraddress2}
+          {userInfo.useraddress2}
           <br />
-          {signedInUser.useraddress3}
+          {userInfo.useraddress3}
           <br />
-          {signedInUser.userpostcode}
+          {userInfo.userpostcode}
         </div>
       </div>
       <div className="profile-info"></div>

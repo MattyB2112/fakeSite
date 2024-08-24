@@ -7,6 +7,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { UserContext } from "./UserContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ItemPage({ handleBasketUpdate }) {
   const { signedInUser } = useContext(UserContext);
@@ -51,9 +53,14 @@ export default function ItemPage({ handleBasketUpdate }) {
       });
   }, []);
 
+  const showToastMessage = () => {
+    toast.success("Added to basket!");
+  };
+
   function multiFunc(product_id, user_id, size) {
     addToCart(product_id, user_id, 1, size).then(() => {
       handleBasketUpdate();
+      showToastMessage();
     });
   }
 
@@ -161,13 +168,20 @@ export default function ItemPage({ handleBasketUpdate }) {
                 onClick={() => {
                   multiFunc(
                     product.product_id,
-                    signedInUser.user_id,
+                    signedInUser,
                     Number(Object.keys(isSelected))
                   );
                 }}
               >
                 ADD TO BASKET
               </button>
+              <ToastContainer
+                position="bottom-center"
+                autoclose={50}
+                hideProgressBar={true}
+                theme="colored"
+                transition:Bounce
+              />
             </div>
           </div>
         </div>

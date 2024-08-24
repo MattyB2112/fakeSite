@@ -1,7 +1,6 @@
 import "./login.css";
 import { useState, useRef, useContext } from "react";
 import { fetchUserByEmail } from "./APICalls";
-import { redirect } from "react-router-dom";
 import { UserContext } from "./UserContext";
 
 export default function Login() {
@@ -10,7 +9,7 @@ export default function Login() {
     password: "",
   });
   const [retrievedDetails, setRetrievedDetails] = useState({});
-  const { signedInUser, setSignedInUser } = useContext(UserContext);
+  const { setSignedInUser } = useContext(UserContext);
   const [emailFound, setEmailFound] = useState(true);
   const [passwordCorrect, setPasswordCorrect] = useState(true);
   const inputRefEmail = useRef();
@@ -37,7 +36,7 @@ export default function Login() {
 
   const handlePasswordBlur = () => {
     if (emailFound) {
-      if (userDetails.password !== retrievedDetails.userpassword) {
+      if (userDetails.password !== retrievedDetails[0].userpassword) {
         setPasswordCorrect(false);
       } else {
         setPasswordCorrect(true);
@@ -49,9 +48,8 @@ export default function Login() {
     if (!emailFound || !passwordCorrect) {
       event.preventDefault();
     } else {
+      setSignedInUser(retrievedDetails[0].user_id);
       localStorage.setItem("auth_token", true);
-      localStorage.setItem("user_id", retrievedDetails.user_id);
-      setSignedInUser(retrievedDetails);
     }
   };
 

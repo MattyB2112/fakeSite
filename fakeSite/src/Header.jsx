@@ -13,6 +13,7 @@ import headIcon2 from "./assets/head-icon2.png";
 import { Link } from "react-router-dom";
 
 export default function Header({ basketSize }) {
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
   return (
     <>
       <div className="header-container">

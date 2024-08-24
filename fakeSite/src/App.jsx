@@ -16,7 +16,7 @@ import SearchBar from "./SearchBar";
 
 function App() {
   const [basket, setBasket] = useState([]);
-  const [signedInUser, setSignedInUser] = useState({ user_id: 1 });
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [basketChanged, setBasketChanged] = useState(false);
@@ -39,7 +39,7 @@ function App() {
   };
 
   useEffect(() => {
-    getCart(signedInUser.user_id)
+    getCart(signedInUser)
       .then((result) => {
         if (result.data.basket !== 0) {
           setBasket(result.data.basket);
@@ -55,7 +55,7 @@ function App() {
         setError({ err });
         setIsLoading(false);
       });
-  }, [basketChanged]);
+  }, [basketChanged, signedInUser]);
 
   return (
     <>
@@ -100,7 +100,7 @@ function App() {
               localStorage.getItem("auth_token") ? (
                 <>
                   <Header basketSize={basketSize} />
-                  <ProfilePage signedInUser={signedInUser} />
+                  <ProfilePage />
                 </>
               ) : (
                 <>

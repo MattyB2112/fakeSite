@@ -52,7 +52,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                         onClick={() => {
                           multiFunc(
                             item.product_id,
-                            signedInUser.user_id,
+                            signedInUser,
                             1,
                             item.quantity,
                             item.size
@@ -67,7 +67,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                         onClick={() => {
                           onBasketChange(
                             item.product_id,
-                            signedInUser.user_id,
+                            signedInUser,
                             -1,
                             item.size
                           );
@@ -82,7 +82,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
                         onClick={() => {
                           onBasketDelete(
                             item.product_id,
-                            signedInUser.user_id,
+                            signedInUser,
                             item.size
                           );
                         }}

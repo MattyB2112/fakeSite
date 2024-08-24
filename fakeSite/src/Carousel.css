@@ -249,7 +249,7 @@
   opacity: 1;
 }
 
-/*other*/
+/*OTHER*/
 
 .sort-by-container {
   display: flex;
@@ -267,6 +267,7 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -280,7 +281,7 @@
 .dropdown {
   position: relative;
   margin: 10px;
-  float: center;
+  float: left;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -295,8 +296,8 @@
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
+  color: white;
+  padding: 8px 8px;
   text-decoration: none;
   display: block;
 }

@@ -5,11 +5,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { fetchAllProducts } from "./APICalls";
 import right from "./assets/right.png";
 import left from "./assets/left.png";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import myFunction from "./sortBy";
+import { UserContext } from "./UserContext";
 
 export default function Home() {
+  const { signedInUser, setSignedInUser } = useContext(UserContext);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -72,7 +74,7 @@ export default function Home() {
           </div>
         </div>
         <div className="carousel-group">
-          {products.map((product, index) => {
+          {products.map((product) => {
             imagesArray = [];
             imagesArray.push(
               product.productimage1,
@@ -82,7 +84,7 @@ export default function Home() {
             );
 
             return (
-              <div className="carousel-container">
+              <div className="carousel-container" key={product.product_id}>
                 <div className="home-product-info">£{product.productprice}</div>
                 <div className="home-product-info">{product.productname}</div>
                 <Carousel
@@ -129,7 +131,7 @@ export default function Home() {
                     return <></>;
                   }}
                 >
-                  {imagesArray.map((image) => (
+                  {imagesArray.map((image, index) => (
                     <Link to={`/${product.product_id}`} className="link-test">
                       <img
                         alt={`${product.productname}`}
