@@ -9,25 +9,27 @@ import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <div className="landing-page-container">
-      <div className="categories-container">
-        <div className="categories-container-top">
-          <Link to="/products">
-            <div className="landing-page-category">Shop all</div>
-          </Link>
-          <Link to="/products/mens">
-            <div className="landing-page-category">Mens</div>
-          </Link>
-        </div>
-        <div className="categories-container-bottom">
-          <Link to="/products/womens">
-            <div className="landing-page-category">Womens</div>
-          </Link>
-          <Link to="/products/kids">
-            <div className="landing-page-category">Kids</div>
-          </Link>
+    <body className="landing-page-body">
+      <div className="landing-page-container">
+        <div className="categories-container">
+          <div className="categories-container-top">
+            <Link to="/products">
+              <div className="landing-page-category">Shop all</div>
+            </Link>
+            <Link to="/products/mens">
+              <div className="landing-page-category">Mens</div>
+            </Link>
+          </div>
+          <div className="categories-container-bottom">
+            <Link to="/products/womens">
+              <div className="landing-page-category">Womens</div>
+            </Link>
+            <Link to="/products/kids">
+              <div className="landing-page-category">Kids</div>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </body>
   );
 }
