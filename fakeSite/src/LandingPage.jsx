@@ -28,9 +28,6 @@ export default function LandingPage() {
           </Link>
         </div>
       </div>
-      <div className="other-container">
-        <div>HELLO</div>
-      </div>
     </div>
   );
 }
