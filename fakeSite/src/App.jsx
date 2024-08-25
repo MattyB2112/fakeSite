@@ -14,6 +14,7 @@ import { UserContext } from "./UserContext";
 import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 import SearchBar from "./SearchBar";
 import ScrollToTop from "./ScrollToTop";
+import LandingPage from "./LandingPage";
 
 function App() {
   const [basket, setBasket] = useState([]);
@@ -66,6 +67,16 @@ function App() {
           <Route
             exact
             path="/"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <LandingPage />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/products"
             element={
               <>
                 <Header basketSize={basketSize} />

@@ -2,7 +2,7 @@ import Navbar from "./Navbar";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./UserContext";
 import "./Header.css";
-import newlogo5 from "./assets/newerlogo1.png";
+import newlogo5 from "./assets/newerlogo1transp.png";
 import shoppingCart from "./assets/shoppingcart.png";
 import headIcon2 from "./assets/head-icon2.png";
 import { Link } from "react-router-dom";
@@ -14,7 +14,7 @@ export default function Header({ basketSize }) {
       <div className="header-container">
         <Navbar />
         <div className="logo-container">
-          <Link to="/">
+          <Link to="/products">
             <img
               src={newlogo5}
               className="logo"

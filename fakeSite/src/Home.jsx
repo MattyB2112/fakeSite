@@ -86,8 +86,11 @@ export default function Home() {
             return (
               <div className="carousel-container" key={product.product_id}>
                 <div className="home-product-info">£{product.productprice}</div>
-                <div className="home-product-info">{product.productname}</div>
+                <div className="home-product-info-title">
+                  {product.productname}
+                </div>
                 <Carousel
+                  className="home-page-carousel"
                   preventMovementUntilSwipeScrollTolerance={true}
                   swipeScrollTolerance={50}
                   showIndicators={false}
