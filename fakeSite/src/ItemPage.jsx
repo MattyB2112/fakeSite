@@ -77,7 +77,7 @@ export default function ItemPage({ handleBasketUpdate }) {
       <>
         <div className="product-container">
           <div className="carousel-and-sizes-container">
-            <div className="carousel-container">
+            <div className="carousel-item-page-container">
               <Carousel
                 preventMovementUntilSwipeScrollTolerance={true}
                 swipeScrollTolerance={50}

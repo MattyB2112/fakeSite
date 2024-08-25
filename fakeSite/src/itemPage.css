@@ -144,18 +144,31 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-    height: 99vh;
-    margin-top: 110px;
+    margin-top: 80px;
+    max-height: 100%;
+    width: 100%;
+    height: 110vh;
+  }
+
+  .carousel-and-sizes-container {
+    width: 98%;
+  }
+
+  .carousel-item-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0px;
   }
 
   /*SIZING*/
   .sizes-container {
-    width: 350px;
-    margin-top: -10px;
-    flex-wrap: wrap;
+    max-width: 250px;
     display: flex;
     align-content: center;
+    flex-wrap: wrap;
   }
 
   #selected {
@@ -163,25 +176,25 @@
   }
 
   .size-button-in-stock {
-    width: 38px;
-    height: 38px;
-    font-size: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
     background-color: white;
     border: 1px solid black;
     border-radius: 0px;
-    margin: 2px;
+    margin: 3px;
     font-weight: bold;
   }
 
   .size-button-out-of-stock {
-    width: 38px;
-    height: 38px;
-    font-size: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
     border: 1px solid black;
     border-radius: 0px;
     border-style: dashed;
     color: white;
-    margin: 2px;
+    margin: 3px;
     background-color: rgb(187, 181, 181);
     pointer-events: none;
     background: linear-gradient(
@@ -207,25 +220,29 @@
     flex-direction: column;
     margin: 2px;
     padding: 5px;
-    width: 80%;
+    max-width: 90%;
+    min-width: 85%;
+    max-height: 100%;
     font-size: 18px;
   }
 
   .product-info,
   .product-info-title {
     padding: 5px;
-    font-size: 15px;
+    font-size: 18px;
   }
+
   .product-info-title {
     font-weight: bold;
   }
 
   .item-page-carousel {
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 350px !important;
-    padding: 5px;
+    justify-content: center;
+    margin-top: 0px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
