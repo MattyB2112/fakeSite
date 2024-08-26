@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
 @media only screen and (max-width: 2000px) {
   .carousel .control-arrow,
   .carousel.carousel-slider .control-arrow {
@@ -51,7 +53,7 @@
     display: flex;
     margin: 0 auto;
     outline: none;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .carousel {
@@ -130,8 +132,8 @@
   .carousel.carousel-slider {
     position: relative;
     margin: 0;
-    padding: 8px;
-    border: 3px solid rgb(251, 141, 0);
+    padding: 5px;
+    border: 2px solid rgb(251, 141, 0);
     overflow: hidden;
     border-style: dotted;
     box-shadow: 10px, 10px;
@@ -333,16 +335,19 @@
 
   .home-product-info,
   .home-product-info-title {
+    font-family: "Advent Pro";
     align-self: center;
     padding: 5px;
-    font-size: 25px;
+    font-size: 28px;
     color: rgb(88, 88, 88);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
   }
 
   .home-product-info-title {
     font-weight: bold;
+  }
+
+  .home-product-info-title:hover {
+    text-decoration: underline;
   }
 
   .carousel-container {
@@ -463,7 +468,6 @@
     justify-content: center;
     align-items: center;
     outline: none;
-    margin-top: 40px;
   }
 
   .carousel {
@@ -540,7 +544,7 @@
     position: relative;
     margin: 0;
     padding: 8px;
-    border: 3px solid rgb(251, 141, 0);
+    border: 2px solid rgb(251, 141, 0);
     overflow: hidden;
     border-style: dotted;
     box-shadow: 10px, 10px;
@@ -746,8 +750,7 @@
     padding: 5px;
     font-size: 25px;
     color: rgb(88, 88, 88);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
+    font-family: "Advent Pro";
   }
 
   .home-product-info-title {
@@ -760,7 +763,7 @@
     align-items: center;
     align-content: center;
     height: auto;
-    margin-top: 30px;
+    margin-top: 10px;
     margin: 0 auto;
     padding: 10px;
     flex-direction: column-reverse;

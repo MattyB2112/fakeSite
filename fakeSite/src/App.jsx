@@ -66,7 +66,7 @@ function App() {
         <Routes>
           <Route
             exact
-            path="/landing"
+            path="/"
             element={
               <>
                 <Header basketSize={basketSize} />
@@ -76,7 +76,7 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/"
+            path="/products"
             element={
               <>
                 <Header basketSize={basketSize} />

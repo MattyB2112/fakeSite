@@ -9,24 +9,23 @@ import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <div className="landing-page-container">
+    <div
+      className="landing-page-container"
+      style={{ backgroundImage: "url(" + landingPageImage3 + ")" }}
+    >
       <div className="categories-container">
-        <div className="categories-container-top">
-          <Link to="/products">
-            <div className="landing-page-category">Shop all</div>
-          </Link>
-          <Link to="/products/mens">
-            <div className="landing-page-category">Mens</div>
-          </Link>
-        </div>
-        <div className="categories-container-bottom">
-          <Link to="/products/womens">
-            <div className="landing-page-category">Womens</div>
-          </Link>
-          <Link to="/products/kids">
-            <div className="landing-page-category">Kids</div>
-          </Link>
-        </div>
+        <Link to="/products">
+          <div className="top-left">SHOP ALL</div>
+        </Link>
+        <Link to="/products">
+          <div className="top-right">MENS</div>
+        </Link>
+        <Link to="/products">
+          <div className="mid-left">WOMENS</div>
+        </Link>
+        <Link to="/products">
+          <div className="mid-right">KIDS</div>
+        </Link>
       </div>
     </div>
   );

@@ -1,112 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
 @media only screen and (max-width: 2000px) {
   .landing-page-container {
-    display: flex;
-    background-image: URL("../src/assets/landingpage1ex.");
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: top;
+    display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-items: center;
     margin-top: 50px;
-    width: 98%;
-    height: 300vh;
+    width: 100%;
+    height: 100vh;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 70px;
   }
   .categories-container {
-    width: 100%;
-    display: flex;
-    height: 75%;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    position: relative;
+    text-align: center;
+    color: white;
   }
 
-  .categories-container-top,
-  .categories-container-bottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    height: 20%;
-    flex-direction: row;
-  }
-
-  .landing-page-category {
-    background-color: rgba(223, 153, 63, 0.37);
-    align-self: center;
-    color: purple;
-    font-size: 60px;
-    margin-left: 50px;
-    margin-right: 50px;
-    border: 3px solid black;
-    width: 350px;
-    height: 300px;
+  .top-left,
+  .top-right,
+  .mid-left,
+  .mid-right {
+    font-family: "Nerko One";
+    font-size: 80px;
+    font-style: italic;
+    color: black;
+    border: 1px solid black;
+    width: 339px;
+    height: 290px;
     text-align: center;
     vertical-align: middle;
-    line-height: 300px;
-    font-weight: bolder;
+    line-height: 270px;
+    box-shadow: 10px 10px;
   }
 
-  .other-container {
-    border: solid black;
+  .top-left {
+    background-color: rgba(251, 142, 0, 0.479);
+    position: absolute;
+    top: 70px;
+    left: -360px;
+  }
+
+  .top-right {
+    background-color: rgba(89, 207, 42, 0.473);
+    background-size: cover;
+    position: absolute;
+    top: 70px;
+    right: -360px;
+  }
+
+  .mid-left {
+    background-color: rgba(230, 50, 134, 0.527);
+    position: absolute;
+    top: 390px;
+    left: -360px;
+  }
+
+  .mid-right {
+    background-color: rgba(32, 169, 233, 0.493);
+    position: absolute;
+    top: 390px;
+    right: -360px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .landing-page-container {
-    display: flex;
-    background-image: URL("../src/assets/landingpage1ex.png");
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-size: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    margin-top: 50px;
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 70px;
   }
   .categories-container {
-    width: 60%;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: -35px;
-    height: 50%;
-    flex-direction: row;
+    position: relative;
+    text-align: center;
+    color: white;
   }
-
-  .categories-container-top {
-    width: 90%;
-    margin-bottom: 40px;
-    margin-left: 50px;
-    margin-right: -50px;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .categories-container-bottom {
-    margin-left: 50px;
-    margin-right: -50px;
+  .landing-page-background-image {
     width: 100%;
-    margin-top: -50px;
   }
-
-  .landing-page-category {
-    background-color: rgba(251, 142, 0, 0.397);
+  .top-left,
+  .top-right,
+  .mid-left,
+  .mid-right {
     font-size: 22px;
-    margin-left: -40px;
     border: 1px solid black;
-    width: 120px;
+    width: 100px;
     height: 100px;
     text-align: center;
     vertical-align: middle;
     line-height: 100px;
+    box-shadow: 5px 5px;
   }
 
-  .other-container {
-    margin-top: 20px;
-    border: solid black;
+  .top-left {
+    background-color: rgba(251, 142, 0, 0.479);
+    position: absolute;
+    top: 80px;
+    left: 10px;
+  }
+
+  .top-right {
+    background-color: rgba(89, 207, 42, 0.473);
+    background-size: cover;
+    position: absolute;
+    top: 80px;
+    right: 10px;
+  }
+
+  .mid-left {
+    background-color: rgba(230, 50, 134, 0.527);
+    position: absolute;
+    top: 210px;
+    left: 10px;
+  }
+
+  .mid-right {
+    background-color: rgba(32, 169, 233, 0.493);
+    position: absolute;
+    top: 210px;
+    right: 10px;
   }
 }
