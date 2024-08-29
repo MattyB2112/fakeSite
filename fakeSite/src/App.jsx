@@ -139,10 +139,14 @@ function App() {
           <Route
             path="/signup"
             element={
-              <>
-                <Header basketSize={basketSize} />
-                <SignUp />
-              </>
+              localStorage.getItem("auth_token") ? (
+                <Navigate to="/profile" />
+              ) : (
+                <>
+                  <Header basketSize={basketSize} />
+                  <SignUp />
+                </>
+              )
             }
           ></Route>
         </Routes>

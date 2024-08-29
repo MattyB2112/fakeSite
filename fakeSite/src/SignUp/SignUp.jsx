@@ -1,6 +1,7 @@
 import "./signup.css";
-import { useEffect, useState } from "react";
-import { createNewUser, fetchAllUsers } from "../APICalls";
+import { useEffect, useState, useContext } from "react";
+import { UserContext } from "../UserContext";
+import { createNewUser, fetchAllUsers, fetchUserByEmail } from "../APICalls";
 
 export default function SignUp() {
   const [userDetails, setUserDetails] = useState({
@@ -11,9 +12,10 @@ export default function SignUp() {
     confirmPassword: "",
   });
   const [allUsers, setAllUsers] = useState([]);
-  const [userExists, setUserExists] = useState(false);
+  const [userExists, setUserExists] = useState(true);
   const [emailValid, setEmailValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
+  const { setSignedInUser } = useContext(UserContext);
 
   useEffect(() => {
     fetchAllUsers().then((result) => {
@@ -55,20 +57,28 @@ export default function SignUp() {
 
   const handleSubmitClick = (e) => {
     if (userDetails.password !== userDetails.confirmPassword) {
+      e.preventDefault();
       console.log("Passwords do not match");
-    } else {
-      fetchAllUsers().then((result) => {
-        setAllUsers(result.data.user);
-        console.log(allUsers);
-      });
-    }
-    if (userExists === false) {
+    } else if (
+      userDetails.password === userDetails.confirmPassword &&
+      userExists === false
+    ) {
+      e.preventDefault();
       createNewUser(
         userDetails.firstName,
         userDetails.surname,
         userDetails.email,
         userDetails.password
-      );
+      ).then(() => {
+        fetchUserByEmail(userDetails.email).then((result) => {
+          console.log(result);
+          setSignedInUser(result.data.user[0].user_id);
+          localStorage.setItem("auth_token", true);
+        });
+      });
+      console.log(userDetails.email);
+    } else {
+      e.preventDefault();
     }
   };
   return (
