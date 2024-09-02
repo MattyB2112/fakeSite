@@ -40,6 +40,8 @@ export default function ProfilePage() {
         </div>
       </div>
       <div className="profile-info"></div>
+      <button className="update-details-button">UPDATE DETAILS</button>
+      <br />
       <button className="profile-logout-button" onClick={Logout}>
         Log Out
       </button>

@@ -8,6 +8,7 @@ import left from "./assets/left.png";
 import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import myFunction from "./sortBy";
+import filterFunction from "./filter";
 import { UserContext } from "./UserContext";
 
 export default function Home() {
@@ -48,11 +49,36 @@ export default function Home() {
   } else
     return (
       <>
-        <div className="dropdown">
-          <button onClick={myFunction} className="dropbtn">
+        <div className="sort-by-dropdown">
+          <button onClick={myFunction} className="sort-by-dropbtn">
             Sort By
           </button>
-          <div id="myDropdown" className="dropdown-content">
+          <div id="sortby-dropdown" className="sort-by-dropdown-content">
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productname", "ASC")}
+            >
+              Alphabetical
+            </a>
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productprice", "ASC")}
+            >
+              Price {"(low to high)"}
+            </a>
+            <a
+              href={`${currentUrl}`}
+              onClick={() => handleQueryChange("productprice", "DESC")}
+            >
+              Price {"(high to low)"}
+            </a>
+          </div>
+        </div>
+        <div className="filter-button-dropdown">
+          <button onClick={filterFunction} className="filter-dropbtn">
+            Filter
+          </button>
+          <div id="filter-dropdown" className="filter-dropdown-content">
             <a
               href={`${currentUrl}`}
               onClick={() => handleQueryChange("productname", "ASC")}
