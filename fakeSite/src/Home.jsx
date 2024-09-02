@@ -22,12 +22,16 @@ export default function Home() {
   const sortByQuery = searchParams.get("sort_by") || "dateadded";
   const orderByQuery = searchParams.get("order_by") || "ASC";
   let imagesArray = [];
+  let sizesArray = [5, 6, 7, 8, 9, 10, 11, 12];
 
   function handleQueryChange(sort_by, order_by) {
     const newParams = new URLSearchParams(searchParams);
     newParams.set("sort_by", sort_by);
     newParams.set("order_by", order_by);
     setSearchParams(newParams);
+  }
+  function handleSizeFilter(size) {
+    console.log(size);
   }
 
   const currentUrl = window.location.href;
@@ -79,24 +83,20 @@ export default function Home() {
             Filter
           </button>
           <div id="filter-dropdown" className="filter-dropdown-content">
-            <a
-              href={`${currentUrl}`}
-              onClick={() => handleQueryChange("productname", "ASC")}
-            >
-              Alphabetical
-            </a>
-            <a
-              href={`${currentUrl}`}
-              onClick={() => handleQueryChange("productprice", "ASC")}
-            >
-              Price {"(low to high)"}
-            </a>
-            <a
-              href={`${currentUrl}`}
-              onClick={() => handleQueryChange("productprice", "DESC")}
-            >
-              Price {"(high to low)"}
-            </a>
+            <div>Size</div>
+            {sizesArray.map((size) => {
+              return (
+                <button
+                  className="filter-size-button"
+                  onClick={() => {
+                    handleSizeFilter(size);
+                  }}
+                >
+                  {size}
+                </button>
+              );
+            })}
+            <div>Colour</div>
           </div>
         </div>
         <div className="carousel-group">
@@ -112,6 +112,9 @@ export default function Home() {
             return (
               <div className="carousel-container" key={product.product_id}>
                 <div className="home-product-info">£{product.productprice}</div>
+                <div className="home-product-info">
+                  {product.productcategory}
+                </div>
                 <Link to={`/${product.product_id}`}>
                   <div className="home-product-info-title">
                     {product.productname}

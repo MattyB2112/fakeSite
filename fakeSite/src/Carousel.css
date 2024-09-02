@@ -255,12 +255,6 @@
 
   /*OTHER*/
 
-  .sort-by-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-  }
-
   /* Dropdown Button */
   .sort-by-dropbtn {
     background-color: rgb(251, 141, 0);
@@ -296,6 +290,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 5px;
   }
 
   /* Links inside the dropdown */
@@ -308,7 +303,7 @@
 
   /* Change color of dropdown links on hover */
   .sort-by-dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: rgb(72, 175, 32);
   }
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -350,22 +345,30 @@
     display: none;
     position: absolute;
     background-color: rgb(251, 141, 0);
-    min-width: 160px;
+    min-width: 150px;
+    color: white;
+    padding: 8px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    right: 0;
+    text-align: right;
+    border-radius: 5px;
   }
 
   /* Links inside the dropdown */
-  .filter-dropdown-content a {
+  .filter-dropdown-content div {
     color: white;
     padding: 8px 8px;
     text-decoration: none;
     display: block;
   }
 
-  /* Change color of dropdown links on hover */
-  .filter-dropdown-content a:hover {
-    background-color: #ddd;
+  .filter-size-button {
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
   }
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -723,13 +726,7 @@
 
   /*OTHER*/
 
-  .sort-by-container {
-    display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-  }
-
-  /* SORT BY Dropdown Button */
+  /* Dropdown Button */
   .sort-by-dropbtn {
     background-color: rgb(251, 141, 0);
     color: white;
@@ -741,12 +738,6 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-
-  /* Dropdown button on hover & focus */
-  .sort-by-dropbtn:hover,
-  .sort-by-dropbtn:focus {
-    background-color: rgb(251, 141, 0);
   }
 
   /* The container <div> - needed to position the dropdown content */
@@ -764,6 +755,7 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    border-radius: 5px;
   }
 
   /* Links inside the dropdown */
@@ -772,11 +764,6 @@
     padding: 8px 8px;
     text-decoration: none;
     display: block;
-  }
-
-  /* Change color of dropdown links on hover */
-  .sort-by-dropdown-content a:hover {
-    background-color: #ddd;
   }
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -809,7 +796,7 @@
   .filter-button-dropdown {
     position: relative;
     margin: 10px;
-    float: left;
+    float: right;
   }
 
   /* Dropdown Content (Hidden by Default) */
@@ -820,19 +807,16 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    right: 0;
+    border-radius: 5px;
   }
 
   /* Links inside the dropdown */
-  .filter-dropdown-content a {
+  .filter-dropdown-content div {
     color: white;
     padding: 8px 8px;
     text-decoration: none;
     display: block;
-  }
-
-  /* Change color of dropdown links on hover */
-  .filter-dropdown-content a:hover {
-    background-color: #ddd;
   }
 
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */

@@ -9,8 +9,8 @@ window.onclick = function (event) {
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains(".sortby-show")) {
-        openDropdown.classList.remove(".sortby-show");
+      if (openDropdown.classList.contains("sortby-show")) {
+        openDropdown.classList.remove("sortby-show");
       }
     }
   }
