@@ -1,4 +1,4 @@
-export default function myFunction() {
+export default function sortByFunction() {
   document.getElementById("sortby-dropdown").classList.toggle("sortby-show");
 }
 

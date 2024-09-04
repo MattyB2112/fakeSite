@@ -7,7 +7,7 @@ import right from "./assets/right.png";
 import left from "./assets/left.png";
 import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
-import myFunction from "./sortBy";
+import sortByFunction from "./sortBy";
 import filterFunction from "./filter";
 import { UserContext } from "./UserContext";
 
@@ -16,9 +16,8 @@ export default function Home() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [searchParams, setSearchParams] = useSearchParams();
-
+  const [sizeFilter, setSizeFilter] = useState("all");
   const sortByQuery = searchParams.get("sort_by") || "dateadded";
   const orderByQuery = searchParams.get("order_by") || "ASC";
   let imagesArray = [];
@@ -30,14 +29,11 @@ export default function Home() {
     newParams.set("order_by", order_by);
     setSearchParams(newParams);
   }
-  function handleSizeFilter(size) {
-    console.log(size);
-  }
 
   const currentUrl = window.location.href;
 
   useEffect(() => {
-    fetchAllProducts(sortByQuery, orderByQuery)
+    fetchAllProducts(sortByQuery, orderByQuery, sizeFilter)
       .then((result) => {
         setProducts(result.data.products);
         setIsLoading(false);
@@ -46,7 +42,12 @@ export default function Home() {
         setError({ err });
         setIsLoading(false);
       });
-  }, [searchParams]);
+  }, [sizeFilter]);
+
+  function handleSizeFilter(size) {
+    let newSize = size;
+    setSizeFilter(newSize);
+  }
 
   if (isLoading) {
     return <div className="loading-message">LOADING API....</div>;
@@ -54,7 +55,7 @@ export default function Home() {
     return (
       <>
         <div className="sort-by-dropdown">
-          <button onClick={myFunction} className="sort-by-dropbtn">
+          <button onClick={sortByFunction} className="sort-by-dropbtn">
             Sort By
           </button>
           <div id="sortby-dropdown" className="sort-by-dropdown-content">
