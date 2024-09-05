@@ -17,9 +17,9 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [sizeFilter, setSizeFilter] = useState("all");
   const sortByQuery = searchParams.get("sort_by") || "dateadded";
   const orderByQuery = searchParams.get("order_by") || "ASC";
+  const sizeQuery = searchParams.get("size") || "all";
   let imagesArray = [];
   let sizesArray = [5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -33,7 +33,7 @@ export default function Home() {
   const currentUrl = window.location.href;
 
   useEffect(() => {
-    fetchAllProducts(sortByQuery, orderByQuery, sizeFilter)
+    fetchAllProducts(sortByQuery, orderByQuery, sizeQuery)
       .then((result) => {
         setProducts(result.data.products);
         setIsLoading(false);
@@ -42,11 +42,14 @@ export default function Home() {
         setError({ err });
         setIsLoading(false);
       });
-  }, [sizeFilter]);
+  }, [searchParams]);
 
   function handleSizeFilter(size) {
-    let newSize = size;
-    setSizeFilter(newSize);
+    const filterParams = new URLSearchParams(searchParams);
+    filterParams.set("size", size);
+    console.log(filterParams);
+    setSearchParams(filterParams);
+    console.log(searchParams);
   }
 
   if (isLoading) {

@@ -3,14 +3,11 @@ import axios from "axios";
 export function fetchAllProducts(
   sortByQuery = "dateadded",
   orderByQuery = "ASC",
-  size
+  size = "all"
 ) {
-  console.log(size);
-  const sizeObj = { size: size };
   return axios
     .get(
-      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order_by=${orderByQuery}`,
-      sizeObj
+      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order_by=${orderByQuery}&size=${size}`
     )
     .then((result) => result)
     .catch((error) => {
