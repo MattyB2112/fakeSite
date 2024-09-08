@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
 @media only screen and (max-width: 2000px) {
   .search-container {
     margin-top: 85px;
     width: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
   .searchbar {
@@ -24,6 +28,50 @@
     border-radius: 8px;
     font-size: 18px;
   }
+  .search-results-box-inactive {
+    display: none;
+    margin: 0 auto;
+    width: 95%;
+    height: 100px;
+    background-color: red;
+  }
+
+  .search-bar-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+  .search-results-box-active {
+    position: absolute;
+    vertical-align: middle;
+    background-color: red;
+    background: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+    left: 0%;
+    right: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: white;
+    z-index: 5;
+    font-family: "Advent Pro";
+    font-size: 25px;
+  }
+  .search-bar-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .search-bar-product-title {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -36,8 +84,6 @@
     height: 40px;
     display: flex;
     justify-content: center;
-    align-self: center;
-    align-items: center;
     font-size: 30px;
     width: 100%;
   }
@@ -48,5 +94,42 @@
     padding: 4px;
     border-radius: 8px;
     font-size: 18px;
+  }
+  .search-results-box-inactive {
+    display: none;
+    margin: 0 auto;
+    width: 95%;
+    background-color: white;
+  }
+
+  .search-results-box-active {
+    position: absolute;
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    height: auto;
+    padding: 10px;
+    background-color: white;
+    z-index: 5;
+    font-family: "Advent Pro";
+    font-size: 20px;
+  }
+
+  .search-bar-product {
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+  .search-bar-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .search-bar-product-title {
+    font-size: 15px;
+    font-family: "Advent Pro";
   }
 }

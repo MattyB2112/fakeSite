@@ -1,5 +1,5 @@
 import { slide as Menu } from "react-burger-menu";
-import "./burgerMenu.css";
+import "./navbar.css";
 
 export default function Navbar() {
   return (
@@ -15,6 +15,9 @@ export default function Navbar() {
       </a>
       <a id="download" className="menu-item" href="/download">
         Kids
+      </a>
+      <a id="download" className="menu-item" href="/about">
+        About
       </a>
     </Menu>
   );

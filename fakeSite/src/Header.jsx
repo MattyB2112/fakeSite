@@ -15,7 +15,7 @@ export default function Header({ basketSize }) {
       <div className="header-container">
         <Navbar />
         <div className="logo-container">
-          <Link to="/products">
+          <Link to="/products/all">
             <img
               src={newlogo5}
               className="logo"

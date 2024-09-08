@@ -77,7 +77,51 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/products"
+            path="/products/all"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SearchBar />
+                <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/products/new"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SearchBar />
+                <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/products/mens"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SearchBar />
+                <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/products/womens"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <SearchBar />
+                <Home />
+              </>
+            }
+          ></Route>
+          <Route
+            exact
+            path="/products/kids"
             element={
               <>
                 <Header basketSize={basketSize} />
