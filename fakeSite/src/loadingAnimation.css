@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
+.loading-message {
+  font-weight: 300;
+  color: rgb(251, 141, 0);
+  font-size: 40px;
+  font-family: "Nerko One";
+}
+
+.loading-message p {
+  text-transform: uppercase;
+  transform: rotateX(-90deg);
+  color: rgb(251, 141, 0);
+}
+
+.let1 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.let2 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.let3 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.let4 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.let5 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.let6 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.let7 {
+  animation: drop 1.2s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+@keyframes drop {
+  10% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+  80% {
+    opacity: 1;
+    top: 3.78em;
+    transform: rotateX(-360deg);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    top: 6.94em;
+  }
+}

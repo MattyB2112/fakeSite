@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { fetchProductById, addToCart, getCart } from "./APICalls";
 import { useEffect, useState, useContext } from "react";
 import "./itemPage.css";
@@ -71,7 +71,9 @@ export default function ItemPage({ handleBasketUpdate }) {
   }
 
   if (isLoading) {
-    return <div className="loading-message">LOADING API....</div>;
+    return <div className="item-page-loading-message">LOADING API....</div>;
+  } else if (error) {
+    return <Navigate to="/error" />;
   } else
     return (
       <>
@@ -84,7 +86,7 @@ export default function ItemPage({ handleBasketUpdate }) {
                 className="item-page-carousel"
                 showIndicators={false}
                 infiniteLoop={true}
-                thumbWidth={75}
+                thumbWidth={60}
                 selectedItem={0}
                 renderArrowNext={(clickHandler, hasNext) => {
                   return (

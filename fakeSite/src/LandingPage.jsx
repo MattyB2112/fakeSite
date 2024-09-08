@@ -14,16 +14,16 @@ export default function LandingPage() {
       style={{ backgroundImage: "url(" + landingPageImage3 + ")" }}
     >
       <div className="categories-container">
-        <Link to="/products">
+        <Link to="/products/all">
           <div className="top-left">SHOP ALL</div>
         </Link>
-        <Link to="/products">
+        <Link to="/products/mens">
           <div className="top-right">MENS</div>
         </Link>
-        <Link to="/products">
+        <Link to="/products/womens">
           <div className="mid-left">WOMENS</div>
         </Link>
-        <Link to="/products">
+        <Link to="/products/kids">
           <div className="mid-right">KIDS</div>
         </Link>
       </div>

@@ -2,7 +2,7 @@
   display: flex;
   padding-top: 40px;
   background: rgb(251, 141, 0);
-  color: white;
+  z-index: 1000;
   /* max-width: 40%;
   min-width: 30%; */
 }
@@ -14,13 +14,14 @@
   position: fixed;
   width: 30px;
   height: 25px;
-  left: 20px;
+  left: 15px;
   top: 22px;
   margin: 0;
+  z-index: 999;
 }
 
 .bm-burger-bars {
-  background: rgb(251, 141, 0);
+  background-color: rgb(251, 141, 0);
 }
 
 .bm-cross-button {
@@ -35,7 +36,6 @@
 }
 
 .bm-item-list {
-  color: white;
   padding-left: 10px;
 }
 

@@ -2,8 +2,7 @@
 }
 
 body {
-  /* background-image: URL("../src/assets/background.jpg"); */
-  background-color: white;
+  background-image: URL("../src/assets/triangles_pattern.png");
   margin: 0px;
   width: 100%;
   height: auto;

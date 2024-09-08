@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Carousel.css";
+import "./home.css";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { fetchAllProducts } from "./APICalls";
@@ -10,6 +10,7 @@ import { useSearchParams } from "react-router-dom";
 import sortByFunction from "./sortBy";
 import filterFunction from "./filter";
 import { UserContext } from "./UserContext";
+import LoadingAnimation from "./LoadingAnimation";
 
 export default function Home() {
   const { signedInUser, setSignedInUser } = useContext(UserContext);
@@ -47,13 +48,11 @@ export default function Home() {
   function handleSizeFilter(size) {
     const filterParams = new URLSearchParams(searchParams);
     filterParams.set("size", size);
-    console.log(filterParams);
     setSearchParams(filterParams);
-    console.log(searchParams);
   }
 
   if (isLoading) {
-    return <div className="loading-message">LOADING API....</div>;
+    return <LoadingAnimation />;
   } else
     return (
       <>
@@ -170,7 +169,10 @@ export default function Home() {
                   }}
                 >
                   {imagesArray.map((image, index) => (
-                    <Link to={`/${product.product_id}`} className="link-test">
+                    <Link
+                      to={`/products/${product.product_id}`}
+                      className="link-test"
+                    >
                       <img
                         alt={`${product.productname}`}
                         src={image}

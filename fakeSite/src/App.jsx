@@ -3,6 +3,7 @@ import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Basket from "./Basket";
+import ErrorPage from "./ErrorPage";
 import ItemPage from "./ItemPage";
 import Login from "./Login";
 import Banner from "./Banner";
@@ -99,7 +100,7 @@ function App() {
             }
           ></Route>
           <Route
-            path="/:product_id"
+            path="products/:product_id"
             element={
               <>
                 <Header basketSize={basketSize} />
@@ -149,6 +150,15 @@ function App() {
               )
             }
           ></Route>
+          <Route
+            path="*"
+            element={
+              <>
+                <Header basketSize={basketSize} />
+                <ErrorPage />
+              </>
+            }
+          />
         </Routes>
         <Footer />
       </UserContext.Provider>

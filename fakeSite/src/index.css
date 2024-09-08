@@ -26,6 +26,7 @@
 /*FOOTER*/
 
 .footer-container {
+  background-color: white;
   display: flex;
   width: 100%;
   justify-items: flex-end;

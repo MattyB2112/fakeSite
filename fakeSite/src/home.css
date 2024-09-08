@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
+@media only screen and (max-width: 2000px) {
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 450px !important;
+    min-width: 360px !important;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    border: 2px solid rgb(251, 141, 0);
+    overflow: hidden;
+    border-style: dotted;
+    box-shadow: 10px, 10px;
+  }
+
+  /*OTHER*/
+
+  /* Dropdown Button */
+  .sort-by-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Dropdown button on hover & focus */
+  .sort-by-dropbtn:hover,
+  .sort-by-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .sort-by-dropdown {
+    position: relative;
+    margin: 10px;
+    float: left;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .sort-by-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .sort-by-dropdown-content a {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .sort-by-dropdown-content a:hover {
+    background-color: rgb(72, 175, 32);
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .sortby-show {
+    display: block;
+  }
+
+  /*filter button*/
+  /*filter dropdown*/
+  /* Dropdown Button */
+  .filter-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Dropdown button on hover & focus */
+  .filter-dropbtn:hover,
+  .filter-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .filter-button-dropdown {
+    position: relative;
+    margin: 10px;
+    float: right;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 150px;
+    color: white;
+    padding: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    text-align: right;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .filter-dropdown-content div {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .filter-size-button {
+    margin: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: black;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .filter-show {
+    display: block;
+  }
+
+  .carousel-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .loading-message {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-product-info,
+  .home-product-info-title {
+    font-family: "Advent Pro";
+    align-self: center;
+    padding: 5px;
+    font-size: 28px;
+    color: rgb(88, 88, 88);
+  }
+
+  .home-product-info-title {
+    font-weight: bold;
+  }
+
+  .home-product-info-title:hover {
+    text-decoration: underline;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin: 20px;
+    height: auto;
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    height: auto;
+    border-radius: 50%;
+    min-width: 50px;
+    max-width: 60px;
+  }
+
+  .nav_btn_left {
+    left: -2%;
+  }
+  .nav_btn_right {
+    right: -2%;
+  }
+
+  .link-test {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .test-text {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 350px !important;
+    min-width: 300px !important;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    padding: 8px;
+    border: 2px solid rgb(251, 141, 0);
+    overflow: hidden;
+    border-style: dotted;
+    box-shadow: 10px, 10px;
+  }
+
+  /*OTHER*/
+
+  /* Dropdown Button */
+  .sort-by-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .sort-by-dropdown {
+    position: relative;
+    margin: 10px;
+    float: left;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .sort-by-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .sort-by-dropdown-content a {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .sortby-show {
+    display: block;
+  }
+
+  /*filter dropdown*/
+  /* Dropdown Button */
+  .filter-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Dropdown button on hover & focus */
+  .filter-dropbtn:hover,
+  .filter-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .filter-button-dropdown {
+    position: relative;
+    margin: 10px;
+    float: right;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .filter-dropdown-content div {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .filter-show {
+    display: block;
+  }
+
+  .carousel-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-product-info,
+  .home-product-info-title {
+    align-self: center;
+    padding: 5px;
+    font-size: 25px;
+    color: rgb(88, 88, 88);
+    font-family: "Advent Pro";
+  }
+
+  .home-product-info-title {
+    font-weight: bold;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    margin-top: 10px;
+    margin: 0 auto;
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+
+    height: auto;
+    border-radius: 50%;
+    min-width: 50px;
+    max-width: 60px;
+    margin: -6px;
+  }
+
+  .nav_btn_left {
+    left: 0;
+  }
+  .nav_btn_right {
+    right: 0;
+  }
+
+  .ind {
+    width: 20px;
+    height: 20px;
+    list-style: none;
+    transform: rotate(135deg);
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+  }
+
+  .ind.active {
+    background-color: rgb(150, 145, 146);
+    transition: 500ms 200ms;
+  }
+
+  .ind:not(:last-child) {
+    margin-right: 1.4rem;
+  }
+
+  .link-test {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
