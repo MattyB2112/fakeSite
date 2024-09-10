@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
+.burger-menu {
+  display: flex;
+  padding-top: 40px;
+  background: rgb(251, 141, 0);
+  z-index: 1000;
+  /* max-width: 40%;
+  min-width: 30%; */
+}
+
+.bm-burger-button {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  width: 30px;
+  height: 25px;
+  left: 15px;
+  top: 22px;
+  margin: 0;
+  z-index: 999;
+}
+
+.bm-burger-bars {
+  background-color: rgb(251, 141, 0);
+}
+
+.bm-cross-button {
+  height: 50px;
+  width: 50px;
+}
+
+.bm-cross {
+  background: #0c0c0c;
+  height: 50px;
+  width: 50px;
+}
+
+.bm-item-list {
+  padding-left: 10px;
+}
+
+.bm-menu-wrap {
+}
+
+.bm-item {
+  display: flex;
+  width: auto;
+  padding-top: 10px;
+}
+
+.menu-item {
+  font-family: "Advent Pro";
+  font-size: 28px;
+  font-weight: 700;
+  padding-top: 20px;
+  max-width: 225px;
+  min-width: 200px;
+  text-decoration: none !important;
+  color: white;
+  border-bottom: 1.5px solid black;
+  text-align: left;
+}
+
+.menu-item:hover {
+  color: rgb(196, 192, 192);
+}

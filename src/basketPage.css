@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ovo&display=swap");
+
+@media only screen and (max-width: 2000px) {
+  .basket-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding: 5px;
+    min-height: 100vh;
+  }
+  .basket-header {
+    font-size: 30px;
+    text-align: left;
+    margin: 10px;
+    font-family: "Advent Pro";
+    font-weight: 700;
+  }
+
+  .basket-product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .loading-message {
+    color: black;
+  }
+  .no-items-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    height: 93vh;
+  }
+
+  .no-items-header {
+    font-family: "Advent Pro";
+    font-weight: 700;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .basket-list-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-family: "Advent Pro";
+  }
+
+  .basket-list-item {
+    padding: 0px;
+    font-size: 30px;
+  }
+
+  .add-or-minus-basket-button-container {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .update-basket-button-plus,
+  .update-basket-button-minus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(251, 141, 0);
+    font-weight: bold;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+  }
+  .update-basket-delete-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .update-basket-button-delete {
+    font-weight: bold;
+    font-size: 20px;
+    width: 80px;
+    background-color: rgb(251, 141, 0);
+    height: 40px;
+    text-align: center;
+  }
+
+  .basket-product-image {
+    max-width: 400px;
+    min-width: 300px;
+    height: auto;
+    margin: 20px;
+  }
+
+  .basket-cost-container {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    font-family: "Advent Pro";
+    font-weight: 700;
+  }
+
+  .checkout-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-button {
+    background-color: rgb(251, 141, 0);
+    font-family: "Advent Pro";
+    font-size: 30px;
+    width: 150px;
+    height: 60px;
+  }
+  li {
+    list-style-type: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .basket-list-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding: 5px;
+    min-height: 100vh;
+  }
+  .basket-header {
+    font-size: 25px;
+    text-align: left;
+    margin: 10px;
+    font-family: "Advent Pro";
+  }
+
+  .basket-product-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .loading-message {
+    color: black;
+  }
+  .no-items-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    height: 93vh;
+  }
+
+  .no-items-header {
+    font-family: "Advent Pro";
+    font-weight: 700;
+    margin-top: 100px;
+    text-align: center;
+  }
+
+  .basket-list-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin-left: 10px;
+    font-size: 13px;
+    font-family: "Advent Pro";
+  }
+
+  .basket-list-item {
+    padding: 0px;
+    font-size: 20px;
+  }
+
+  .add-or-minus-basket-button-container {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .update-basket-button-plus,
+  .update-basket-button-minus {
+    background-color: rgb(251, 141, 0);
+    font-weight: bold;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+  }
+  .update-basket-delete-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .update-basket-button-delete {
+    font-weight: bold;
+    font-size: 13px;
+    width: 70px;
+    background-color: rgb(251, 141, 0);
+    height: 30px;
+    text-align: center;
+  }
+
+  .basket-product-image {
+    max-width: 220px;
+    min-width: 200px;
+    height: auto;
+  }
+
+  .basket-cost-container {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px;
+    font-family: "Advent Pro";
+  }
+
+  .checkout-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-button {
+    background-color: rgb(251, 141, 0);
+    font-family: "Advent Pro";
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

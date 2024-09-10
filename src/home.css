@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
+@media only screen and (max-width: 2000px) {
+  .home-page-container {
+    margin-top: 0px;
+  }
+  .home-page-container .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    min-width: 250px;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .home-page-container .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    padding: 0px;
+    border: 4px solid white;
+    overflow: hidden;
+    box-shadow: 10px, 10px;
+  }
+
+  /*OTHER*/
+
+  /* Dropdown Button */
+  .sort-by-dropbtn {
+    background-color: rgb(251, 141, 0);
+    font-family: "Advent Pro";
+    color: white;
+    width: 90px;
+    height: 40px;
+    padding: 6px;
+    font-size: 22px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dropdown button on hover & focus */
+  .sort-by-dropbtn:hover,
+  .sort-by-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .sort-by-dropdown {
+    position: relative;
+    margin: 10px;
+    float: left;
+    z-index: 10;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .sort-by-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 190px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    font-family: "Advent Pro";
+    font-size: 21px;
+  }
+
+  /* Links inside the dropdown */
+  .sort-by-dropdown-content a {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .sort-by-dropdown-content a:hover {
+    background-color: rgb(72, 175, 32);
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .sortby-show {
+    display: block;
+  }
+
+  /*filter button*/
+  /*filter dropdown*/
+  /* Dropdown Button */
+  .filter-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 90px;
+    height: 40px;
+    padding: 6px;
+    font-size: 25px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Advent Pro";
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Dropdown button on hover & focus */
+  .filter-dropbtn:hover,
+  .filter-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .filter-button-dropdown {
+    position: relative;
+    margin: 10px;
+    float: right;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 190px;
+    color: white;
+    padding: 8px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    right: 0;
+    text-align: left;
+    border-radius: 5px;
+    font-family: "Advent Pro";
+    font-size: 22px;
+  }
+
+  /* Links inside the dropdown */
+  .filter-dropdown-content div {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .filter-size-button {
+    margin: 3px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: black;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .filter-show {
+    display: block;
+  }
+
+  .carousel-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .loading-message {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-product-info,
+  .home-product-info-title {
+    font-family: "Advent Pro";
+    align-self: center;
+    padding: 0px;
+    font-size: 28px;
+    color: rgb(88, 88, 88);
+    text-decoration: none !important;
+  }
+
+  .home-product-info-title {
+    font-weight: bold;
+  }
+
+  .carousel-container a {
+    text-decoration: none;
+    color: #373a47;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    color: #373a47;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+    height: auto;
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    height: auto;
+    border-radius: 50%;
+    min-width: 30px;
+    max-width: 40px;
+  }
+
+  .nav_btn_left {
+    left: -2%;
+  }
+  .nav_btn_right {
+    right: -2%;
+  }
+
+  .link-test {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .test-text {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home-page-carousel .carousel {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 80%;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    padding: 0px;
+    border: 4px solid white;
+    overflow: hidden;
+    box-shadow: 10px, 10px;
+  }
+
+  /*OTHER*/
+
+  /* Dropdown Button */
+  .sort-by-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .sort-by-dropdown {
+    position: relative;
+    margin: 10px;
+    float: left;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .sort-by-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .sort-by-dropdown-content a {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .sortby-show {
+    display: block;
+  }
+
+  /*filter dropdown*/
+  /* Dropdown Button */
+  .filter-dropbtn {
+    background-color: rgb(251, 141, 0);
+    color: white;
+    width: 80px;
+    height: 40px;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Dropdown button on hover & focus */
+  .filter-dropbtn:hover,
+  .filter-dropbtn:focus {
+    background-color: rgb(251, 141, 0);
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .filter-button-dropdown {
+    position: relative;
+    margin: 10px;
+    float: right;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .filter-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(251, 141, 0);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+    border-radius: 5px;
+  }
+
+  /* Links inside the dropdown */
+  .filter-dropdown-content div {
+    color: white;
+    padding: 8px 8px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .filter-show {
+    display: block;
+  }
+
+  .carousel-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .home-product-info,
+  .home-product-info-title {
+    align-self: center;
+    padding: 0px;
+    font-size: 25px;
+    color: rgb(88, 88, 88);
+    font-family: "Advent Pro";
+  }
+
+  .home-product-info-title {
+    font-weight: bold;
+  }
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: auto;
+    margin-top: 10px;
+    margin: 0 auto;
+    padding: 10px;
+    flex-direction: column-reverse;
+  }
+
+  .nav_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    height: auto;
+    border-radius: 50%;
+    min-width: 40px;
+    max-width: 40px;
+  }
+
+  .nav_btn_left {
+    left: -2%;
+  }
+  .nav_btn_right {
+    right: -2%;
+  }
+
+  .ind {
+    width: 20px;
+    height: 20px;
+    list-style: none;
+    transform: rotate(135deg);
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+  }
+
+  .ind.active {
+    background-color: rgb(150, 145, 146);
+    transition: 500ms 200ms;
+  }
+
+  .ind:not(:last-child) {
+    margin-right: 1.4rem;
+  }
+
+  .link-test {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
