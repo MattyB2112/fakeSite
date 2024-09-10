@@ -3,11 +3,12 @@ import axios from "axios";
 export function fetchAllProducts(
   sortByQuery = "dateadded",
   orderByQuery = "ASC",
-  size = "all"
+  size = "all",
+  filter = "all"
 ) {
   return axios
     .get(
-      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order_by=${orderByQuery}&size=${size}`
+      `https://fakesitebackend.onrender.com/api/products/?sort_by=${sortByQuery}&order_by=${orderByQuery}&size=${size}&category=${filter}`
     )
     .then((result) => result)
     .catch((error) => {

@@ -3,6 +3,7 @@
 @media only screen and (max-width: 2000px) {
   .home-page-container {
     margin-top: 0px;
+    min-height: 100vh;
   }
   .home-page-container .carousel {
     display: flex;
@@ -244,9 +245,26 @@
   .test-text {
     font-size: 80px;
   }
+
+  .no-products-message {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    margin-top: 0px;
+    font-family: "Advent Pro";
+    font-size: 28px;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .home-page-container {
+    margin-top: 0px;
+    min-height: 100vh;
+  }
   .home-page-carousel .carousel {
     display: flex;
     align-content: center;
@@ -446,5 +464,18 @@
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  .no-products-message {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    margin-top: 0px;
+    font-family: "Advent Pro";
+    font-size: 28px;
+    min-height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

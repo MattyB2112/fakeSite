@@ -77,7 +77,7 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/products/all"
+            path="/products/all/"
             element={
               <>
                 <Header basketSize={basketSize} />
@@ -88,7 +88,7 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/products/new"
+            path="/products/new/"
             element={
               <>
                 <Header basketSize={basketSize} />
@@ -99,34 +99,34 @@ function App() {
           ></Route>
           <Route
             exact
-            path="/products/mens"
+            path="/products/mens/"
             element={
               <>
                 <Header basketSize={basketSize} />
                 <SearchBar />
-                <Home />
+                <Home filter={"Mens"} />
               </>
             }
           ></Route>
           <Route
             exact
-            path="/products/womens"
+            path="/products/womens/"
             element={
               <>
                 <Header basketSize={basketSize} />
                 <SearchBar />
-                <Home />
+                <Home filter={"Womens"} />
               </>
             }
           ></Route>
           <Route
             exact
-            path="/products/kids"
+            path="/products/kids/"
             element={
               <>
                 <Header basketSize={basketSize} />
                 <SearchBar />
-                <Home />
+                <Home filter={"Kids"} />
               </>
             }
           ></Route>

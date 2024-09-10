@@ -30,8 +30,6 @@
 
 .basket-counter-container {
   display: flex;
-  align-content: center;
-  align-items: center;
   justify-content: center;
   margin-right: 4px;
 }
@@ -77,27 +75,17 @@ a {
   align-self: end;
   justify-content: center;
   width: 18px;
-  margin-left: -8px;
-  height: 20px;
+  margin-left: -10px;
+  margin-bottom: -5px;
+  height: 22px;
   font-weight: bold;
   color: white;
   background-color: red;
-  border-radius: 50%;
+  border-radius: 8px;
 }
 
 .basket-counter-empty {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  align-self: end;
-  justify-content: center;
-  width: 18px;
-  margin-left: -8px;
-  height: 20px;
-  font-weight: bold;
-  color: white;
   background-color: grey;
-  border-radius: 50%;
 }
 
 .logo-container {

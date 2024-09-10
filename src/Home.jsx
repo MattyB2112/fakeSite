@@ -13,7 +13,8 @@ import { UserContext } from "./UserContext";
 import LoadingAnimation from "./LoadingAnimation";
 import landingPageImage3 from "../src/assets/landingpage3.jpg";
 
-export default function Home() {
+export default function Home(props) {
+  const { filter } = props;
   const { signedInUser, setSignedInUser } = useContext(UserContext);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -35,7 +36,7 @@ export default function Home() {
   const currentUrl = window.location.href;
 
   useEffect(() => {
-    fetchAllProducts(sortByQuery, orderByQuery, sizeQuery)
+    fetchAllProducts(sortByQuery, orderByQuery, sizeQuery, filter)
       .then((result) => {
         setProducts(result.data.products);
         setIsLoading(false);
@@ -104,92 +105,98 @@ export default function Home() {
               <div>Colour</div>
             </div>
           </div>
-          <div className="carousel-group">
-            {products.map((product) => {
-              imagesArray = [];
-              imagesArray.push(
-                product.productimage1,
-                product.productimage2,
-                product.productimage3,
-                product.productimage4
-              );
+          {products.length === 0 ? (
+            <div className="no-products-message">
+              <div>No products matched filter</div>
+            </div>
+          ) : (
+            <div className="carousel-group">
+              {products.map((product) => {
+                imagesArray = [];
+                imagesArray.push(
+                  product.productimage1,
+                  product.productimage2,
+                  product.productimage3,
+                  product.productimage4
+                );
 
-              return (
-                <div className="carousel-container" key={product.product_id}>
-                  <div className="home-product-info">
-                    £{product.productprice}
-                  </div>
-                  <div className="home-product-info">
-                    {product.productcategory}
-                  </div>
-                  <a href={`/${product.product_id}`}>
-                    <div className="home-product-info-title">
-                      {product.productname}
+                return (
+                  <div className="carousel-container" key={product.product_id}>
+                    <div className="home-product-info">
+                      £{product.productprice}
                     </div>
-                  </a>
-                  <Carousel
-                    className="home-page-carousel"
-                    preventMovementUntilSwipeScrollTolerance={true}
-                    swipeScrollTolerance={50}
-                    showIndicators={false}
-                    showThumbs={false}
-                    infiniteLoop={true}
-                    renderArrowNext={(clickHandler, hasNext) => {
-                      return (
-                        hasNext && (
-                          <button
-                            className="nav_btn nav_btn_right"
+                    <div className="home-product-info">
+                      {product.productcategory}
+                    </div>
+                    <a href={`/${product.product_id}`}>
+                      <div className="home-product-info-title">
+                        {product.productname}
+                      </div>
+                    </a>
+                    <Carousel
+                      className="home-page-carousel"
+                      preventMovementUntilSwipeScrollTolerance={true}
+                      swipeScrollTolerance={50}
+                      showIndicators={false}
+                      showThumbs={false}
+                      infiniteLoop={true}
+                      renderArrowNext={(clickHandler, hasNext) => {
+                        return (
+                          hasNext && (
+                            <button
+                              className="nav_btn nav_btn_right"
+                              onClick={clickHandler}
+                            >
+                              <img src={right} />
+                            </button>
+                          )
+                        );
+                      }}
+                      renderArrowPrev={(clickHandler, hasNext) => {
+                        return (
+                          hasNext && (
+                            <button
+                              onClick={clickHandler}
+                              className="nav_btn nav_btn_left"
+                            >
+                              <img src={left} />
+                            </button>
+                          )
+                        );
+                      }}
+                      renderIndicator={(clickHandler, isSelected, index) => {
+                        return (
+                          <li
                             onClick={clickHandler}
-                          >
-                            <img src={right} />
-                          </button>
-                        )
-                      );
-                    }}
-                    renderArrowPrev={(clickHandler, hasNext) => {
-                      return (
-                        hasNext && (
-                          <button
-                            onClick={clickHandler}
-                            className="nav_btn nav_btn_left"
-                          >
-                            <img src={left} />
-                          </button>
-                        )
-                      );
-                    }}
-                    renderIndicator={(clickHandler, isSelected, index) => {
-                      return (
-                        <li
-                          onClick={clickHandler}
-                          className={`ind ${isSelected ? "active" : ""}`}
-                          key={index}
-                          role="button"
-                        />
-                      );
-                    }}
-                    statusFormatter={(currentItem, total) => {
-                      return <></>;
-                    }}
-                  >
-                    {imagesArray.map((image, index) => (
-                      <Link
-                        to={`/products/${product.product_id}`}
-                        className="link-test"
-                      >
-                        <img
-                          alt={`${product.productname}`}
-                          src={image}
-                          key={product.product_id}
-                          className="carousel-image"
-                        />
-                      </Link>
-                    ))}
-                  </Carousel>
-                </div>
-              );
-            })}
-          </div>
+                            className={`ind ${isSelected ? "active" : ""}`}
+                            key={index}
+                            role="button"
+                          />
+                        );
+                      }}
+                      statusFormatter={(currentItem, total) => {
+                        return <></>;
+                      }}
+                    >
+                      {imagesArray.map((image, index) => (
+                        <Link
+                          to={`/products/${product.product_id}`}
+                          className="link-test"
+                        >
+                          <img
+                            alt={`${product.productname}`}
+                            src={image}
+                            key={product.product_id}
+                            className="carousel-image"
+                          />
+                        </Link>
+                      ))}
+                    </Carousel>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </>
     );
