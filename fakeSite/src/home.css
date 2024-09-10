@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
 
 @media only screen and (max-width: 2000px) {
+  .home-page-container {
+    margin-top: 0px;
+  }
   .carousel {
     display: flex;
     justify-content: center;
@@ -16,7 +19,7 @@
   .carousel.carousel-slider {
     position: relative;
     margin: 0;
-    padding: 5px;
+    padding: 0px;
     border: 8px solid white;
     overflow: hidden;
     box-shadow: 10px, 10px;
@@ -157,7 +160,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 10px;
     width: 100%;
   }
 
@@ -250,7 +253,7 @@
   .carousel.carousel-slider {
     position: relative;
     margin: 0;
-    padding: 8px;
+    padding: 0px;
     border: 4px solid white;
     overflow: hidden;
     box-shadow: 10px, 10px;

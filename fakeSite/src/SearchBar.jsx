@@ -32,7 +32,10 @@ export default function SearchBar() {
   }, [searchTerm]);
   return (
     <>
-      <div className="search-container">
+      <div
+        className="search-container"
+        style={{ backgroundImage: "URL('./src/assets/triangles_pattern.png')" }}
+      >
         <div className="searchbar">
           <input
             type="text"

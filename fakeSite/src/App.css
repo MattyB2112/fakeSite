@@ -1,4 +1,8 @@
 #root {
+  background-image: URL("/src/assets/triangles_pattern.png");
+  background-position: stretch;
+  padding: 0;
+  margin: 0;
 }
 
 body {

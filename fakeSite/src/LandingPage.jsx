@@ -1,10 +1,7 @@
 import "./landingPage.css";
-import landingPageImage1 from "../src/assets/landingpage1.jpg";
-import landingPageImage2 from "../src/assets/landingpage2.jpg";
+
 import landingPageImage3 from "../src/assets/landingpage3.jpg";
-import landingPageImage4 from "../src/assets/landingpage4.jpg";
-import landingPageImageText from "../src/assets/landingpage1ex.jpg";
-import landingPageImageText3 from "../src/assets/landingpage3text.jpg";
+
 import { Link } from "react-router-dom";
 
 export default function LandingPage() {
