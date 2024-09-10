@@ -95,7 +95,7 @@ export default function Basket({ basket, onBasketChange, onBasketDelete }) {
               );
           })}
           <div className="basket-cost-container">
-            Basket Total = £{totalCost.toFixed(2)}
+            TOTAL = £{totalCost.toFixed(2)}
           </div>
           <div className="checkout-container">
             <button className="checkout-button">CHECKOUT</button>

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ovo&display=swap");
 
 @media only screen and (max-width: 2000px) {
   .basket-list-container {
@@ -9,10 +11,11 @@
     min-height: 100vh;
   }
   .basket-header {
-    font-size: 25px;
+    font-size: 30px;
     text-align: left;
     margin: 10px;
     font-family: "Advent Pro";
+    font-weight: 700;
   }
 
   .basket-product-container {
@@ -34,6 +37,7 @@
 
   .no-items-header {
     font-family: "Advent Pro";
+    font-weight: 700;
     margin-top: 100px;
     text-align: center;
   }
@@ -95,12 +99,13 @@
   }
 
   .basket-cost-container {
-    font-size: 28px;
+    font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     margin: 10px;
     font-family: "Advent Pro";
+    font-weight: 700;
   }
 
   .checkout-container {
@@ -155,6 +160,7 @@
 
   .no-items-header {
     font-family: "Advent Pro";
+    font-weight: 700;
     margin-top: 100px;
     text-align: center;
   }
