@@ -26,6 +26,7 @@
     margin: 0;
     padding: 0px;
     border: 4px solid white;
+    border-radius: 10px;
     overflow: hidden;
   }
 
@@ -195,6 +196,7 @@
     margin: 0;
     padding: 0px;
     border: 4px solid white;
+    border-radius: 10px;
     overflow: hidden;
   }
 
