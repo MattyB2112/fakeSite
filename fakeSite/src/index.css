@@ -4,6 +4,7 @@
 body {
   background-image: url("./assets/triangles_pattern.png");
   margin: 0px;
+  min-height: 100vh;
 }
 
 /*DETAILS AND BASKET*/

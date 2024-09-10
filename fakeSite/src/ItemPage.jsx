@@ -78,66 +78,65 @@ export default function ItemPage({ handleBasketUpdate }) {
     return (
       <>
         <div className="product-container">
-          <div className="carousel-and-sizes-container">
-            <div className="carousel-item-page-container">
-              <Carousel
-                preventMovementUntilSwipeScrollTolerance={true}
-                swipeScrollTolerance={50}
-                className="item-page-carousel"
-                showIndicators={false}
-                infiniteLoop={true}
-                thumbWidth={60}
-                selectedItem={0}
-                renderArrowNext={(clickHandler, hasNext) => {
-                  return (
-                    hasNext && (
-                      <button
-                        className="nav_btn nav_btn_right"
-                        onClick={clickHandler}
-                      >
-                        <img src={right} />
-                      </button>
-                    )
-                  );
-                }}
-                renderArrowPrev={(clickHandler, hasNext) => {
-                  return (
-                    hasNext && (
-                      <button
-                        onClick={clickHandler}
-                        className="nav_btn nav_btn_left"
-                      >
-                        <img src={left} />
-                      </button>
-                    )
-                  );
-                }}
-                renderIndicator={(clickHandler, isSelected, index) => {
-                  return (
-                    <li
+          <div className="carousel-item-page-container">
+            <Carousel
+              preventMovementUntilSwipeScrollTolerance={true}
+              swipeScrollTolerance={50}
+              showIndicators={false}
+              infiniteLoop={true}
+              showThumbs={false}
+              selectedItem={0}
+              renderArrowNext={(clickHandler, hasNext) => {
+                return (
+                  hasNext && (
+                    <button
+                      className="nav_btn nav_btn_right"
                       onClick={clickHandler}
-                      className={`ind ${isSelected ? "active" : ""}`}
-                      key={index}
-                      role="button"
-                    />
-                  );
-                }}
-                statusFormatter={(currentItem, total) => {
-                  return <></>;
-                }}
-              >
-                {images.map((image, index) => (
-                  <div>
-                    <img
-                      alt="sample_file"
-                      src={image}
-                      key={index}
-                      className="item-page-image"
-                    />
-                  </div>
-                ))}
-              </Carousel>
-            </div>
+                    >
+                      <img src={right} />
+                    </button>
+                  )
+                );
+              }}
+              renderArrowPrev={(clickHandler, hasNext) => {
+                return (
+                  hasNext && (
+                    <button
+                      onClick={clickHandler}
+                      className="nav_btn nav_btn_left"
+                    >
+                      <img src={left} />
+                    </button>
+                  )
+                );
+              }}
+              renderIndicator={(clickHandler, isSelected, index) => {
+                return (
+                  <li
+                    onClick={clickHandler}
+                    className={`ind ${isSelected ? "active" : ""}`}
+                    key={index}
+                    role="button"
+                  />
+                );
+              }}
+              statusFormatter={(currentItem, total) => {
+                return <></>;
+              }}
+            >
+              {images.map((image, index) => (
+                <div>
+                  <img
+                    alt="sample_file"
+                    src={image}
+                    key={index}
+                    className="item-page-image"
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </div>
+          <div className="sizes-and-info-container">
             <div className="sizes-container">
               {sizes.map((element) => {
                 let available = element[Object.keys(element)];
@@ -159,30 +158,30 @@ export default function ItemPage({ handleBasketUpdate }) {
                 );
               })}
             </div>
-          </div>
-          <div className="product-info-container">
-            <div className="product-info-title">{product.productname}</div>
-            <div className="product-info">£{product.productprice}</div>
-            <div className="product-info">{product.about}</div>
-            <br />
-            <div className="product-info">
-              <button
-                className={
-                  isSelected === ""
-                    ? "add-to-basket-button-inactive"
-                    : "add-to-basket-button-active"
-                }
-                disabled={isSelected === "" ? true : false}
-                onClick={() => {
-                  multiFunc(
-                    product.product_id,
-                    signedInUser,
-                    Number(Object.keys(isSelected))
-                  );
-                }}
-              >
-                ADD TO BASKET
-              </button>
+            <div className="product-info-container">
+              <div className="product-info-title">{product.productname}</div>
+              <div className="product-info">£{product.productprice}</div>
+              <div className="product-info">{product.about}</div>
+              <br />
+              <div className="product-info">
+                <button
+                  className={
+                    isSelected === ""
+                      ? "add-to-basket-button-inactive"
+                      : "add-to-basket-button-active"
+                  }
+                  disabled={isSelected === "" ? true : false}
+                  onClick={() => {
+                    multiFunc(
+                      product.product_id,
+                      signedInUser,
+                      Number(Object.keys(isSelected))
+                    );
+                  }}
+                >
+                  ADD TO BASKET
+                </button>
+              </div>
               <ToastContainer
                 position="bottom-center"
                 autoclose={50}

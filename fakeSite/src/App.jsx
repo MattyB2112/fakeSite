@@ -16,7 +16,6 @@ import { deleteFromBasket, getCart, updateCart } from "./APICalls";
 import SearchBar from "./SearchBar";
 import ScrollToTop from "./ScrollToTop";
 import LandingPage from "./LandingPage";
-import background from "../src/assets/triangles_pattern.png";
 
 function App() {
   const [basket, setBasket] = useState([]);

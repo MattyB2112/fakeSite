@@ -4,19 +4,19 @@
   .home-page-container {
     margin-top: 0px;
   }
-  .carousel {
+  .home-page-container .carousel {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 450px !important;
-    min-width: 360px !important;
+    max-width: 300px;
+    min-width: 250px;
     padding: 5px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 
-  .carousel.carousel-slider {
+  .home-page-container .carousel.carousel-slider {
     position: relative;
     margin: 0;
     padding: 0px;
@@ -175,7 +175,7 @@
   .home-product-info-title {
     font-family: "Advent Pro";
     align-self: center;
-    padding: 5px;
+    padding: 0px;
     font-size: 28px;
     color: rgb(88, 88, 88);
     text-decoration: none !important;
@@ -200,7 +200,8 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    margin: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
     height: auto;
     padding: 10px;
     flex-direction: column-reverse;
@@ -238,13 +239,13 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .carousel {
+  .home-page-carousel .carousel {
     display: flex;
     align-content: center;
     justify-content: center;
-    max-width: 350px !important;
-    min-width: 300px !important;
-    padding: 5px;
+    max-width: 100%;
+    min-width: 80%;
+    padding: 0px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -370,7 +371,7 @@
   .home-product-info,
   .home-product-info-title {
     align-self: center;
-    padding: 5px;
+    padding: 0px;
     font-size: 25px;
     color: rgb(88, 88, 88);
     font-family: "Advent Pro";
