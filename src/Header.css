@@ -68,7 +68,8 @@ a {
   text-decoration: none;
 }
 
-.basket-counter-not-empty {
+.basket-counter-not-empty,
+.basket-counter-empty {
   display: flex;
   align-items: center;
   font-size: 15px;
