@@ -1,5 +1,5 @@
 import "./login.css";
-import { useState, useRef, useContext, useEffect } from "react";
+import { useState, useRef, useContext } from "react";
 import { fetchUserByEmail } from "./APICalls";
 import { UserContext } from "./UserContext";
 
@@ -69,7 +69,7 @@ export default function Login() {
               type="email"
               id="email"
               ref={inputRefEmail}
-              className={emailFound ? "inputfield" : "invalid"}
+              className={emailFound ? "login-inputfield" : "login-invalid"}
               placeholder="Enter your email"
               onChange={handleChange}
               onBlur={handleEmailBlur}
@@ -81,7 +81,7 @@ export default function Login() {
               type="password"
               id="password"
               ref={inputRefPassword}
-              className={passwordCorrect ? "inputfield" : "invalid"}
+              className={passwordCorrect ? "login-inputfield" : "login-invalid"}
               placeholder="Enter password"
               onChange={handleChange}
               onBlur={handlePasswordBlur}
@@ -89,7 +89,7 @@ export default function Login() {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" className="submit-button">
+            <button type="submit" className="login-submit-button">
               Login!
             </button>
           </div>

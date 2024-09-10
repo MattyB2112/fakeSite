@@ -18,10 +18,11 @@
     max-width: 80%;
     min-width: 50%;
     margin: 0 auto;
+    font-family: "Advent Pro";
   }
 
   .search-input {
-    height: 20px;
+    height: 40px;
     max-width: 80%;
     min-width: 50%;
     padding: 4px;
@@ -32,7 +33,6 @@
     display: none;
     margin: 0 auto;
     width: 95%;
-    height: 100px;
     background-color: red;
   }
 
@@ -89,11 +89,12 @@
   }
 
   .search-input {
-    height: 20px;
+    height: 40px;
     min-width: 100%;
     padding: 4px;
     border-radius: 8px;
     font-size: 18px;
+    font-family: "Advent Pro";
   }
   .search-results-box-inactive {
     display: none;

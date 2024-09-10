@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -5,14 +7,15 @@
   justify-content: flex-start;
   height: 95vh;
   width: 100%;
-  font-size: 25px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 28px;
+  font-family: "Nerko One";
   margin: 0 auto;
   margin-top: 100px;
 }
 .Auth-form-title {
   color: white;
   margin: 0;
+  margin-top: 20px;
 }
 
 .Auth-form {
@@ -40,24 +43,20 @@
 .form-group-mt-3 {
 }
 
-.inputfield {
-  width: 280px;
-  height: 25px;
+.login-inputfield,
+.login-invalid {
+  width: 250px;
+  height: 40px;
   border-radius: 10px;
   border: 3px solid rgb(175, 100, 3);
   border: none;
   margin: 5px;
   padding: 5px;
   font-size: 20px;
+  font-family: "Advent Pro";
 }
 
-.invalid {
-  width: 280px;
-  height: 25px;
-  border-radius: 10px;
-  margin: 5px;
-  padding: 5px;
-  font-size: 20px;
+.login-invalid {
   border: 3px solid red;
 }
 
@@ -66,7 +65,7 @@
 }
 
 .forgot-password-text {
-  font-size: 12px;
+  font-size: 20px;
 }
 .forgot-password-link,
 .signup-link {
@@ -74,9 +73,13 @@
   text-decoration: underline;
 }
 
-.submit-button {
+.login-submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 10px;
   width: 80px;
-  font-size: 15px;
+  font-size: 20px;
   height: 30px;
+  margin-bottom: 10px;
 }

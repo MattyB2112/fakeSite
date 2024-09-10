@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Bebas+Neue&family=Nerko+One&display=swap");
+
 .burger-menu {
   display: flex;
   padding-top: 40px;
@@ -49,7 +51,7 @@
 }
 
 .menu-item {
-  font-family: inherit;
+  font-family: "Advent Pro";
   font-size: 28px;
   font-weight: 700;
   padding-top: 20px;
@@ -59,7 +61,6 @@
   color: white;
   border-bottom: 1.5px solid black;
   text-align: left;
-  font-family: "Courier New", Courier, monospace;
 }
 
 .menu-item:hover {

@@ -17,9 +17,8 @@
     position: relative;
     margin: 0;
     padding: 5px;
-    border: 2px solid rgb(251, 141, 0);
+    border: 8px solid white;
     overflow: hidden;
-    border-style: dotted;
     box-shadow: 10px, 10px;
   }
 
@@ -28,15 +27,18 @@
   /* Dropdown Button */
   .sort-by-dropbtn {
     background-color: rgb(251, 141, 0);
+    font-family: "Nerko One";
     color: white;
-    width: 80px;
+    width: 90px;
     height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 6px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Dropdown button on hover & focus */
@@ -87,14 +89,18 @@
   .filter-dropbtn {
     background-color: rgb(251, 141, 0);
     color: white;
-    width: 80px;
+    width: 90px;
     height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 6px;
+    font-size: 22px;
+    text-align: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Nerko One";
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Dropdown button on hover & focus */
@@ -169,14 +175,21 @@
     padding: 5px;
     font-size: 28px;
     color: rgb(88, 88, 88);
+    text-decoration: none !important;
   }
 
   .home-product-info-title {
     font-weight: bold;
   }
 
-  .home-product-info-title:hover {
+  .carousel-container a {
+    text-decoration: none;
+    color: #373a47;
+  }
+
+  a:hover {
     text-decoration: underline;
+    color: #373a47;
   }
 
   .carousel-container {
@@ -204,10 +217,10 @@
   }
 
   .nav_btn_left {
-    left: -2%;
+    left: -1%;
   }
   .nav_btn_right {
-    right: -2%;
+    right: -1%;
   }
 
   .link-test {
@@ -238,9 +251,8 @@
     position: relative;
     margin: 0;
     padding: 8px;
-    border: 2px solid rgb(251, 141, 0);
+    border: 4px solid white;
     overflow: hidden;
-    border-style: dotted;
     box-shadow: 10px, 10px;
   }
 
@@ -252,9 +264,8 @@
     color: white;
     width: 80px;
     height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 6px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -298,9 +309,8 @@
     color: white;
     width: 80px;
     height: 40px;
-    padding: 8px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 6px;
+    font-size: 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -391,7 +401,7 @@
     border-radius: 50%;
     min-width: 50px;
     max-width: 60px;
-    margin: -6px;
+    margin: -3px;
   }
 
   .nav_btn_left {

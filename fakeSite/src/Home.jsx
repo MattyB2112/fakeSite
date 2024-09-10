@@ -118,11 +118,11 @@ export default function Home() {
                 <div className="home-product-info">
                   {product.productcategory}
                 </div>
-                <Link to={`/${product.product_id}`}>
+                <a href={`/${product.product_id}`}>
                   <div className="home-product-info-title">
                     {product.productname}
                   </div>
-                </Link>
+                </a>
                 <Carousel
                   className="home-page-carousel"
                   preventMovementUntilSwipeScrollTolerance={true}

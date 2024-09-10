@@ -90,7 +90,7 @@ export default function SignUp() {
             <input
               type="text"
               id="firstName"
-              className="inputfield"
+              className="signup-inputfield"
               placeholder="Enter your first name"
               value={userDetails.userName}
               onChange={handleChange}
@@ -101,7 +101,7 @@ export default function SignUp() {
             <input
               type="text"
               id="surname"
-              className="inputfield"
+              className="signup-inputfield"
               placeholder="Enter your surname"
               value={userDetails.userName}
               onChange={handleChange}
@@ -112,7 +112,7 @@ export default function SignUp() {
             <input
               type="email"
               id="email"
-              className={emailValid ? "inputfield" : "invalid"}
+              className={emailValid ? "signup-inputfield" : "signup-invalid"}
               placeholder="Enter your email"
               value={userDetails.userName}
               onChange={handleChange}
@@ -124,7 +124,7 @@ export default function SignUp() {
             <input
               type="password"
               id="password"
-              className={passwordValid ? "inputfield" : "invalid"}
+              className={passwordValid ? "signup-inputfield" : "signup-invalid"}
               placeholder="Enter your password"
               value={userDetails.userName}
               onChange={handleChange}
@@ -135,7 +135,7 @@ export default function SignUp() {
             <input
               type="password"
               id="confirmPassword"
-              className={passwordValid ? "inputfield" : "invalid"}
+              className={passwordValid ? "signup-inputfield" : "signup-invalid"}
               placeholder="Confirm your password"
               value={userDetails.userName}
               onChange={handleChange}
@@ -146,7 +146,7 @@ export default function SignUp() {
           <div className="d-grid gap-2 mt-3">
             <button
               type="submit"
-              className="submit-button"
+              className="signup-submit-button"
               onClick={handleSubmitClick}
             >
               Join!

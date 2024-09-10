@@ -3,8 +3,9 @@
 .loading-message {
   font-weight: 300;
   color: rgb(251, 141, 0);
-  font-size: 40px;
+  font-size: 60px;
   font-family: "Nerko One";
+  height: 80vh;
 }
 
 .loading-message p {

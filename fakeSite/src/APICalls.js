@@ -72,6 +72,18 @@ export function createNewUser(
     });
 }
 
+export function UpdateUser(newUserObj) {
+  return axios
+    .patch(
+      `https://fakesitebackend.onrender.com/api/users/id/${newUserObj.user_id}`,
+      newUserObj
+    )
+    .then((result) => result)
+    .catch((error) => {
+      return error;
+    });
+}
+
 export function fetchUserByEmail(email) {
   return axios
     .get(`https://fakesitebackend.onrender.com/api/users/email/${email}`)
