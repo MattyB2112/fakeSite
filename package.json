@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "fakesite",
   "private": true,
   "version": "0.0.0",
@@ -30,9 +29,5 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "vite": "^5.2.0"
-=======
-  "dependencies": {
-    "react-burger-menu": "^3.0.9"
->>>>>>> e876d4073ea654ccfa7a211f715138544b0f4754
   }
 }
