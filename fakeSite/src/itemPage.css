@@ -12,7 +12,7 @@
     min-height: 100vh;
   }
 
-  .carousel-item-page-container .carousel {
+  .item-page-carousel .carousel {
     max-width: 90%;
     min-width: 300px;
     padding: 5px;
@@ -79,26 +79,21 @@
     background-color: rgb(251, 141, 0);
   }
 
-  .size-button-in-stock {
+  .size-button-in-stock,
+  .size-button-out-of-stock {
     width: 50px;
-    font-size: 20px;
     height: 50px;
+    font-size: 20px;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 0px;
+    border: 2px solid black;
+    border-radius: 4px;
     margin: 3px;
     font-weight: bold;
   }
 
   .size-button-out-of-stock {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    border: 1px solid black;
-    border-radius: 0px;
-    border-style: dashed;
+    border: 2px dashed black;
     color: white;
-    margin: 3px;
     background-color: rgb(187, 181, 181);
     pointer-events: none;
     background: linear-gradient(
@@ -191,12 +186,8 @@
     min-height: 100vh;
   }
 
-  .carousel-item-page-container .carousel {
-    width: 100vw;
-    padding: 0px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+  .item-page-carousel .carousel {
+    width: 97vw !important;
   }
 
   .product-container .carousel.carousel-slider {
@@ -259,26 +250,21 @@
     background-color: rgb(251, 141, 0);
   }
 
-  .size-button-in-stock {
+  .size-button-in-stock,
+  .size-button-out-of-stock {
     width: 45px;
     height: 45px;
     font-size: 18px;
     background-color: white;
-    border: 1px solid black;
-    border-radius: 0px;
+    border: 2px solid black;
+    border-radius: 4px;
     margin: 3px;
     font-weight: bold;
   }
 
   .size-button-out-of-stock {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    border: 1px solid black;
-    border-radius: 0px;
-    border-style: dashed;
+    border: 2px dashed black;
     color: white;
-    margin: 3px;
     background-color: rgb(187, 181, 181);
     pointer-events: none;
     background: linear-gradient(

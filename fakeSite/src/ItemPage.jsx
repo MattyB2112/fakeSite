@@ -82,6 +82,7 @@ export default function ItemPage({ handleBasketUpdate }) {
             <Carousel
               preventMovementUntilSwipeScrollTolerance={true}
               swipeScrollTolerance={50}
+              className="item-page-carousel"
               showIndicators={false}
               infiniteLoop={true}
               showThumbs={false}
