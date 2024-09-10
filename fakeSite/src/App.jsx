@@ -61,7 +61,13 @@ function App() {
   }, [basketChanged, signedInUser]);
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: "URL('./src/assets/triangles_pattern.png')",
+        margin: "0px",
+        padding: "0px",
+      }}
+    >
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
         <ScrollToTop />
         <Routes>
@@ -206,7 +212,7 @@ function App() {
         </Routes>
         <Footer />
       </UserContext.Provider>
-    </>
+    </div>
   );
 }
 
