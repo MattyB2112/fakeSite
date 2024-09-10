@@ -90,7 +90,7 @@ export default function ItemPage({ handleBasketUpdate }) {
                 return (
                   hasNext && (
                     <button
-                      className="nav_btn nav_btn_right"
+                      className="item-page-nav-right"
                       onClick={clickHandler}
                     >
                       <img src={right} />
@@ -103,7 +103,7 @@ export default function ItemPage({ handleBasketUpdate }) {
                   hasNext && (
                     <button
                       onClick={clickHandler}
-                      className="nav_btn nav_btn_left"
+                      className="item-page-nav-left"
                     >
                       <img src={left} />
                     </button>

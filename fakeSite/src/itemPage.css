@@ -43,6 +43,26 @@
     align-items: center;
     justify-content: center;
   }
+  .carousel-item-page-container .item-page-nav-left,
+  .carousel-item-page-container .item-page-nav-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    height: auto;
+    border-radius: 50%;
+    min-width: 60px;
+    max-width: 70px;
+  }
+
+  .carousel-item-page-container .item-page-nav-left {
+    left: -1%;
+  }
+  .carousel-item-page-container .item-page-nav-right {
+    right: -1%;
+  }
 
   /*SIZING*/
   .sizes-container {
@@ -166,9 +186,25 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin-top: 80px;
+    margin-top: 90px;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .carousel-item-page-container .carousel {
+    width: 100vw;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .product-container .carousel.carousel-slider {
+    position: relative;
+    margin: 0;
+    padding: 0px;
+    border: 4px solid white;
+    overflow: hidden;
   }
 
   .sizes-and-info-container {
@@ -186,6 +222,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .carousel-item-page-container .item-page-nav-left,
+  .carousel-item-page-container .item-page-nav-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 4;
+    border: none;
+    height: auto;
+    border-radius: 50%;
+    min-width: 40px;
+    max-width: 40px;
+  }
+
+  .carousel-item-page-container .item-page-nav-left {
+    left: -2%;
+  }
+  .carousel-item-page-container .item-page-nav-right {
+    right: -2%;
   }
 
   /*SIZING*/
@@ -246,9 +303,8 @@
     display: flex;
     flex-direction: column;
     margin: 2px;
-    padding: 5px;
-    max-width: 90%;
-    min-width: 85%;
+    padding: 1px;
+    width: 100%;
     max-height: 100%;
     font-size: 18px;
     margin-bottom: 50px;
@@ -256,7 +312,7 @@
 
   .product-info,
   .product-info-title {
-    padding: 0px;
+    padding: 0;
     font-size: 18px;
   }
 
