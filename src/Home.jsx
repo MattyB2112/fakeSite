@@ -20,6 +20,7 @@ export default function Home(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedSize, setSelectedSize] = useState();
   const sortByQuery = searchParams.get("sort_by") || "dateadded";
   const orderByQuery = searchParams.get("order_by") || "ASC";
   const sizeQuery = searchParams.get("size") || "all";
@@ -31,6 +32,13 @@ export default function Home(props) {
     newParams.set("sort_by", sort_by);
     newParams.set("order_by", order_by);
     setSearchParams(newParams);
+  }
+
+  function removeFilters() {
+    const filterParams = new URLSearchParams(searchParams);
+    filterParams.set("size", "all");
+    setSearchParams(filterParams);
+    setSelectedSize();
   }
 
   const currentUrl = window.location.href;
@@ -51,6 +59,7 @@ export default function Home(props) {
     const filterParams = new URLSearchParams(searchParams);
     filterParams.set("size", size);
     setSearchParams(filterParams);
+    setSelectedSize(size);
   }
 
   if (isLoading) {
@@ -89,11 +98,15 @@ export default function Home(props) {
               Filter
             </button>
             <div id="filter-dropdown" className="filter-dropdown-content">
-              <div>Size</div>
+              <div>By size:</div>
               {sizesArray.map((size) => {
                 return (
                   <button
-                    className="filter-size-button"
+                    className={
+                      size === selectedSize
+                        ? "filter-size-button-selected"
+                        : "filter-size-button-not-selected"
+                    }
                     onClick={() => {
                       handleSizeFilter(size);
                     }}
@@ -102,7 +115,9 @@ export default function Home(props) {
                   </button>
                 );
               })}
-              <div>Colour</div>
+              <br />
+              <br />
+              <button onClick={removeFilters}>Remove filters</button>
             </div>
           </div>
           {products.length === 0 ? (
