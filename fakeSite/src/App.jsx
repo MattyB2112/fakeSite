@@ -62,13 +62,7 @@ function App() {
   }, [basketChanged, signedInUser]);
 
   return (
-    <div
-      style={{
-        backgroundImage: "url(" + background + ")",
-        margin: "0px",
-        padding: "0px",
-      }}
-    >
+    <>
       <UserContext.Provider value={{ signedInUser, setSignedInUser }}>
         <ScrollToTop />
         <Routes>
@@ -213,7 +207,7 @@ function App() {
         </Routes>
         <Footer />
       </UserContext.Provider>
-    </div>
+    </>
   );
 }
 

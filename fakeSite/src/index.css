@@ -1,6 +1,11 @@
 #root {
 }
 
+body {
+  background-image: url("./assets/triangles_pattern.png");
+  margin: 0px;
+}
+
 /*DETAILS AND BASKET*/
 .details-basket-container {
   display: flex;
