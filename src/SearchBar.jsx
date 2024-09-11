@@ -7,8 +7,14 @@ export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [matchingProducts, setMatchingProducts] = useState([]);
   let tempProducts = [];
+
   const onSearchChange = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const onSearchBlur = (e) => {
+    e.target.value = "";
+    setSearchTerm("");
   };
 
   useEffect(() => {
@@ -39,6 +45,7 @@ export default function SearchBar() {
             placeholder="Search for a product..."
             className="search-input"
             onChange={onSearchChange}
+            onBlur={onSearchBlur}
           />
         </div>
         <div

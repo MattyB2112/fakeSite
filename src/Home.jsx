@@ -143,7 +143,7 @@ export default function Home(props) {
                     <div className="home-product-info">
                       {product.productcategory}
                     </div>
-                    <a href={`/${product.product_id}`}>
+                    <a href={`/products/${product.product_id}`}>
                       <div className="home-product-info-title">
                         {product.productname}
                       </div>
